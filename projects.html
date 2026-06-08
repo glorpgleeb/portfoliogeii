@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projets</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .project-item {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 4rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .project-item:nth-child(even) {
+            grid-template-columns: 1fr 1.2fr;
+        }
+
+        .project-item:nth-child(even) > *:first-child {
+            order: 2;
+        }
+
+        .project-item:nth-child(even) > *:last-child {
+            order: 1;
+        }
+
+        .project-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: var(--bg-secondary);
+            border-radius: 2px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 0.4rem 0.8rem;
+            border-radius: 2px;
+            text-transform: lowercase;
+        }
+
+        @media (max-width: 768px) {
+            .project-item,
+            .project-item:nth-child(even) {
+                grid-template-columns: 1fr;
+            }
+
+            .project-item:nth-child(even) > *:first-child,
+            .project-item:nth-child(even) > *:last-child {
+                order: unset;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">accueil</a>
+            <a href="projects.html" class="active">projets</a>
+            <a href="about.html">à propos</a>
+            <a href="contact.html">contact</a>
+        </div>
+    </nav>
+
+    <main class="page">
+        <div class="container">
+            <h1>mes projets</h1>
+
+            <!-- PROJET 1 -->
+            <div class="project-item">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>nom du projet 1</h3>
+                    <p>description détaillée de votre premier projet. qu'avez-vous créé ? quels ont été les défis ? quels ont été les résultats ?</p>
+                    <div class="project-tags">
+                        <span class="tag">arduino</span>
+                        <span class="tag">c++</span>
+                        <span class="tag">iot</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET 2 -->
+            <div class="project-item">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>nom du projet 2</h3>
+                    <p>description détaillée de votre deuxième projet. technologies utilisées et résultats obtenus.</p>
+                    <div class="project-tags">
+                        <span class="tag">python</span>
+                        <span class="tag">moteurs</span>
+                        <span class="tag">contrôle</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET 3 -->
+            <div class="project-item">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>nom du projet 3</h3>
+                    <p>description détaillée de votre troisième projet. le plus récent ou le plus ambitieux ?</p>
+                    <div class="project-tags">
+                        <span class="tag">esp32</span>
+                        <span class="tag">wifi</span>
+                        <span class="tag">app mobile</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET 4 -->
+            <div class="project-item">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>nom du projet 4</h3>
+                    <p>description courte du quatrième projet. vous pouvez en ajouter ou en supprimer selon vos besoins.</p>
+                    <div class="project-tags">
+                        <span class="tag">dashboard</span>
+                        <span class="tag">javascript</span>
+                        <span class="tag">données en temps réel</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 votre portfolio</p>
+    </footer>
+
+</body>
+</html>
