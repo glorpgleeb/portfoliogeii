@@ -1,71 +1,106 @@
-<!-- CENTRES D'INTÉRÊTS SECTION -->
-<div class="container" style="padding: 6rem 0;">
-    <h2>centres d'intérêts</h2>
-    
-    <div style="
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-    ">
-        <div style="
-            padding: 2rem;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        " onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.1rem;">⚡ électronique embarquée</h3>
-            <p style="font-size: 0.9rem;">conception et programmation de systèmes électroniques autonomes. passion pour les microcontrôleurs et les capteurs.</p>
-        </div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>centres d'intérêts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-        <div style="
-            padding: 2rem;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        " onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.1rem;">🤖 automatisation industrielle</h3>
-            <p style="font-size: 0.9rem;">créer des solutions pour automatiser les processus. intéressé par l'iot et les systèmes de contrôle.</p>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">accueil</a>
+            <a href="projects.html">projets</a>
+            <a href="about.html">à propos</a>
+            <a href="interests.html" class="active">centres d'intérêts</a>
+            <a href="skills.html">compétences</a>
+            <a href="contact.html">contact</a>
         </div>
+    </nav>
 
-        <div style="
-            padding: 2rem;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        " onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.1rem;">📱 iot et connectivité</h3>
-            <p style="font-size: 0.9rem;">projets intégrant wifi, bluetooth et communication réseau. explorer les applications mobiles et web.</p>
-        </div>
+    <main class="page">
+        <div class="container">
+            <h1>centres d'intérêts</h1>
+            
+            <div style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+                margin-top: 3rem;
+            ">
+                <div style="
+                    padding: 2rem;
+                    border: 1px solid rgba(0, 0, 0, 0.05);
+                    border-radius: 2px;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                " onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
+                    <h3 style="margin-bottom: 0.8rem; font-size: 1.1rem;">⚡ électronique embarquée</h3>
+                    <p style="font-size: 0.9rem;">conception et programmation de systèmes électroniques autonomes. passion pour les microcontrôleurs et les capteurs innovants.</p>
+                </div>
 
-        <div style="
-            padding: 2rem;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        " onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.1rem;">🔬 innovation technologique</h3>
-            <p style="font-size: 0.9rem;">explorer les nouvelles technologies et les appliquer dans des projets créatifs et utiles.</p>
-        </div>
+                <div style="
+                    padding: 2rem;
+                    border: 1px solid rgba(0, 0, 0, 0.05);
+                    border-radius: 2px;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                " onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
+                    <h3 style="margin-bottom: 0.8rem; font-size: 1.1rem;">🤖 automatisation industrielle</h3>
+                    <p style="font-size: 0.9rem;">créer des solutions pour automatiser les processus. intéressé par les systèmes de contrôle et l'optimisation.</p>
+                </div>
 
-        <div style="
-            padding: 2rem;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        " onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.1rem;">👥 collaboration</h3>
-            <p style="font-size: 0.9rem;">travailler en équipe sur des projets ambitieux. partager les connaissances et apprendre ensemble.</p>
-        </div>
+                <div style="
+                    padding: 2rem;
+                    border: 1px solid rgba(0, 0, 0, 0.05);
+                    border-radius: 2px;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                " onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
+                    <h3 style="margin-bottom: 0.8rem; font-size: 1.1rem;">📱 iot et connectivité</h3>
+                    <p style="font-size: 0.9rem;">projets intégrant wifi, bluetooth et communication réseau. explorer les applications mobiles et web.</p>
+                </div>
 
-        <div style="
-            padding: 2rem;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        " onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.1rem;">📚 apprentissage continu</h3>
-            <p style="font-size: 0.9rem;">curiosité pour découvrir de nouvelles technologies et améliorer continuellement mes compétences.</p>
+                <div style="
+                    padding: 2rem;
+                    border: 1px solid rgba(0, 0, 0, 0.05);
+                    border-radius: 2px;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                " onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
+                    <h3 style="margin-bottom: 0.8rem; font-size: 1.1rem;">🔬 innovation technologique</h3>
+                    <p style="font-size: 0.9rem;">explorer les nouvelles technologies et les appliquer dans des projets créatifs et utiles au quotidien.</p>
+                </div>
+
+                <div style="
+                    padding: 2rem;
+                    border: 1px solid rgba(0, 0, 0, 0.05);
+                    border-radius: 2px;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                " onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
+                    <h3 style="margin-bottom: 0.8rem; font-size: 1.1rem;">👥 collaboration</h3>
+                    <p style="font-size: 0.9rem;">travailler en équipe sur des projets ambitieux. partager les connaissances et apprendre ensemble.</p>
+                </div>
+
+                <div style="
+                    padding: 2rem;
+                    border: 1px solid rgba(0, 0, 0, 0.05);
+                    border-radius: 2px;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                " onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
+                    <h3 style="margin-bottom: 0.8rem; font-size: 1.1rem;">📚 apprentissage continu</h3>
+                    <p style="font-size: 0.9rem;">curiosité pour découvrir de nouvelles technologies et améliorer continuellement mes compétences.</p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 votre portfolio</p>
+    </footer>
+
+</body>
+</html>
