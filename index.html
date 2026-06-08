@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="active">accueil</a>
+            <a href="projects.html">projets</a>
+            <a href="about.html">à propos</a>
+            <a href="contact.html">contact</a>
+        </div>
+    </nav>
+
+    <main class="page">
+        <div class="container">
+            <!-- LAYOUT ASYMÉTRIQUE HERO -->
+            <div class="grid-asymmetric" style="min-height: 70vh; align-items: center;">
+                <div>
+                    <h1>your name here</h1>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                        étudiant en but geii | électronique & automatisation
+                    </p>
+                    <a href="projects.html" class="btn">voir mes projets</a>
+                </div>
+                <div style="
+                    width: 100%;
+                    aspect-ratio: 1;
+                    background: var(--bg-secondary);
+                    border-radius: 2px;
+                    animation: slideUp 0.8s ease 0.2s backwards;
+                "></div>
+            </div>
+        </div>
+
+        <!-- SECTION VIDE ASYMÉTRIQUE -->
+        <div class="container">
+            <div style="height: 15vh;"></div>
+            <div class="grid-asymmetric-reverse">
+                <div style="
+                    width: 100%;
+                    aspect-ratio: 4/3;
+                    background: var(--bg-secondary);
+                    border-radius: 2px;
+                    animation: slideUp 0.8s ease 0.3s backwards;
+                "></div>
+                <div>
+                    <h2>passion pour les technologies</h2>
+                    <p>développement de solutions innovantes en électronique et programmation embarquée. actuellement en exploration des systèmes iot et de l'automatisation industrielle.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESPACE BLANC INTENTIONNEL -->
+        <div style="height: 8rem;"></div>
+
+        <!-- CALL TO ACTION ASYMÉTRIQUE -->
+        <div class="container-small">
+            <div style="text-align: center;">
+                <h2>commençons à travailler ensemble</h2>
+                <p style="margin-bottom: 2rem;">vous recherchez un stage ou une alternance ?</p>
+                <a href="contact.html" class="btn">m'envoyer un message</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 votre portfolio</p>
+    </footer>
+
+    <style>
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+</body>
+</html>
