@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>à propos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 4rem;
+            align-items: start;
+            margin-bottom: 5rem;
+        }
+
+        .about-image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: var(--bg-secondary);
+            border-radius: 2px;
+            animation: slideUp 0.8s ease 0.2s backwards;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-item {
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-item h4 {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            text-transform: lowercase;
+        }
+
+        .skill-item p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">accueil</a>
+            <a href="projects.html">projets</a>
+            <a href="about.html" class="active">à propos</a>
+            <a href="contact.html">contact</a>
+        </div>
+    </nav>
+
+    <main class="page">
+        <div class="container">
+            <h1>à propos de moi</h1>
+
+            <div class="about-grid">
+                <div class="about-image"></div>
+                <div>
+                    <p style="font-size: 1.05rem; margin-bottom: 2rem;">
+                        je suis actuellement en première année de but geii. passionné par les systèmes embarqués et l'automatisation, j'aime résoudre des problèmes complexes à travers des projets concrets.
+                    </p>
+                    <p style="margin-bottom: 2rem;">
+                        mon objectif est de développer une expertise en électronique et programmation pour créer des solutions innovantes dans le domaine de l'iot et de l'automatisation industrielle.
+                    </p>
+                    <p>
+                        je suis toujours à la recherche de nouvelles opportunités pour apprendre et me challenger sur des projets ambitieux.
+                    </p>
+
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <h4>⚡ électronique</h4>
+                            <p>arduino, esp32, circuits, pcb</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>💻 programmation</h4>
+                            <p>c, python, javascript, html/css</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>🤖 automatisation</h4>
+                            <p>systèmes embarqués, iot</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>🛠️ outils</h4>
+                            <p>kicad, matlab, git, linux</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 votre portfolio</p>
+    </footer>
+
+</body>
+</html>
