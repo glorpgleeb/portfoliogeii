@@ -1,12 +1,12 @@
 :root {
     /* PALETTE VERT & CRÈME - PROFESSIONNEL */
-    --bg-primary: #fffbf7;
-    --bg-secondary: #f5f1e8;
+    --bg-primary: #f0e6d2;
+    --bg-secondary: #e8dcc8;
     --text-primary: #1a1410;
     --text-secondary: #6b6b6b;
     --accent: #00A865;
     --accent-hover: #008c54;
-    --border: #e5ddd2;
+    --border: #ddd0c0;
 }
 
 * {
@@ -35,7 +35,7 @@ nav {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(255, 251, 247, 0.98);
+    background: rgba(240, 230, 210, 0.98);
     backdrop-filter: blur(15px);
     padding: 1.5rem 0;
     border-bottom: 1px solid var(--border);
@@ -119,7 +119,7 @@ nav a.active::after {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, rgba(255, 251, 247, 0.99) 0%, rgba(245, 241, 232, 0.99) 100%);
+    background: linear-gradient(135deg, rgba(240, 230, 210, 0.99) 0%, rgba(232, 220, 200, 0.99) 100%);
     backdrop-filter: blur(10px);
     border: 1px solid var(--accent);
     border-radius: 8px;
@@ -393,7 +393,7 @@ a:hover::after {
 .project-image {
     width: 100%;
     aspect-ratio: 4/3;
-    background: linear-gradient(135deg, var(--accent) 0%, #00d87d 100%);
+    background: var(--accent);
     border-radius: 16px 16px 0 0;
     display: flex;
     align-items: center;
@@ -496,7 +496,7 @@ a:hover::after {
 
 .skill-bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--accent) 0%, #00d87d 100%);
+    background: var(--accent);
     border-radius: 10px;
     width: 0;
     animation: fillSkillBar 1.2s ease-out forwards;
@@ -516,7 +516,7 @@ a:hover::after {
 /* CONTACT SECTION */
 .contact {
     padding: 4rem 5%;
-    background: linear-gradient(135deg, var(--accent) 0%, #00d87d 100%);
+    background: var(--accent);
     color: white;
     text-align: center;
     border-radius: 20px;
