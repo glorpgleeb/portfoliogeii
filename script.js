@@ -2,9 +2,8 @@
 // INTERACTIVITÉ & ANIMATIONS AVANCÉES
 // ==========================================
 
-// 1. SMOOTH SCROLL & ACTIVE LINK
 document.addEventListener('DOMContentLoaded', () => {
-    updateActiveLink();
+    setActiveNavLink();
     animateOnScroll();
     animateSkillBars();
     addInteractiveEffects();
@@ -12,26 +11,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('scroll', () => {
-    updateActiveLink();
     animateOnScroll();
 });
 
-function updateActiveLink() {
-    const sections = document.querySelectorAll('main > div, main > section');
+// 1. SET ACTIVE NAV LINK (basé sur l'URL actuelle)
+function setActiveNavLink() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('nav a');
     
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 200) {
-            current = section.getAttribute('id') || section.getAttribute('data-section');
-        }
-    });
-
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
+        const href = link.getAttribute('href');
+        
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
             link.classList.add('active');
         }
     });
@@ -77,39 +69,29 @@ function animateSkillBars() {
     skillBars.forEach(bar => observer.observe(bar));
 }
 
-// 4. COMPTEURS ANIMÉS (pour stats si vous en avez)
-function animateCounter(element, target, duration = 2000) {
-    let current = 0;
-    const increment = target / (duration / 16);
-    
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target;
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(current);
-        }
-    }, 16);
-}
-
-// 5. EFFETS INTERACTIFS AVANCÉS
+// 4. EFFETS INTERACTIFS
 function addInteractiveEffects() {
-    // Effet de clic ripple
+    // Effet ripple au clic sur les boutons et cartes
     document.querySelectorAll('.btn, .contact-link, .card-item').forEach(element => {
         element.addEventListener('click', createRipple);
     });
 
-    // Hover parallax sur les cartes
+    // Parallax hover sur les cartes
     document.querySelectorAll('.project-card, .card-item').forEach(card => {
         card.addEventListener('mousemove', parallaxHover);
         card.addEventListener('mouseleave', parallaxReset);
     });
 
-    // Animation du texte au hover
+    // Hover simple et propre sur la navigation (sans dispersion de lettres)
     document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('mouseenter', textHoverEffect);
-        link.addEventListener('mouseleave', textResetEffect);
+        link.addEventListener('mouseenter', function() {
+            this.style.color = 'var(--accent)';
+        });
+        link.addEventListener('mouseleave', function() {
+            if (!this.classList.contains('active')) {
+                this.style.color = 'var(--text-primary)';
+            }
+        });
     });
 }
 
@@ -150,14 +132,14 @@ function parallaxHover(e) {
     const x = (e.clientX - rect.left) / rect.width;
     const y = (e.clientY - rect.top) / rect.height;
 
-    const rotateX = (y - 0.5) * 10;
-    const rotateY = (x - 0.5) * -10;
+    const rotateX = (y - 0.5) * 8;
+    const rotateY = (x - 0.5) * -8;
 
     card.style.transform = `
         perspective(1000px)
         rotateX(${rotateX}deg)
         rotateY(${rotateY}deg)
-        scale(1.02)
+        scale(1.01)
     `;
 }
 
@@ -165,33 +147,7 @@ function parallaxReset(e) {
     e.currentTarget.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
 }
 
-// Effet texte au hover
-function textHoverEffect(e) {
-    const text = e.currentTarget.textContent;
-    const chars = text.split('');
-    
-    e.currentTarget.innerHTML = chars.map((char, i) => `
-        <span style="
-            display: inline-block;
-            transition: all 0.3s ease;
-            transition-delay: ${i * 30}ms;
-            transform: translateY(0);
-        " class="char-${i}">${char}</span>
-    `).join('');
-
-    setTimeout(() => {
-        chars.forEach((char, i) => {
-            const span = e.currentTarget.querySelector(`.char-${i}`);
-            if (span) span.style.transform = 'translateY(-5px)';
-        });
-    }, 10);
-}
-
-function textResetEffect(e) {
-    e.currentTarget.textContent = e.currentTarget.textContent;
-}
-
-// 6. EFFET PARALLAX AU SCROLL
+// 5. EFFET PARALLAX AU SCROLL
 function setupParallaxEffect() {
     const parallaxElements = document.querySelectorAll('[data-parallax]');
     
@@ -208,17 +164,21 @@ function setupParallaxEffect() {
     });
 }
 
-// 7. PAGE TRANSITION EFFECT
-window.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A' && e.target.getAttribute('href')?.endsWith('.html')) {
-        const href = e.target.getAttribute('href');
+// 6. PAGE TRANSITION EFFECT
+document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (link && link.getAttribute('href')?.endsWith('.html')) {
+        const href = link.getAttribute('href');
         
         if (href && !href.startsWith('http') && !href.startsWith('mailto')) {
             e.preventDefault();
             
             // Fade out
-            document.querySelector('main').style.opacity = '0';
-            document.querySelector('main').style.transform = 'translateY(20px)';
+            const main = document.querySelector('main');
+            if (main) {
+                main.style.opacity = '0';
+                main.style.transform = 'translateY(20px)';
+            }
             
             setTimeout(() => {
                 window.location.href = href;
@@ -227,48 +187,7 @@ window.addEventListener('click', (e) => {
     }
 });
 
-// 8. MENU MOBILE RESPONSIVE
-function setupMobileMenu() {
-    const nav = document.querySelector('nav');
-    const navContainer = document.querySelector('.nav-container');
-    
-    if (window.innerWidth <= 768) {
-        // Créer le bouton hamburger
-        if (!document.querySelector('.hamburger')) {
-            const hamburger = document.createElement('button');
-            hamburger.className = 'hamburger';
-            hamburger.innerHTML = '☰';
-            hamburger.style.cssText = `
-                position: fixed;
-                right: 2rem;
-                top: 1.5rem;
-                background: var(--accent);
-                color: white;
-                border: none;
-                font-size: 1.5rem;
-                cursor: pointer;
-                z-index: 999;
-                border-radius: 8px;
-                padding: 0.5rem 0.8rem;
-                display: flex;
-                align-items: center;
-                transition: all 0.3s ease;
-            `;
-
-            hamburger.addEventListener('click', () => {
-                navContainer.style.display = navContainer.style.display === 'flex' ? 'none' : 'flex';
-                hamburger.style.transform = navContainer.style.display === 'flex' ? 'rotate(90deg)' : 'rotate(0)';
-            });
-
-            nav.appendChild(hamburger);
-        }
-    }
-}
-
-window.addEventListener('resize', setupMobileMenu);
-setupMobileMenu();
-
-// 9. SCROLL PROGRESS INDICATOR (optionnel)
+// 7. SCROLL PROGRESS INDICATOR
 function setupScrollIndicator() {
     const indicator = document.createElement('div');
     indicator.style.cssText = `
@@ -291,7 +210,7 @@ function setupScrollIndicator() {
 
 setupScrollIndicator();
 
-// 10. ANIMATIONS CSS SUPPLÉMENTAIRES
+// 8. ANIMATIONS CSS SUPPLÉMENTAIRES
 const style = document.createElement('style');
 style.textContent = `
     @keyframes rippleEffect {
@@ -351,6 +270,6 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// 11. CONSOLE MESSAGE (EASTER EGG)
+// 9. CONSOLE MESSAGE (EASTER EGG)
 console.log('%c🚀 Bienvenue sur mon portfolio GEII !', 'font-size: 20px; color: #3b82f6; font-weight: bold;');
 console.log('%cCurieux ? Vous pouvez me contacter pour discuter de collaborations ! 😊', 'font-size: 14px; color: #5a6b7a;');
