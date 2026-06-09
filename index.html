@@ -9,47 +9,47 @@
 <body>
 
     <!-- NAVIGATION -->
-<nav>
-    <div class="nav-container">
-        <a href="index.html" class="active">accueil</a>
-        
-        <div class="nav-item">
-            <a href="projects.html">projets</a>
-            <div class="dropdown">
-                <div class="dropdown-title">projets geii</div>
-                <a href="project-1.html">projet électronique 1</a>
-                <a href="project-2.html">projet automatisation</a>
-                <a href="project-3.html">projet iot</a>
-                
-                <div class="dropdown-title">projets perso</div>
-                <a href="project-4.html">projet personnel 1</a>
-                <a href="project-5.html">projet personnel 2</a>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" style="text-transform: uppercase; letter-spacing: 1px; font-size: 1rem;">Votre Nom</div>
+            
+            <div class="nav-item">
+                <a href="projects.html">projets</a>
+                <div class="dropdown">
+                    <div class="dropdown-title">projets geii</div>
+                    <a href="project-1.html">projet électronique 1</a>
+                    <a href="project-2.html">projet automatisation</a>
+                    <a href="project-3.html">projet iot</a>
+                    
+                    <div class="dropdown-title">projets perso</div>
+                    <a href="project-4.html">projet personnel 1</a>
+                    <a href="project-5.html">projet personnel 2</a>
+                </div>
             </div>
+            
+            <a href="about.html">à propos</a>
+            <a href="interests.html">centres d'intérêts</a>
+            <a href="skills.html">compétences</a>
+            <a href="contact.html">contact</a>
         </div>
-        
-        <a href="about.html">à propos</a>
-        <a href="interests.html">centres d'intérêts</a>
-        <a href="skills.html">compétences</a>
-        <a href="contact.html">contact</a>
-    </div>
-</nav>
+    </nav>
 
     <main class="page">
         <div class="container">
             <!-- LAYOUT ASYMÉTRIQUE HERO -->
             <div class="grid-asymmetric" style="min-height: 70vh; align-items: center;">
                 <div>
-                    <h1>Alexis Cardon</h1>
+                    <h1>Cardon Alexis</h1>
                     <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
-                        étudiant en but geii | électronique et systèmes embarqués
+                        étudiant en but geii | électronique & automatisation
                     </p>
                     <a href="projects.html" class="btn">voir mes projets</a>
                 </div>
                 <div style="
                     width: 100%;
                     aspect-ratio: 1;
-                    background: var(--bg-secondary);
-                    border-radius: 2px;
+                    background: linear-gradient(135deg, var(--accent) 0%, #60a5fa 100%);
+                    border-radius: 16px;
                     animation: slideUp 0.8s ease 0.2s backwards;
                 "></div>
             </div>
@@ -62,8 +62,8 @@
                 <div style="
                     width: 100%;
                     aspect-ratio: 4/3;
-                    background: var(--bg-secondary);
-                    border-radius: 2px;
+                    background: linear-gradient(135deg, var(--accent) 0%, #60a5fa 100%);
+                    border-radius: 16px;
                     animation: slideUp 0.8s ease 0.3s backwards;
                 "></div>
                 <div>
@@ -87,7 +87,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 votre portfolio</p>
+        <p>&copy; 2026 CARDON Alexis</p>
     </footer>
 
     <style>
@@ -101,7 +101,20 @@
                 transform: translateY(0);
             }
         }
+
+        .logo {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .logo-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
     </style>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
