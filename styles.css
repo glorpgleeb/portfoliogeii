@@ -77,9 +77,10 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-/* DROPDOWN MENU */
+/* DROPDOWN MENU - AVEC ACCENT */
 .nav-item {
     position: relative;
+    display: inline-block;
 }
 
 .dropdown {
@@ -89,40 +90,62 @@ nav a:hover {
     transform: translateX(-50%);
     background: var(--bg-primary);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    min-width: 220px;
+    border-radius: 6px;
+    min-width: 210px;
     padding: 1rem 0;
-    margin-top: 0.8rem;
+    margin-top: 1rem;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transform: translateX(-50%) translateY(-10px);
-    transition: all 0.3s ease;
+    transition: all 0.35s ease;
     z-index: 999;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+    white-space: nowrap;
 }
 
 .nav-item:hover .dropdown {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
     transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-title {
+    display: block;
+    padding: 0.7rem 1.5rem 0.5rem;
+    font-weight: 400;
+    color: var(--accent);
+    font-size: 0.75rem;
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+    opacity: 0.8;
 }
 
 .dropdown a {
     display: block;
-    padding: 0.8rem 1.5rem;
+    padding: 0.7rem 1.5rem;
     color: var(--text-primary);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
     text-transform: lowercase;
     font-size: 0.9rem;
-    border-left: 3px solid transparent;
+    font-weight: 350;
+    letter-spacing: 0.2px;
+    white-space: normal;
 }
 
 .dropdown a:hover {
-    background: var(--bg-secondary);
+    background: rgba(59, 130, 246, 0.06);
     color: var(--accent);
-    border-left-color: var(--accent);
-    padding-left: 2rem;
+    padding-left: 1.7rem;
+}
+
+.dropdown a:nth-child(4) {
+    border-top: 1px solid var(--border);
+    padding-top: 0.8rem;
+    margin-top: 0.2rem;
 }
 
 .dropdown-title {
