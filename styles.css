@@ -58,6 +58,7 @@ nav {
     justify-content: center;
     gap: 2.5rem;
     max-width: 100%;
+    align-items: center;
 }
 
 nav a {
