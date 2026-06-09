@@ -1,13 +1,12 @@
 :root {
     /* PALETTE VERT & CRÈME - PROFESSIONNEL */
-    --bg-primary: #fff1ca;
-    --bg-secondary: #e8dcc8;
-    --text-primary: #1a1410;
-    --text-secondary: #6b6b6b;
-    --accent: #00A865;
-    --accent-hover: #008c54;
-    --border: #ddd0c0;
-}
+    --bg-primary: #E1EEBC;
+    --bg-secondary: #F7FBEF;
+    --text-primary: #2B3E35;
+    --text-secondary: #67AE6E;
+    --accent: #328E6E;
+    --accent-hover: #5A9D7D;
+    --border: #D4E8A8;
 
 * {
     margin: 0;
