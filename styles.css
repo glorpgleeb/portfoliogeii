@@ -35,7 +35,7 @@ nav {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(218, 215, 205, 0.98);
+    background: rgba(255, 253, 249, 0.98);
     backdrop-filter: blur(15px);
     padding: 1.5rem 0;
     border-bottom: 1px solid var(--border);
@@ -119,7 +119,7 @@ nav a.active::after {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, rgba(218, 215, 205, 0.99) 0%, rgba(163, 177, 138, 0.99) 100%);
+    background: linear-gradient(135deg, rgba(232, 240, 220, 0.99) 0%, rgba(220, 235, 205, 0.99) 100%);
     backdrop-filter: blur(10px);
     border: 1px solid var(--accent);
     border-radius: 8px;
@@ -146,27 +146,27 @@ nav a.active::after {
 .dropdown-title {
     display: block;
     padding: 0.9rem 1.6rem 0.5rem;
-    font-weight: 600;
-    color: var(--accent);
+    font-weight: 700;
+    color: #3A5A40;
     font-size: 0.8rem;
     text-transform: lowercase;
     letter-spacing: 0.7px;
     margin-bottom: 0.4rem;
     opacity: 1;
-    background: rgba(88, 129, 87, 0.05);
-    border-left: 3px solid var(--accent);
+    background: rgba(88, 129, 87, 0.08);
+    border-left: 3px solid #3A5A40;
     padding-left: 1.3rem;
 }
 
 .dropdown a {
     display: block;
     padding: 0.75rem 1.6rem;
-    color: var(--text-primary);
+    color: #1E1713;
     text-decoration: none;
     transition: all 0.25s ease;
     text-transform: lowercase;
     font-size: 0.9rem;
-    font-weight: 350;
+    font-weight: 500;
     letter-spacing: 0.3px;
     position: relative;
     white-space: normal;
@@ -187,10 +187,10 @@ nav a.active::after {
 }
 
 .dropdown a:hover {
-    background: rgba(88, 129, 87, 0.08);
-    color: var(--accent);
+    background: rgba(88, 129, 87, 0.12);
+    color: #3A5A40;
     padding-left: 1.9rem;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .dropdown a:hover::before {
