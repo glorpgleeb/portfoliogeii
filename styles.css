@@ -339,6 +339,15 @@ a:hover::after {
     width: 100%;
 }
 
+/* EXCLURE LES ITEMS DU DROPDOWN DU SURLIGNAGE */
+.dropdown a::after {
+    display: none !important;
+}
+
+.dropdown a:hover::after {
+    display: none !important;
+}
+
 /* BUTTON */
 .btn {
     padding: 0.9rem 2.2rem;
