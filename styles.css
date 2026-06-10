@@ -1,12 +1,12 @@
 :root {
-    /* PALETTE VERT PROFESSIONNEL */
-    --bg-primary: #FFFDF9;
-    --bg-secondary: #799F61;
-    --text-primary: #1E1713;
-    --text-secondary: #4B4B4B;
-    --accent: #588157;
-    --accent-hover: #3A5A40;
-    --border: #A3B18A;
+/* PALETTE VERT PROFESSIONNEL */
+--bg-primary: #FFFDF9;
+--bg-secondary: #799F61;
+--text-primary: #1E1713;
+--text-secondary: #4B4B4B;
+--accent: #588157;
+--accent-hover: #3A5A40;
+--border: #A3B18A;
 }
 
 * {
@@ -40,9 +40,6 @@ nav {
     padding: 1.5rem 5%;
     border-bottom: 1px solid var(--border);
     animation: slideDownNav 0.6s ease;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 @keyframes slideDownNav {
@@ -60,9 +57,9 @@ nav {
     display: flex;
     justify-content: center;
     gap: 2.5rem;
-    max-width: 100%;
     align-items: center;
-    flex: 1;
+    flex-wrap: wrap;
+    max-width: 100%;
 }
 
 /* LOGO / NOM DANS NAV */
@@ -70,17 +67,34 @@ nav {
     text-decoration: none;
     color: var(--text-primary);
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: lowercase;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
     white-space: nowrap;
-    margin-right: 2rem;
+    padding: 0.5rem 0;
+    position: relative;
 }
 
 .nav-logo:hover {
     color: var(--accent);
     transform: translateY(-2px);
+}
+
+.nav-logo::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-logo:hover::after {
+    width: 100%;
 }
 
 nav a {
