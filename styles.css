@@ -225,19 +225,6 @@ nav a.active::after {
     height: auto;
 }
 
-.dropdown a::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: var(--accent);
-    transform: scaleY(0);
-    transform-origin: center;
-    transition: transform 0.25s ease;
-}
-
 .dropdown a:hover {
     background: rgba(88, 129, 87, 0.12);
     color: #3A5A40;
@@ -246,6 +233,13 @@ nav a.active::after {
 }
 
 .dropdown a:hover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--accent);
     transform: scaleY(1);
 }
 
