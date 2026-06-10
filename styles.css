@@ -149,7 +149,6 @@ nav a.active::after {
     font-weight: 700;
     color: #3A5A40;
     font-size: 0.8rem;
-    text-transform: lowercase;
     letter-spacing: 0.7px;
     margin-bottom: 0.4rem;
     opacity: 1;
@@ -164,7 +163,6 @@ nav a.active::after {
     color: #1E1713;
     text-decoration: none;
     transition: all 0.25s ease;
-    text-transform: lowercase;
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 0.3px;
