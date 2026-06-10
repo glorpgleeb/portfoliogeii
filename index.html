@@ -8,10 +8,11 @@
 </head>
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-    <a href="index.html" class="nav-logo">cardon alexis</a>
+<!-- NAVIGATION -->
+<nav>
     <div class="nav-container">
+        <a href="index.html" class="nav-logo">cardon alexis</a>
+        
         <div class="nav-item">
             <a href="projects.html">projets</a>
             <div class="dropdown">
@@ -21,7 +22,7 @@
                 <a href="project-3.html">projet KAH</a>
                 
                 <div class="dropdown-title">projets perso</div>
-                <a href="project-4.html">projet ambilight </a>
+                <a href="project-4.html">projet ambilight</a>
                 <a href="project-5.html">projet personnel 2</a>
             </div>
         </div>
@@ -33,87 +34,88 @@
     </div>
 </nav>
 
-    <main class="page">
-        <div class="container">
-            <!-- LAYOUT ASYMÉTRIQUE HERO -->
-            <div class="grid-asymmetric" style="min-height: 70vh; align-items: center;">
-                <div>
-                    <h1>Cardon Alexis</h1>
-                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
-                        étudiant en but geii | génie électrique et informatique industrielle
-                    </p>
-                    <a href="projects.html" class="btn">voir mes projets</a>
-                </div>
-                <div style="
-                    width: 100%;
-                    aspect-ratio: 1;
-                    background: linear-gradient(135deg, var(--accent) 0%, #344E41 100%);
-                    border-radius: 16px;
-                    animation: slideUp 0.8s ease 0.2s backwards;
-                "></div>
+<main class="page">
+    <div class="container">
+        <!-- LAYOUT ASYMÉTRIQUE HERO -->
+        <div class="grid-asymmetric" style="min-height: 70vh; align-items: center;">
+            <div>
+                <h1>Cardon Alexis</h1>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                    étudiant en but geii | génie électrique et informatique industrielle
+                </p>
+                <a href="projects.html" class="btn">voir mes projets</a>
+            </div>
+            <div style="
+                width: 100%;
+                aspect-ratio: 1;
+                background: linear-gradient(135deg, var(--accent) 0%, #344E41 100%);
+                border-radius: 16px;
+                animation: slideUp 0.8s ease 0.2s backwards;
+            "></div>
+        </div>
+    </div>
+
+    <!-- SECTION VIDE ASYMÉTRIQUE -->
+    <div class="container">
+        <div style="height: 15vh;"></div>
+        <div class="grid-asymmetric-reverse">
+            <div style="
+                width: 100%;
+                aspect-ratio: 4/3;
+                background: linear-gradient(135deg, var(--accent) 0%, #344E41 100%);
+                border-radius: 16px;
+                animation: slideUp 0.8s ease 0.3s backwards;
+            "></div>
+            <div>
+                <h2>passion pour les technologies</h2>
+                <p>développement de solutions innovantes en électronique et programmation embarquée. actuellement en exploration des systèmes iot et de l'automatisation industrielle.</p>
             </div>
         </div>
+    </div>
 
-        <!-- SECTION VIDE ASYMÉTRIQUE -->
-        <div class="container">
-            <div style="height: 15vh;"></div>
-            <div class="grid-asymmetric-reverse">
-                <div style="
-                    width: 100%;
-                    aspect-ratio: 4/3;
-                    background: linear-gradient(135deg, var(--accent) 0%, #344E41 100%);
-                    border-radius: 16px;
-                    animation: slideUp 0.8s ease 0.3s backwards;
-                "></div>
-                <div>
-                    <h2>passion pour les technologies</h2>
-                    <p>développement de solutions innovantes en électronique et programmation embarquée. actuellement en exploration des systèmes iot et de l'automatisation industrielle.</p>
-                </div>
-            </div>
+    <!-- ESPACE BLANC INTENTIONNEL -->
+    <div style="height: 8rem;"></div>
+
+    <!-- CALL TO ACTION ASYMÉTRIQUE -->
+    <div class="container-small">
+        <div style="text-align: center;">
+            <h2>choisissez cardon</h2>
+            <p style="margin-bottom: 2rem;">vous souhaitez me contacter ?</p>
+            <a href="contact.html" class="btn">m'envoyer un message</a>
         </div>
+    </div>
+</main>
 
-        <!-- ESPACE BLANC INTENTIONNEL -->
-        <div style="height: 8rem;"></div>
+<footer>
+    <p>&copy; 2026 CARDON Alexis</p>
+</footer>
 
-        <!-- CALL TO ACTION ASYMÉTRIQUE -->
-        <div class="container-small">
-            <div style="text-align: center;">
-                <h2>choisissez cardon</h2>
-                <p style="margin-bottom: 2rem;">vous souhaitez me contacter ?</p>
-                <a href="contact.html" class="btn">m'envoyer un message</a>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 CARDON Alexis</p>
-    </footer>
-
-    <style>
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+<style>
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
         }
-
-        .logo {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-primary);
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
+    }
 
-        .logo-subtitle {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-        }
-    </style>
+    .logo {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text-primary);
+    }
 
-    <script src="script.js"></script>
+    .logo-subtitle {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        font-weight: 400;
+    }
+</style>
+
+<script src="script.js"></script>
+
 </body>
 </html>
