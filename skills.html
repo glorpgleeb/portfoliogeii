@@ -60,7 +60,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            margin: 4rem 0 3rem;
+            margin: 4rem 0 2rem;
             padding: 2rem;
             background: var(--bg-secondary);
             border-radius: 12px;
@@ -79,27 +79,24 @@
             font-size: 0.95rem;
         }
 
-        .competences-grid-levels {
+        /* LAYOUT RÉFÉRENTIEL */
+        .referentiel-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
+            gap: 1rem;
             margin-bottom: 3rem;
         }
 
-        .competence-column {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
+        /* EN-TÊTES DES COLONNES */
         .competence-header {
-            padding: 1rem;
+            padding: 1.2rem;
             border-radius: 8px;
             text-align: center;
             color: white;
             font-weight: 600;
             text-transform: lowercase;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            grid-column: span 1;
         }
 
         .concevoir-header {
@@ -118,17 +115,18 @@
             background: #588157;
         }
 
+        /* CARTES DE NIVEAUX */
         .competence-level {
             padding: 1.5rem;
             border-radius: 8px;
-            text-align: center;
-            min-height: 120px;
+            min-height: 100px;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
+            text-align: center;
             transition: all 0.3s ease;
             cursor: pointer;
-            position: relative;
         }
 
         .competence-level:hover {
@@ -141,17 +139,17 @@
             margin-bottom: 0.8rem;
             color: var(--text-primary);
             text-transform: lowercase;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .competence-level p {
-            font-size: 0.85rem;
-            line-height: 1.5;
+            font-size: 0.8rem;
+            line-height: 1.4;
             color: var(--text-primary);
             animation: none;
         }
 
-        /* CONCEVOIR - Nuances rouges */
+        /* COULEURS CONCEVOIR */
         .concevoir-1 {
             background: #E8D4D0;
         }
@@ -169,7 +167,7 @@
             color: white;
         }
 
-        /* VÉRIFIER - Nuances oranges */
+        /* COULEURS VÉRIFIER */
         .verifier-1 {
             background: #E8D9CE;
         }
@@ -187,7 +185,7 @@
             color: white;
         }
 
-        /* MAINTENIR - Nuances jaunes */
+        /* COULEURS MAINTENIR */
         .maintenir-1 {
             background: #F0F0D0;
         }
@@ -205,7 +203,7 @@
             color: white;
         }
 
-        /* INTÉGRER - Nuances vertes */
+        /* COULEURS INTÉGRER */
         .integrer-1 {
             background: #D4E8C8;
         }
@@ -223,22 +221,22 @@
             color: white;
         }
 
-        /* PLACEHOLDER POUR NIVEAUX NON DISPONIBLES */
+        /* PLACEHOLDER */
         .competence-placeholder {
             padding: 1.5rem;
             border-radius: 8px;
-            text-align: center;
-            min-height: 120px;
+            min-height: 100px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background: #f5f5f5;
+            align-items: center;
+            background: #f0f0f0;
             border: 2px dashed #ccc;
         }
 
         .competence-placeholder p {
             color: #999;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             animation: none;
         }
 
@@ -270,7 +268,7 @@
             background: rgba(88, 129, 87, 0.08);
             border-left: 4px solid var(--accent);
             border-radius: 8px;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .but1-info p {
@@ -279,12 +277,25 @@
             font-size: 0.95rem;
         }
 
+        /* SECTION TITRES */
+        .level-section {
+            margin-bottom: 2rem;
+        }
+
+        .level-section h3 {
+            text-transform: lowercase;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
         @media (max-width: 1024px) {
             .competences-grid {
                 grid-template-columns: 1fr;
             }
 
-            .competences-grid-levels {
+            .referentiel-container {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -294,7 +305,7 @@
         }
 
         @media (max-width: 768px) {
-            .competences-grid-levels {
+            .referentiel-container {
                 grid-template-columns: 1fr;
             }
         }
@@ -453,125 +464,79 @@
                 </div>
 
                 <!-- NIVEAU 1 -->
-                <div style="margin-bottom: 3rem;">
-                    <h3 style="text-transform: lowercase; font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-primary);">niveau 1</h3>
-                    <div class="competences-grid-levels">
-                        <!-- CONCEVOIR - NIVEAU 1 -->
-                        <div class="competence-column">
-                            <div class="competence-header concevoir-header">concevoir</div>
-                            <div class="competence-level concevoir-1">
-                                <h4>niveau 1</h4>
-                                <p>mener une conception partielle intégrant une démarche projet</p>
-                            </div>
-                        </div>
+                <div class="level-section">
+                    <h3>niveau 1</h3>
+                    <div class="referentiel-container">
+                        <!-- EN-TÊTES -->
+                        <div class="competence-header concevoir-header">concevoir</div>
+                        <div class="competence-header verifier-header">vérifier</div>
+                        <div class="competence-header maintenir-header">maintenir</div>
+                        <div class="competence-header integrer-header">intégrer</div>
 
-                        <!-- VÉRIFIER - NIVEAU 1 -->
-                        <div class="competence-column">
-                            <div class="competence-header verifier-header">vérifier</div>
-                            <div class="competence-level verifier-1">
-                                <h4>niveau 1</h4>
-                                <p>effectuer les tests et mesures nécessaires à une vérification d'un système</p>
-                            </div>
+                        <!-- CARTES NIVEAU 1 -->
+                        <div class="competence-level concevoir-1">
+                            <p>mener une conception partielle intégrant une démarche projet</p>
                         </div>
-
-                        <!-- MAINTENIR - VIDE -->
-                        <div class="competence-column">
-                            <div class="competence-header maintenir-header">maintenir</div>
-                            <div class="competence-placeholder">
-                                <p>non développée en 1ère année</p>
-                            </div>
+                        <div class="competence-level verifier-1">
+                            <p>effectuer les tests et mesures nécessaires à une vérification d'un système</p>
                         </div>
-
-                        <!-- INTÉGRER - VIDE -->
-                        <div class="competence-column">
-                            <div class="competence-header integrer-header">intégrer</div>
-                            <div class="competence-placeholder">
-                                <p>non développée en 1ère année</p>
-                            </div>
+                        <div class="competence-placeholder">
+                            <p>non développée en 1ère année</p>
+                        </div>
+                        <div class="competence-placeholder">
+                            <p>non développée en 1ère année</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- NIVEAU 2 -->
-                <div style="margin-bottom: 3rem;">
-                    <h3 style="text-transform: lowercase; font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-primary);">niveau 2</h3>
-                    <div class="competences-grid-levels">
-                        <!-- CONCEVOIR - NIVEAU 2 -->
-                        <div class="competence-column">
-                            <div class="competence-header concevoir-header">concevoir</div>
-                            <div class="competence-level concevoir-2">
-                                <h4>niveau 2</h4>
-                                <p>concevoir un système en fiabilisant les solutions proposées</p>
-                            </div>
-                        </div>
+                <div class="level-section">
+                    <h3>niveau 2</h3>
+                    <div class="referentiel-container">
+                        <!-- EN-TÊTES -->
+                        <div class="competence-header concevoir-header">concevoir</div>
+                        <div class="competence-header verifier-header">vérifier</div>
+                        <div class="competence-header maintenir-header">maintenir</div>
+                        <div class="competence-header integrer-header">intégrer</div>
 
-                        <!-- VÉRIFIER - NIVEAU 2 -->
-                        <div class="competence-column">
-                            <div class="competence-header verifier-header">vérifier</div>
-                            <div class="competence-level verifier-2">
-                                <h4>niveau 2</h4>
-                                <p>mettre en place un protocole de tests pour valider le fonctionnement d'un système</p>
-                            </div>
+                        <!-- CARTES NIVEAU 2 -->
+                        <div class="competence-level concevoir-2">
+                            <p>concevoir un système en fiabilisant les solutions proposées</p>
                         </div>
-
-                        <!-- MAINTENIR - NIVEAU 1 -->
-                        <div class="competence-column">
-                            <div class="competence-header maintenir-header">maintenir</div>
-                            <div class="competence-level maintenir-1">
-                                <h4>niveau 1</h4>
-                                <p>intervenir sur un système pour effectuer une opération de maintenance</p>
-                            </div>
+                        <div class="competence-level verifier-2">
+                            <p>mettre en place un protocole de tests pour valider le fonctionnement d'un système</p>
                         </div>
-
-                        <!-- INTÉGRER - NIVEAU 1 -->
-                        <div class="competence-column">
-                            <div class="competence-header integrer-header">intégrer</div>
-                            <div class="competence-level integrer-1">
-                                <h4>niveau 1</h4>
-                                <p>procéder à une installation ou à une mise en service en suivant un protocole</p>
-                            </div>
+                        <div class="competence-level maintenir-1">
+                            <p>intervenir sur un système pour effectuer une opération de maintenance</p>
+                        </div>
+                        <div class="competence-level integrer-1">
+                            <p>procéder à une installation ou à une mise en service en suivant un protocole</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- NIVEAU 3 -->
-                <div style="margin-bottom: 3rem;">
-                    <h3 style="text-transform: lowercase; font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-primary);">niveau 3</h3>
-                    <div class="competences-grid-levels">
-                        <!-- CONCEVOIR - NIVEAU 3 -->
-                        <div class="competence-column">
-                            <div class="competence-header concevoir-header">concevoir</div>
-                            <div class="competence-level concevoir-3">
-                                <h4>niveau 3</h4>
-                                <p>concevoir un système en adoptant une approche sélective dans ses choix technologiques</p>
-                            </div>
-                        </div>
+                <div class="level-section">
+                    <h3>niveau 3</h3>
+                    <div class="referentiel-container">
+                        <!-- EN-TÊTES -->
+                        <div class="competence-header concevoir-header">concevoir</div>
+                        <div class="competence-header verifier-header">vérifier</div>
+                        <div class="competence-header maintenir-header">maintenir</div>
+                        <div class="competence-header integrer-header">intégrer</div>
 
-                        <!-- VÉRIFIER - NIVEAU 3 -->
-                        <div class="competence-column">
-                            <div class="competence-header verifier-header">vérifier</div>
-                            <div class="competence-level verifier-3">
-                                <h4>niveau 3</h4>
-                                <p>élaborer une procédure intégrant une démarche qualité pour valider le fonctionnement d'un système</p>
-                            </div>
+                        <!-- CARTES NIVEAU 3 -->
+                        <div class="competence-level concevoir-3">
+                            <p>concevoir un système en adoptant une approche sélective dans ses choix technologiques</p>
                         </div>
-
-                        <!-- MAINTENIR - NIVEAU 2 -->
-                        <div class="competence-column">
-                            <div class="competence-header maintenir-header">maintenir</div>
-                            <div class="competence-level maintenir-2">
-                                <h4>niveau 2</h4>
-                                <p>mettre en place une stratégie de maintenance pour garantir un fonctionnement optimal</p>
-                            </div>
+                        <div class="competence-level verifier-3">
+                            <p>élaborer une procédure intégrant une démarche qualité pour valider le fonctionnement d'un système</p>
                         </div>
-
-                        <!-- INTÉGRER - NIVEAU 2 -->
-                        <div class="competence-column">
-                            <div class="competence-header integrer-header">intégrer</div>
-                            <div class="competence-level integrer-2">
-                                <h4>niveau 2</h4>
-                                <p>interagir avec les différents acteurs, depuis l'élaboration du protocole jusqu'à l'installation, dans une visée de démarche qualité</p>
-                            </div>
+                        <div class="competence-level maintenir-2">
+                            <p>mettre en place une stratégie de maintenance pour garantir un fonctionnement optimal</p>
+                        </div>
+                        <div class="competence-level integrer-2">
+                            <p>interagir avec les différents acteurs, depuis l'élaboration du protocole jusqu'à l'installation, dans une visée de démarche qualité</p>
                         </div>
                     </div>
                 </div>
