@@ -207,6 +207,7 @@ nav a.active::after {
     background: rgba(88, 129, 87, 0.08);
     border-left: 3px solid #3A5A40;
     padding-left: 1.3rem;
+    border-bottom: none;
 }
 
 .dropdown a {
@@ -223,6 +224,7 @@ nav a.active::after {
     white-space: normal;
     border-left: 3px solid transparent;
     height: auto;
+    border-bottom: none;
 }
 
 .dropdown a:hover {
@@ -233,11 +235,11 @@ nav a.active::after {
     border-left: 3px solid var(--accent);
 }
 
-/* SÉPARATION ENTRE CATÉGORIES */
-.dropdown a:nth-child(5) {
+/* SÉPARATION ENTRE CATÉGORIES - SEULEMENT ENTRE LES DEUX GROUPES */
+.dropdown-title:nth-of-type(2) {
     border-top: 1px solid var(--border);
-    padding-top: 0.9rem;
     margin-top: 0.4rem;
+    padding-top: 0.9rem;
 }
 
 /* PAGE TRANSITIONS */
@@ -534,27 +536,18 @@ a:hover::after {
 
 .timeline {
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: 0;
 }
 
 .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--accent), rgba(88, 129, 87, 0.2));
-    border-radius: 2px;
+    display: none;
 }
 
 .timeline-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    display: block;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
     position: relative;
-    padding-left: 0;
 }
 
 .timeline-item:last-child {
@@ -562,32 +555,21 @@ a:hover::after {
 }
 
 .timeline-dot {
-    width: 12px;
-    height: 12px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
     background: var(--accent);
     border-radius: 50%;
-    position: absolute;
-    left: -8px;
-    top: 2px;
-    box-shadow: 0 0 0 3px rgba(88, 129, 87, 0.15);
+    box-shadow: 0 0 0 3px rgba(88, 129, 87, 0.2);
 }
 
 .timeline-content h4 {
     color: var(--text-primary);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.3rem;
     font-weight: 500;
     text-transform: lowercase;
-}
-
-.timeline-content h4::before {
-    content: '✓ ';
-    color: var(--accent);
-    font-weight: bold;
-    margin-right: 0.3rem;
-}
-
-.timeline-content {
-    padding-left: 0;
 }
 
 .timeline-content p {
@@ -990,10 +972,6 @@ footer {
     .about-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
-    }
-
-    .about-details-card {
-        position: static;
     }
 
     .about-cta-grid {
