@@ -26,24 +26,28 @@
 
         .contact-link {
             padding: 1.5rem;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 2px;
-            transition: all 0.3s ease;
+            background: rgba(88, 129, 87, 0.08);
+            border: 1px solid rgba(88, 129, 87, 0.15);
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             text-decoration: none;
         }
 
         .contact-link:hover {
-            background: var(--bg-secondary);
+            background: rgba(88, 129, 87, 0.12);
             border-color: var(--accent);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(88, 129, 87, 0.1);
         }
 
         .contact-link h3 {
             margin-bottom: 0.5rem;
-            color: var(--text-primary);
+            color: var(--accent);
         }
 
         .contact-link p {
             font-size: 0.9rem;
+            animation: none;
         }
 
         .form-group {
@@ -56,19 +60,31 @@
             margin-bottom: 0.5rem;
             font-size: 0.9rem;
             text-transform: lowercase;
+            font-weight: 400;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
             padding: 0.8rem;
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--border);
             background: var(--bg-primary);
             color: var(--text-primary);
             font-family: inherit;
             font-size: 0.95rem;
-            border-radius: 2px;
+            border-radius: 12px;
             resize: none;
+            transition: all 0.3s ease;
+            font-weight: 300;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--bg-primary);
+            box-shadow: 0 0 0 3px rgba(88, 129, 87, 0.1);
+            transform: translateY(-2px);
         }
 
         .form-group textarea {
@@ -86,8 +102,9 @@
 
 <!-- NAVIGATION -->
 <nav>
-    <a href="index.html" class="nav-logo">cardon alexis</a>
     <div class="nav-container">
+        <a href="index.html" class="nav-logo">cardon alexis</a>
+        
         <div class="nav-item">
             <a href="projects.html">projets</a>
             <div class="dropdown">
@@ -97,64 +114,65 @@
                 <a href="project-3.html">projet KAH</a>
                 
                 <div class="dropdown-title">projets perso</div>
-                <a href="project-4.html">projet ambilight </a>
+                <a href="project-4.html">projet ambilight</a>
                 <a href="project-5.html">projet personnel 2</a>
             </div>
         </div>
         
-        <a href="about.html">à propos</a>
         <a href="interests.html">centres d'intérêts</a>
         <a href="skills.html">compétences</a>
         <a href="contact.html">contact</a>
     </div>
 </nav>
     
-    <main class="page">
-        <div class="container-small">
-            <div class="contact-container">
-                <h1>travaillons ensemble</h1>
-                <p>vous m'intéressez pour un stage, une alternance ou un projet ? n'hésitez pas à me contacter !</p>
+<main class="page">
+    <div class="container-small">
+        <div class="contact-container">
+            <h1>travaillons ensemble</h1>
+            <p>vous m'intéressez pour un stage, une alternance ou un projet ? n'hésitez pas à me contacter !</p>
 
-                <div class="contact-links">
-                    <a href="mailto:votre.email@exemple.com" class="contact-link">
-                        <h3>📧 email</h3>
-                        <p>votre.email@exemple.com</p>
-                    </a>
-                    <a href="https://linkedin.com/in/votre-profil" target="_blank" class="contact-link">
-                        <h3>💼 linkedin</h3>
-                        <p>visitez mon profil</p>
-                    </a>
-                    <a href="https://github.com/votre-profil" target="_blank" class="contact-link">
-                        <h3>🐙 github</h3>
-                        <p>découvrez mes projets</p>
-                    </a>
-                </div>
+            <div class="contact-links">
+                <a href="mailto:votre.email@exemple.com" class="contact-link">
+                    <h3>📧 email</h3>
+                    <p>votre.email@exemple.com</p>
+                </a>
+                <a href="https://linkedin.com/in/votre-profil" target="_blank" class="contact-link">
+                    <h3>💼 linkedin</h3>
+                    <p>visitez mon profil</p>
+                </a>
+                <a href="https://github.com/votre-profil" target="_blank" class="contact-link">
+                    <h3>🐙 github</h3>
+                    <p>découvrez mes projets</p>
+                </a>
+            </div>
 
-                <div style="margin-top: 4rem;">
-                    <h2 style="margin-bottom: 2rem;">ou envoyez-moi un message</h2>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">nom</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">envoyer</button>
-                    </form>
-                </div>
+            <div style="margin-top: 4rem;">
+                <h2 style="margin-bottom: 2rem;">ou envoyez-moi un message</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">nom</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">envoyer</button>
+                </form>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
-    <footer>
-        <p>&copy; 2024 votre portfolio</p>
-    </footer>
+<footer>
+    <p>&copy; 2026 CARDON Alexis</p>
+</footer>
+
 <script src="script.js"></script>
+
 </body>
 </html>
