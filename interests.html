@@ -5,13 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>centres d'intérêts</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .interests-hero {
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease 0.1s backwards;
+        }
+
+        .interests-hero p {
+            animation: none;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            margin-top: 3rem;
+            animation: fadeInUp 0.8s ease 0.1s backwards;
+        }
+
+        .interest-card {
+            padding: 2.5rem;
+            background: rgba(88, 129, 87, 0.08);
+            border: 1px solid rgba(88, 129, 87, 0.15);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: fadeInUp 0.8s ease forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interest-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .interest-card:nth-child(1) { animation-delay: 0.1s; }
+        .interest-card:nth-child(2) { animation-delay: 0.15s; }
+        .interest-card:nth-child(3) { animation-delay: 0.2s; }
+        .interest-card:nth-child(4) { animation-delay: 0.25s; }
+        .interest-card:nth-child(5) { animation-delay: 0.3s; }
+        .interest-card:nth-child(6) { animation-delay: 0.35s; }
+
+        .interest-card:hover {
+            background: rgba(88, 129, 87, 0.12);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(88, 129, 87, 0.15);
+            border-color: var(--accent);
+        }
+
+        .interest-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .interest-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .interest-card p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            animation: none;
+        }
+    </style>
 </head>
 <body>
 
-   <!-- NAVIGATION -->
+<!-- NAVIGATION -->
 <nav>
-    <a href="index.html" class="nav-logo">cardon alexis</a>
     <div class="nav-container">
+        <a href="index.html" class="nav-logo">cardon alexis</a>
+        
         <div class="nav-item">
             <a href="projects.html">projets</a>
             <div class="dropdown">
@@ -21,114 +96,81 @@
                 <a href="project-3.html">projet KAH</a>
                 
                 <div class="dropdown-title">projets perso</div>
-                <a href="project-4.html">projet ambilight </a>
+                <a href="project-4.html">projet ambilight</a>
                 <a href="project-5.html">projet personnel 2</a>
             </div>
         </div>
-
         
-        <a href="about.html">à propos</a>
         <a href="interests.html">centres d'intérêts</a>
         <a href="skills.html">compétences</a>
         <a href="contact.html">contact</a>
     </div>
 </nav>
 
-    <main class="page">
-        <div class="container-small">
+<main class="page">
+    <div class="container-small">
+        <div class="interests-hero">
             <h1>centres d'intérêts</h1>
-            
-            <div style="
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-                margin-top: 3rem;
-            ">
-                <div style="
-                    padding: 2.5rem;
-                    border: 1px solid rgba(0, 0, 0, 0.05);
-                    border-radius: 16px;
-                    background: var(--bg-secondary);
-                    transition: all 0.3s ease;
-                " onmouseover="this.style.transform='translateY(-6px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
-                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem; color: var(--accent);">⚡ électronique embarquée</h3>
-                    <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary);">
-                        Je suis passionné par la conception et la programmation de systèmes électroniques autonomes. Mon intérêt porte particulièrement sur les microcontrôleurs (Arduino, ESP32) et leur intégration dans des projets innovants. J'aime explorer les différents types de capteurs, comprendre comment ils communiquent, et créer des solutions qui répondent à des problèmes réels. Cette passion me pousse à approfondir mes connaissances en électronique analogique et numérique.
-                    </p>
-                </div>
+            <p style="font-size: 1.1rem; color: var(--text-secondary);">découvrez les domaines qui me passionnent et qui guident mon parcours technologique.</p>
+        </div>
+        
+        <div class="interests-grid">
+            <!-- INTÉRÊT 1 -->
+            <div class="interest-card">
+                <h3>⚡ électronique embarquée</h3>
+                <p>
+                    je suis passionné par la conception et la programmation de systèmes électroniques autonomes. mon intérêt porte particulièrement sur les microcontrôleurs (arduino, esp32) et leur intégration dans des projets innovants. j'aime explorer les différents types de capteurs, comprendre comment ils communiquent, et créer des solutions qui répondent à des problèmes réels. cette passion me pousse à approfondir mes connaissances en électronique analogique et numérique.
+                </p>
+            </div>
 
-                <div style="
-                    padding: 2.5rem;
-                    border: 1px solid rgba(0, 0, 0, 0.05);
-                    border-radius: 16px;
-                    background: var(--bg-secondary);
-                    transition: all 0.3s ease;
-                " onmouseover="this.style.transform='translateY(-6px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
-                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem; color: var(--accent);">🤖 automatisation industrielle</h3>
-                    <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary);">
-                        L'automatisation industrielle me fascine par sa capacité à transformer les processus manuels en systèmes efficaces et fiables. Je m'intéresse particulièrement aux systèmes de contrôle, à la logique de programmation des automates, et à la façon dont on peut optimiser les processus de production. Mon objectif est d'apprendre à concevoir des solutions d'automatisation qui augmentent la productivité tout en réduisant les erreurs humaines.
-                    </p>
-                </div>
+            <!-- INTÉRÊT 2 -->
+            <div class="interest-card">
+                <h3>🤖 automatisation industrielle</h3>
+                <p>
+                    l'automatisation industrielle me fascine par sa capacité à transformer les processus manuels en systèmes efficaces et fiables. je m'intéresse particulièrement aux systèmes de contrôle, à la logique de programmation des automates, et à la façon dont on peut optimiser les processus de production. mon objectif est d'apprendre à concevoir des solutions d'automatisation qui augmentent la productivité tout en réduisant les erreurs humaines.
+                </p>
+            </div>
 
-                <div style="
-                    padding: 2.5rem;
-                    border: 1px solid rgba(0, 0, 0, 0.05);
-                    border-radius: 16px;
-                    background: var(--bg-secondary);
-                    transition: all 0.3s ease;
-                " onmouseover="this.style.transform='translateY(-6px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
-                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem; color: var(--accent);">📱 iot et connectivité</h3>
-                    <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary);">
-                        La connectivité et l'Internet des Objets représentent l'avenir de la technologie. J'explore comment connecter des appareils via WiFi et Bluetooth, comment créer des applications mobiles pour contrôler ces appareils, et comment gérer les données en temps réel. Je suis particulièrement intéressé par les applications pratiques de l'IoT dans les smart homes, les wearables, et les systèmes de monitoring environnemental.
-                    </p>
-                </div>
+            <!-- INTÉRÊT 3 -->
+            <div class="interest-card">
+                <h3>📱 iot et connectivité</h3>
+                <p>
+                    la connectivité et l'internet des objets représentent l'avenir de la technologie. j'explore comment connecter des appareils via wifi et bluetooth, comment créer des applications mobiles pour contrôler ces appareils, et comment gérer les données en temps réel. je suis particulièrement intéressé par les applications pratiques de l'iot dans les smart homes, les wearables, et les systèmes de monitoring environnemental.
+                </p>
+            </div>
 
-                <div style="
-                    padding: 2.5rem;
-                    border: 1px solid rgba(0, 0, 0, 0.05);
-                    border-radius: 16px;
-                    background: var(--bg-secondary);
-                    transition: all 0.3s ease;
-                " onmouseover="this.style.transform='translateY(-6px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
-                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem; color: var(--accent);">🔬 innovation technologique</h3>
-                    <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary);">
-                        Au-delà des compétences techniques, j'aime explorer les nouvelles technologies et réfléchir à comment les appliquer dans des projets créatifs et utiles. Je m'intéresse à la façon dont la technologie peut résoudre des problèmes du monde réel, améliorer la qualité de vie des gens, et contribuer à un avenir plus durable. Je suis curieux par nature et j'aime rester à jour avec les dernières avancées technologiques.
-                    </p>
-                </div>
+            <!-- INTÉRÊT 4 -->
+            <div class="interest-card">
+                <h3>🔬 innovation technologique</h3>
+                <p>
+                    au-delà des compétences techniques, j'aime explorer les nouvelles technologies et réfléchir à comment les appliquer dans des projets créatifs et utiles. je m'intéresse à la façon dont la technologie peut résoudre des problèmes du monde réel, améliorer la qualité de vie des gens, et contribuer à un avenir plus durable. je suis curieux par nature et j'aime rester à jour avec les dernières avancées technologiques.
+                </p>
+            </div>
 
-                <div style="
-                    padding: 2.5rem;
-                    border: 1px solid rgba(0, 0, 0, 0.05);
-                    border-radius: 16px;
-                    background: var(--bg-secondary);
-                    transition: all 0.3s ease;
-                " onmouseover="this.style.transform='translateY(-6px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
-                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem; color: var(--accent);">👥 collaboration et mentorat</h3>
-                    <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary);">
-                        Je crois fermement que les meilleurs projets naissent de la collaboration. J'aime travailler en équipe, échanger des idées, et apprendre des autres. Je suis également intéressé par le mentorat et l'aide à mes camarades pour qu'ils progressent dans leurs propres projets. La communication et le partage de connaissances sont essentiels pour créer une communauté technologique forte.
-                    </p>
-                </div>
+            <!-- INTÉRÊT 5 -->
+            <div class="interest-card">
+                <h3>👥 collaboration et mentorat</h3>
+                <p>
+                    je crois fermement que les meilleurs projets naissent de la collaboration. j'aime travailler en équipe, échanger des idées, et apprendre des autres. je suis également intéressé par le mentorat et l'aide à mes camarades pour qu'ils progressent dans leurs propres projets. la communication et le partage de connaissances sont essentiels pour créer une communauté technologique forte.
+                </p>
+            </div>
 
-                <div style="
-                    padding: 2.5rem;
-                    border: 1px solid rgba(0, 0, 0, 0.05);
-                    border-radius: 16px;
-                    background: var(--bg-secondary);
-                    transition: all 0.3s ease;
-                " onmouseover="this.style.transform='translateY(-6px)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 0, 0, 0.05)';">
-                    <h3 style="margin-bottom: 1rem; font-size: 1.3rem; color: var(--accent);">📚 apprentissage continu</h3>
-                    <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary);">
-                        Dans le domaine de la technologie, l'apprentissage ne s'arrête jamais. Je suis passionné par le processus d'acquisition de nouvelles compétences et la maîtrise de nouveaux langages de programmation et outils. Que ce soit par des projets personnels, des cours en ligne, ou des lectures techniques, j'investis constamment dans mon développement personnel. Cette mentalité de croissance continue me pousse à repousser mes limites et à atteindre de nouveaux objectifs.
-                    </p>
-                </div>
+            <!-- INTÉRÊT 6 -->
+            <div class="interest-card">
+                <h3>📚 apprentissage continu</h3>
+                <p>
+                    dans le domaine de la technologie, l'apprentissage ne s'arrête jamais. je suis passionné par le processus d'acquisition de nouvelles compétences et la maîtrise de nouveaux langages de programmation et outils. que ce soit par des projets personnels, des cours en ligne, ou des lectures techniques, j'investis constamment dans mon développement personnel. cette mentalité de croissance continue me pousse à repousser mes limites et à atteindre de nouveaux objectifs.
+                </p>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
-    <footer>
-        <p>&copy; 2024 votre portfolio</p>
-    </footer>
+<footer>
+    <p>&copy; 2026 CARDON Alexis</p>
+</footer>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
