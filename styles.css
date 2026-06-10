@@ -169,7 +169,7 @@ nav a.active::after {
     border-radius: 8px;
     min-width: 220px;
     padding: 0.8rem 0;
-    margin-top: 0.8rem;
+    margin-top: 0.5rem;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -185,6 +185,13 @@ nav a.active::after {
     visibility: visible;
     pointer-events: auto;
     transform: translateX(-50%) translateY(0);
+}
+
+/* Garder le dropdown visible quand on le survole */
+.dropdown:hover {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .dropdown-title {
