@@ -195,7 +195,7 @@ function setupScrollIndicator() {
         top: 0;
         left: 0;
         height: 3px;
-        background: linear-gradient(90deg, var(--accent) 0%, #60a5fa 100%);
+        background: linear-gradient(90deg, var(--accent) 0%, #344E41 100%);
         width: 0;
         z-index: 1001;
         transition: width 0.1s ease;
