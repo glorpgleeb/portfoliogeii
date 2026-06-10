@@ -223,6 +223,25 @@
             color: white;
         }
 
+        /* PLACEHOLDER POUR NIVEAUX NON DISPONIBLES */
+        .competence-placeholder {
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #f5f5f5;
+            border: 2px dashed #ccc;
+        }
+
+        .competence-placeholder p {
+            color: #999;
+            font-size: 0.85rem;
+            animation: none;
+        }
+
         /* ZONE DE TEXTE POUR DÉVELOPPER */
         .competence-development {
             margin-top: 2rem;
@@ -245,13 +264,28 @@
             animation: none;
         }
 
-        @media (max-width: 1024px) {
-            .competences-grid-levels {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        /* INFO BUT1 */
+        .but1-info {
+            padding: 2rem;
+            background: rgba(88, 129, 87, 0.08);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
 
+        .but1-info p {
+            color: var(--text-secondary);
+            animation: none;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 1024px) {
             .competences-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .competences-grid-levels {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .header-info {
@@ -403,6 +437,10 @@
             <div style="margin-top: 6rem;">
                 <h2>niveaux de développement des compétences</h2>
 
+                <div class="but1-info">
+                    <p><strong style="color: var(--text-primary);">première année de but :</strong> en première année, je développe les compétences fondamentales de "concevoir" et "vérifier". les compétences "maintenir" et "intégrer" seront développées au cours des années suivantes du cursus.</p>
+                </div>
+
                 <div class="header-info">
                     <div>
                         <h3>b.u.t. génie électrique et informatique industrielle</h3>
@@ -414,72 +452,126 @@
                     </div>
                 </div>
 
-                <div class="competences-grid-levels">
-                    <!-- COLONNE CONCEVOIR -->
-                    <div class="competence-column">
-                        <div class="competence-header concevoir-header">concevoir</div>
-                        <div class="competence-level concevoir-1">
-                            <h4>niveau 1</h4>
-                            <p>mener une conception partielle intégrant une démarche projet</p>
+                <!-- NIVEAU 1 -->
+                <div style="margin-bottom: 3rem;">
+                    <h3 style="text-transform: lowercase; font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-primary);">niveau 1</h3>
+                    <div class="competences-grid-levels">
+                        <!-- CONCEVOIR - NIVEAU 1 -->
+                        <div class="competence-column">
+                            <div class="competence-header concevoir-header">concevoir</div>
+                            <div class="competence-level concevoir-1">
+                                <h4>niveau 1</h4>
+                                <p>mener une conception partielle intégrant une démarche projet</p>
+                            </div>
                         </div>
-                        <div class="competence-level concevoir-2">
-                            <h4>niveau 2</h4>
-                            <p>concevoir un système en fiabilisant les solutions proposées</p>
+
+                        <!-- VÉRIFIER - NIVEAU 1 -->
+                        <div class="competence-column">
+                            <div class="competence-header verifier-header">vérifier</div>
+                            <div class="competence-level verifier-1">
+                                <h4>niveau 1</h4>
+                                <p>effectuer les tests et mesures nécessaires à une vérification d'un système</p>
+                            </div>
                         </div>
-                        <div class="competence-level concevoir-3">
-                            <h4>niveau 3</h4>
-                            <p>concevoir un système en adoptant une approche sélective dans ses choix technologiques</p>
+
+                        <!-- MAINTENIR - VIDE -->
+                        <div class="competence-column">
+                            <div class="competence-header maintenir-header">maintenir</div>
+                            <div class="competence-placeholder">
+                                <p>non développée en 1ère année</p>
+                            </div>
+                        </div>
+
+                        <!-- INTÉGRER - VIDE -->
+                        <div class="competence-column">
+                            <div class="competence-header integrer-header">intégrer</div>
+                            <div class="competence-placeholder">
+                                <p>non développée en 1ère année</p>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- COLONNE VÉRIFIER -->
-                    <div class="competence-column">
-                        <div class="competence-header verifier-header">vérifier</div>
-                        <div class="competence-level verifier-1">
-                            <h4>niveau 1</h4>
-                            <p>effectuer les tests et mesures nécessaires à une vérification d'un système</p>
+                <!-- NIVEAU 2 -->
+                <div style="margin-bottom: 3rem;">
+                    <h3 style="text-transform: lowercase; font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-primary);">niveau 2</h3>
+                    <div class="competences-grid-levels">
+                        <!-- CONCEVOIR - NIVEAU 2 -->
+                        <div class="competence-column">
+                            <div class="competence-header concevoir-header">concevoir</div>
+                            <div class="competence-level concevoir-2">
+                                <h4>niveau 2</h4>
+                                <p>concevoir un système en fiabilisant les solutions proposées</p>
+                            </div>
                         </div>
-                        <div class="competence-level verifier-2">
-                            <h4>niveau 2</h4>
-                            <p>mettre en place un protocole de tests pour valider le fonctionnement d'un système</p>
+
+                        <!-- VÉRIFIER - NIVEAU 2 -->
+                        <div class="competence-column">
+                            <div class="competence-header verifier-header">vérifier</div>
+                            <div class="competence-level verifier-2">
+                                <h4>niveau 2</h4>
+                                <p>mettre en place un protocole de tests pour valider le fonctionnement d'un système</p>
+                            </div>
                         </div>
-                        <div class="competence-level verifier-3">
-                            <h4>niveau 3</h4>
-                            <p>élaborer une procédure intégrant une démarche qualité pour valider le fonctionnement d'un système</p>
+
+                        <!-- MAINTENIR - NIVEAU 1 -->
+                        <div class="competence-column">
+                            <div class="competence-header maintenir-header">maintenir</div>
+                            <div class="competence-level maintenir-1">
+                                <h4>niveau 1</h4>
+                                <p>intervenir sur un système pour effectuer une opération de maintenance</p>
+                            </div>
+                        </div>
+
+                        <!-- INTÉGRER - NIVEAU 1 -->
+                        <div class="competence-column">
+                            <div class="competence-header integrer-header">intégrer</div>
+                            <div class="competence-level integrer-1">
+                                <h4>niveau 1</h4>
+                                <p>procéder à une installation ou à une mise en service en suivant un protocole</p>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- COLONNE MAINTENIR -->
-                    <div class="competence-column">
-                        <div class="competence-header maintenir-header">maintenir</div>
-                        <div class="competence-level maintenir-1">
-                            <h4>niveau 1</h4>
-                            <p>intervenir sur un système pour effectuer une opération de maintenance</p>
+                <!-- NIVEAU 3 -->
+                <div style="margin-bottom: 3rem;">
+                    <h3 style="text-transform: lowercase; font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-primary);">niveau 3</h3>
+                    <div class="competences-grid-levels">
+                        <!-- CONCEVOIR - NIVEAU 3 -->
+                        <div class="competence-column">
+                            <div class="competence-header concevoir-header">concevoir</div>
+                            <div class="competence-level concevoir-3">
+                                <h4>niveau 3</h4>
+                                <p>concevoir un système en adoptant une approche sélective dans ses choix technologiques</p>
+                            </div>
                         </div>
-                        <div class="competence-level maintenir-2">
-                            <h4>niveau 2</h4>
-                            <p>mettre en place une stratégie de maintenance pour garantir un fonctionnement optimal</p>
-                        </div>
-                        <div class="competence-level maintenir-3">
-                            <h4>niveau 3</h4>
-                            <p>concevoir une stratégie de maintenance globale pour garantir la durabilité</p>
-                        </div>
-                    </div>
 
-                    <!-- COLONNE INTÉGRER -->
-                    <div class="competence-column">
-                        <div class="competence-header integrer-header">intégrer</div>
-                        <div class="competence-level integrer-1">
-                            <h4>niveau 1</h4>
-                            <p>procéder à une installation ou à une mise en service en suivant un protocole</p>
+                        <!-- VÉRIFIER - NIVEAU 3 -->
+                        <div class="competence-column">
+                            <div class="competence-header verifier-header">vérifier</div>
+                            <div class="competence-level verifier-3">
+                                <h4>niveau 3</h4>
+                                <p>élaborer une procédure intégrant une démarche qualité pour valider le fonctionnement d'un système</p>
+                            </div>
                         </div>
-                        <div class="competence-level integrer-2">
-                            <h4>niveau 2</h4>
-                            <p>interagir avec les différents acteurs depuis l'élaboration du protocole</p>
+
+                        <!-- MAINTENIR - NIVEAU 2 -->
+                        <div class="competence-column">
+                            <div class="competence-header maintenir-header">maintenir</div>
+                            <div class="competence-level maintenir-2">
+                                <h4>niveau 2</h4>
+                                <p>mettre en place une stratégie de maintenance pour garantir un fonctionnement optimal</p>
+                            </div>
                         </div>
-                        <div class="competence-level integrer-3">
-                            <h4>niveau 3</h4>
-                            <p>piloter l'intégration d'un système en coordonnant les acteurs</p>
+
+                        <!-- INTÉGRER - NIVEAU 2 -->
+                        <div class="competence-column">
+                            <div class="competence-header integrer-header">intégrer</div>
+                            <div class="competence-level integrer-2">
+                                <h4>niveau 2</h4>
+                                <p>interagir avec les différents acteurs, depuis l'élaboration du protocole jusqu'à l'installation, dans une visée de démarche qualité</p>
+                            </div>
                         </div>
                     </div>
                 </div>
