@@ -196,7 +196,7 @@ nav a.active::after {
 }
 
 /* SÉPARATION ENTRE CATÉGORIES */
-.dropdown a:nth-child(4) {
+.dropdown a:nth-child(5) {
     border-top: 1px solid var(--border);
     padding-top: 0.9rem;
     margin-top: 0.4rem;
