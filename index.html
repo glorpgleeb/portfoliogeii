@@ -75,58 +75,122 @@
     <!-- ESPACE BLANC INTENTIONNEL -->
     <div style="height: 8rem;"></div>
 
-    <!-- SECTION À PROPOS (INTÉGRÉE) -->
+    <!-- SECTION À PROPOS (STYLISÉE) -->
     <div class="container">
         <div class="about-section">
-            <div style="height: 8rem;"></div>
+            <div style="height: 4rem;"></div>
             
-            <h2 style="margin-bottom: 4rem;">à propos de moi</h2>
+            <div class="about-header">
+                <h2>à propos de moi</h2>
+                <p class="about-subtitle">découvrez mon parcours et ce qui me pousse à créer</p>
+            </div>
             
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>qui suis-je ?</h3>
-                    <p>
-                        je suis étudiant en BUT Génie Électrique et Informatique Industrielle (GEII) à l'IUT de <span style="color: var(--accent); font-weight: 500;">Poitiers</span>. 
-                        passionné par l'électronique, la programmation embarquée et les systèmes autonomes, j'aime développer des solutions 
-                        technologiques qui résolvent des problèmes concrets.
-                    </p>
-                    <p style="margin-top: 1.5rem;">
-                        mon parcours universitaire m'a permis d'acquérir une solide base en électronique analogique et numérique, 
-                        en programmation C/C++ et en automatisation industrielle. je suis toujours à la recherche de nouveaux défis pour 
-                        approfondir mes compétences.
-                    </p>
-                </div>
-
-                <div class="about-visual" style="
-                    width: 100%;
-                    aspect-ratio: 16/9;
-                    background: linear-gradient(135deg, var(--accent) 0%, #344E41 100%);
-                    border-radius: 16px;
-                    animation: slideUp 0.8s ease 0.2s backwards;
-                    margin-top: 3rem;
-                "></div>
-
-                <div style="height: 4rem;"></div>
-
-                <div class="about-motivations">
-                    <div class="motivation-item">
-                        <h3>mes motivations</h3>
+            <!-- GRILLE 2 COLONNES -->
+            <div class="about-grid">
+                <!-- GAUCHE : TEXTE + CARTES -->
+                <div class="about-left">
+                    <div class="about-intro">
+                        <h3>qui suis-je ?</h3>
                         <p>
-                            je suis motivé par la création de prototypes fonctionnels et l'optimisation des systèmes électroniques. 
-                            j'apprécie particulièrement les projets qui combinent hardware et software pour créer des solutions innovantes.
+                            je suis étudiant en BUT Génie Électrique et Informatique Industrielle (GEII) à l'IUT de <span class="accent-text">Poitiers</span>. 
+                            passionné par l'électronique, la programmation embarquée et les systèmes autonomes, j'aime développer des solutions 
+                            technologiques qui résolvent des problèmes concrets.
                         </p>
                     </div>
-                    <div class="motivation-item">
-                        <h3>ma vision</h3>
-                        <p>
-                            je souhaite contribuer à l'avenir de l'IoT et de l'automatisation en créant des systèmes plus intelligents et efficaces. 
-                            mon objectif est de mettre en pratique mes connaissances théoriques pour résoudre des problèmes réels en industrie.
-                        </p>
+
+                    <!-- CARTES INFO -->
+                    <div class="about-info-cards">
+                        <div class="info-card">
+                            <div class="card-icon">🎓</div>
+                            <h4>formation</h4>
+                            <p>BUT GEII - IUT Poitiers</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="card-icon">⚡</div>
+                            <h4>spécialisation</h4>
+                            <p>automatisation & iot</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="card-icon">🔧</div>
+                            <h4>passion</h4>
+                            <p>créer des solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DROITE : VISUAL + DÉTAILS -->
+                <div class="about-right">
+                    <div class="about-visual-card">
+                        <div style="
+                            width: 100%;
+                            aspect-ratio: 16/9;
+                            background: linear-gradient(135deg, var(--accent) 0%, #344E41 100%);
+                            border-radius: 16px;
+                            animation: slideUp 0.8s ease 0.2s backwards;
+                            margin-bottom: 2rem;
+                        "></div>
+
+                        <div class="about-details">
+                            <h3>mon parcours</h3>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <h4>électronique analogique & numérique</h4>
+                                        <p>fondamentaux solides en conception</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <h4>programmation C/C++ et python</h4>
+                                        <p>langages pour systèmes embarqués</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <h4>automatisation industrielle</h4>
+                                        <p>systèmes de contrôle avancés</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div style="height: 8rem;"></div>
+            <!-- SECTION MOTIVATIONS ET VISION -->
+            <div style="height: 2rem;"></div>
+
+            <div class="about-cta-grid">
+                <div class="cta-card">
+                    <div class="cta-number">01</div>
+                    <h3>mes motivations</h3>
+                    <p>
+                        je suis motivé par la création de prototypes fonctionnels et l'optimisation des systèmes électroniques. 
+                        j'apprécie particulièrement les projets qui combinent hardware et software pour créer des solutions innovantes.
+                    </p>
+                </div>
+                <div class="cta-card">
+                    <div class="cta-number">02</div>
+                    <h3>ma vision</h3>
+                    <p>
+                        je souhaite contribuer à l'avenir de l'IoT et de l'automatisation en créant des systèmes plus intelligents et efficaces. 
+                        mon objectif est de mettre en pratique mes connaissances théoriques pour résoudre des problèmes réels.
+                    </p>
+                </div>
+                <div class="cta-card">
+                    <div class="cta-number">03</div>
+                    <h3>mon approche</h3>
+                    <p>
+                        je crois en l'apprentissage continu et l'innovation. chaque projet est une opportunité pour repousser mes limites
+                        et explorer de nouvelles technologies qui façonnent l'avenir.
+                    </p>
+                </div>
+            </div>
+
+            <div style="height: 4rem;"></div>
         </div>
     </div>
 
@@ -169,6 +233,249 @@
         font-size: 0.8rem;
         color: var(--text-secondary);
         font-weight: 400;
+    }
+
+    /* STYLES SUPPLÉMENTAIRES POUR LA SECTION ABOUT */
+    .accent-text {
+        color: var(--accent);
+        font-weight: 500;
+    }
+
+    .about-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        animation: fadeInUp 0.8s ease 0.1s backwards;
+    }
+
+    .about-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        animation: none;
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-bottom: 3rem;
+        animation: fadeInUp 0.8s ease 0.15s backwards;
+    }
+
+    .about-left {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .about-intro {
+        padding: 2.5rem;
+        background: rgba(88, 129, 87, 0.08);
+        border-radius: 16px;
+        border-left: 4px solid var(--accent);
+        animation: fadeInUp 0.8s ease 0.2s backwards;
+    }
+
+    .about-intro h3 {
+        color: var(--accent);
+        margin-bottom: 1rem;
+        font-weight: 500;
+    }
+
+    .about-intro p {
+        line-height: 1.8;
+        animation: none;
+    }
+
+    .about-info-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .info-card {
+        padding: 2rem;
+        background: linear-gradient(135deg, rgba(88, 129, 87, 0.08) 0%, rgba(88, 129, 87, 0.04) 100%);
+        border: 1px solid rgba(88, 129, 87, 0.15);
+        border-radius: 12px;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .info-card:nth-child(1) { animation-delay: 0.25s; }
+    .info-card:nth-child(2) { animation-delay: 0.3s; }
+    .info-card:nth-child(3) { animation-delay: 0.35s; }
+
+    .info-card:hover {
+        background: linear-gradient(135deg, rgba(88, 129, 87, 0.12) 0%, rgba(88, 129, 87, 0.08) 100%);
+        border-color: var(--accent);
+        transform: translateY(-6px);
+        box-shadow: 0 12px 24px rgba(88, 129, 87, 0.15);
+    }
+
+    .card-icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .info-card h4 {
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+
+    .info-card p {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        animation: none;
+    }
+
+    .about-right {
+        animation: fadeInUp 0.8s ease 0.2s backwards;
+    }
+
+    .about-visual-card {
+        padding: 2.5rem;
+        background: rgba(88, 129, 87, 0.04);
+        border: 1px solid rgba(88, 129, 87, 0.1);
+        border-radius: 16px;
+    }
+
+    .about-details {
+        margin-top: 2rem;
+    }
+
+    .about-details h3 {
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+    }
+
+    .timeline {
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(to bottom, var(--accent), rgba(88, 129, 87, 0.2));
+        border-radius: 2px;
+    }
+
+    .timeline-item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .timeline-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .timeline-dot {
+        width: 12px;
+        height: 12px;
+        background: var(--accent);
+        border-radius: 50%;
+        position: absolute;
+        left: -8px;
+        top: 6px;
+        box-shadow: 0 0 0 3px rgba(88, 129, 87, 0.15);
+    }
+
+    .timeline-content h4 {
+        color: var(--text-primary);
+        margin-bottom: 0.25rem;
+        font-weight: 500;
+    }
+
+    .timeline-content p {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        animation: none;
+    }
+
+    .about-cta-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        animation: fadeInUp 0.8s ease 0.25s backwards;
+    }
+
+    .cta-card {
+        padding: 2.5rem;
+        background: linear-gradient(135deg, rgba(88, 129, 87, 0.08) 0%, rgba(88, 129, 87, 0.04) 100%);
+        border: 1px solid rgba(88, 129, 87, 0.15);
+        border-radius: 16px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .cta-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--accent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+    }
+
+    .cta-card:hover {
+        background: linear-gradient(135deg, rgba(88, 129, 87, 0.12) 0%, rgba(88, 129, 87, 0.08) 100%);
+        border-color: var(--accent);
+        transform: translateY(-8px);
+        box-shadow: 0 16px 32px rgba(88, 129, 87, 0.15);
+    }
+
+    .cta-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .cta-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--accent);
+        opacity: 0.2;
+        margin-bottom: 0.5rem;
+        line-height: 1;
+    }
+
+    .cta-card h3 {
+        color: var(--accent);
+        margin-bottom: 1rem;
+        font-weight: 500;
+    }
+
+    .cta-card p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        animation: none;
+    }
+
+    @media (max-width: 1024px) {
+        .about-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .about-cta-grid {
+            grid-template-columns: 1fr;
+        }
     }
 </style>
 
