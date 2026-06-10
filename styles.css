@@ -1,7 +1,7 @@
 :root {
     /* PALETTE VERT PROFESSIONNEL */
     --bg-primary: #FFFDF9;
-    --bg-secondary: #DBECC7;
+    --bg-secondary: #799F61;
     --text-primary: #1E1713;
     --text-secondary: #4B4B4B;
     --accent: #588157;
@@ -37,9 +37,12 @@ nav {
     z-index: 1000;
     background: rgba(255, 253, 249, 0.98);
     backdrop-filter: blur(15px);
-    padding: 1.5rem 0;
+    padding: 1.5rem 5%;
     border-bottom: 1px solid var(--border);
     animation: slideDownNav 0.6s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 @keyframes slideDownNav {
@@ -59,6 +62,25 @@ nav {
     gap: 2.5rem;
     max-width: 100%;
     align-items: center;
+    flex: 1;
+}
+
+/* LOGO / NOM DANS NAV */
+.nav-logo {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    margin-right: 2rem;
+}
+
+.nav-logo:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
 }
 
 nav a {
@@ -119,7 +141,7 @@ nav a.active::after {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, rgba(232, 240, 220, 0.99) 0%, rgba(220, 235, 205, 0.99) 100%);
+    background: linear-gradient(135deg, rgba(255, 253, 249, 0.99) 0%, rgba(255, 253, 249, 0.99) 100%);
     backdrop-filter: blur(10px);
     border: 1px solid var(--accent);
     border-radius: 8px;
@@ -149,6 +171,7 @@ nav a.active::after {
     font-weight: 700;
     color: #3A5A40;
     font-size: 0.8rem;
+    text-transform: lowercase;
     letter-spacing: 0.7px;
     margin-bottom: 0.4rem;
     opacity: 1;
@@ -163,6 +186,7 @@ nav a.active::after {
     color: #1E1713;
     text-decoration: none;
     transition: all 0.25s ease;
+    text-transform: lowercase;
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 0.3px;
@@ -229,6 +253,7 @@ main {
 h1 {
     font-size: 4rem;
     font-weight: 300;
+    text-transform: lowercase;
     line-height: 1.1;
     margin-bottom: 2rem;
     letter-spacing: -0.5px;
@@ -667,7 +692,6 @@ footer {
     .nav-container {
         gap: 1.2rem;
         flex-wrap: wrap;
-        padding: 0 1rem;
     }
 
     nav a {
