@@ -80,12 +80,26 @@ nav {
     display: flex;
     align-items: center;
     height: 100%;
-    border-bottom: 2px solid transparent;
 }
 
 .nav-logo:hover {
     color: var(--accent);
-    border-bottom-color: var(--accent);
+}
+
+.nav-logo::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-logo:hover::after {
+    width: 100%;
 }
 
 nav a {
@@ -101,18 +115,36 @@ nav a {
     display: flex;
     align-items: center;
     height: 100%;
-    border-bottom: 2px solid transparent;
 }
 
 nav a:hover {
     color: var(--accent);
-    border-bottom-color: var(--accent);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 nav a.active {
     color: var(--accent);
     font-weight: 500;
-    border-bottom-color: var(--accent);
+}
+
+nav a.active::after {
+    width: 100%;
+    animation: none;
 }
 
 /* DROPDOWN MENU - MODERN & MINIMAL AVEC COULEUR */
@@ -136,7 +168,7 @@ nav a.active {
     border-radius: 8px;
     min-width: 220px;
     padding: 0.8rem 0;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -183,7 +215,6 @@ nav a.active {
     white-space: normal;
     border-left: 3px solid transparent;
     height: auto;
-    border-bottom: none;
 }
 
 .dropdown a::before {
@@ -204,7 +235,6 @@ nav a.active {
     color: #3A5A40;
     padding-left: 1.9rem;
     font-weight: 600;
-    border-bottom: none;
 }
 
 .dropdown a:hover::before {
