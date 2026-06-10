@@ -90,7 +90,7 @@
         /* EN-TÊTES DES COLONNES */
         .competence-header {
             padding: 1.2rem;
-            border-radius: 8px;
+            border-radius: 12px;
             text-align: center;
             color: white;
             font-weight: 600;
@@ -118,7 +118,7 @@
         /* CARTES DE NIVEAUX */
         .competence-level {
             padding: 1.5rem;
-            border-radius: 8px;
+            border-radius: 12px;
             min-height: 100px;
             display: flex;
             flex-direction: column;
@@ -132,14 +132,6 @@
         .competence-level:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 20px rgba(88, 129, 87, 0.15);
-        }
-
-        .competence-level h4 {
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-            color: var(--text-primary);
-            text-transform: lowercase;
-            font-size: 0.9rem;
         }
 
         .competence-level p {
@@ -224,14 +216,14 @@
         /* PLACEHOLDER */
         .competence-placeholder {
             padding: 1.5rem;
-            border-radius: 8px;
+            border-radius: 12px;
             min-height: 100px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: #f0f0f0;
-            border: 2px dashed #ccc;
+            background: #f5f5f5;
+            border: 2px dashed #ddd;
         }
 
         .competence-placeholder p {
@@ -275,19 +267,6 @@
             color: var(--text-secondary);
             animation: none;
             font-size: 0.95rem;
-        }
-
-        /* SECTION TITRES */
-        .level-section {
-            margin-bottom: 2rem;
-        }
-
-        .level-section h3 {
-            text-transform: lowercase;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            font-weight: 500;
         }
 
         @media (max-width: 1024px) {
@@ -464,57 +443,53 @@
                 </div>
 
                 <!-- NIVEAU 1 -->
-                <div class="level-section">
-                    <div class="referentiel-container">
-                        <!-- EN-TÊTES -->
-                        <div class="competence-header concevoir-header">concevoir</div>
-                        <div class="competence-header verifier-header">vérifier</div>
-                        <div class="competence-header maintenir-header">maintenir</div>
-                        <div class="competence-header integrer-header">intégrer</div>
+                <div class="referentiel-container">
+                    <!-- EN-TÊTES -->
+                    <div class="competence-header concevoir-header">concevoir</div>
+                    <div class="competence-header verifier-header">vérifier</div>
+                    <div class="competence-header maintenir-header">maintenir</div>
+                    <div class="competence-header integrer-header">intégrer</div>
 
-                        <!-- CARTES NIVEAU 1 -->
-                        <div class="competence-level concevoir-1">
-                            <p>mener une conception partielle intégrant une démarche projet</p>
-                        </div>
-                        <div class="competence-level verifier-1">
-                            <p>effectuer les tests et mesures nécessaires à une vérification d'un système</p>
-                        </div>
-                        <div class="competence-placeholder">
-                            <p>non développée en 1ère année</p>
-                        </div>
-                        <div class="competence-placeholder"> </div>
-                            <p>non développée en 1ère année</p>
-                        <!-- CARTES NIVEAU 2 -->
-                        <div class="competence-level concevoir-2">
-                            <p>concevoir un système en fiabilisant les solutions proposées</p>
-                        </div>
-                        <div class="competence-level verifier-2">
-                            <p>mettre en place un protocole de tests pour valider le fonctionnement d'un système</p>
-                        </div>
-                        <div class="competence-level maintenir-1">
-                            <p>intervenir sur un système pour effectuer une opération de maintenance</p>
-                        </div>
-                        <div class="competence-level integrer-1">
-                            <p>procéder à une installation ou à une mise en service en suivant un protocole</p>
-                            </div>
-                        <!-- CARTES NIVEAU 3 -->
-                        <div class="competence-level concevoir-3">
-                            <p>concevoir un système en adoptant une approche sélective dans ses choix technologiques</p>
-                        </div>
-                        <div class="competence-level verifier-3">
-                            <p>élaborer une procédure intégrant une démarche qualité pour valider le fonctionnement d'un système</p>
-                        </div>
-                        <div class="competence-level maintenir-2">
-                            <p>mettre en place une stratégie de maintenance pour garantir un fonctionnement optimal</p>
-                        </div>
-                        <div class="competence-level integrer-2">
-                            <p>interagir avec les différents acteurs, depuis l'élaboration du protocole jusqu'à l'installation, dans une visée de démarche qualité</p>
-                        </div>
+                    <!-- CARTES NIVEAU 1 -->
+                    <div class="competence-level concevoir-1">
+                        <p>mener une conception partielle intégrant une démarche projet</p>
                     </div>
-                </div>
-                <!-- NIVEAU 3 -->
-                <div class="level-section">
-                    <div class="referentiel-container">
+                    <div class="competence-level verifier-1">
+                        <p>effectuer les tests et mesures nécessaires à une vérification d'un système</p>
+                    </div>
+                    <div class="competence-placeholder">
+                        <p>non développée en 1ère année</p>
+                    </div>
+                    <div class="competence-placeholder">
+                        <p>non développée en 1ère année</p>
+                    </div>
+
+                    <!-- CARTES NIVEAU 2 -->
+                    <div class="competence-level concevoir-2">
+                        <p>concevoir un système en fiabilisant les solutions proposées</p>
+                    </div>
+                    <div class="competence-level verifier-2">
+                        <p>mettre en place un protocole de tests pour valider le fonctionnement d'un système</p>
+                    </div>
+                    <div class="competence-level maintenir-1">
+                        <p>intervenir sur un système pour effectuer une opération de maintenance</p>
+                    </div>
+                    <div class="competence-level integrer-1">
+                        <p>procéder à une installation ou à une mise en service en suivant un protocole</p>
+                    </div>
+
+                    <!-- CARTES NIVEAU 3 -->
+                    <div class="competence-level concevoir-3">
+                        <p>concevoir un système en adoptant une approche sélective dans ses choix technologiques</p>
+                    </div>
+                    <div class="competence-level verifier-3">
+                        <p>élaborer une procédure intégrant une démarche qualité pour valider le fonctionnement d'un système</p>
+                    </div>
+                    <div class="competence-level maintenir-2">
+                        <p>mettre en place une stratégie de maintenance pour garantir un fonctionnement optimal</p>
+                    </div>
+                    <div class="competence-level integrer-2">
+                        <p>interagir avec les différents acteurs, depuis l'élaboration du protocole jusqu'à l'installation, dans une visée de démarche qualité</p>
                     </div>
                 </div>
             </div>
