@@ -5,130 +5,346 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>compétences</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .competences-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        /* SKILL BARS - ANIMATED */
+        .skill-bar-container {
+            margin-bottom: 2rem;
+        }
+
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+            text-transform: lowercase;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 10px;
+            width: 0;
+            animation: fillSkillBar 1.2s ease-out forwards;
+        }
+
+        @keyframes fillSkillBar {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+            to {
+                width: var(--skill-width);
+                opacity: 1;
+            }
+        }
+
+        /* NIVEAUX DE COMPÉTENCES */
+        .header-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 4rem 0 3rem;
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+        }
+
+        .header-info h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            text-transform: lowercase;
+        }
+
+        .header-info p {
+            color: var(--text-secondary);
+            animation: none;
+            font-size: 0.95rem;
+        }
+
+        .competences-grid-levels {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .competence-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .competence-header {
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+            text-transform: lowercase;
+            font-size: 1rem;
+        }
+
+        .concevoir-header {
+            background: #A3534D;
+        }
+
+        .verifier-header {
+            background: #B8925F;
+        }
+
+        .maintenir-header {
+            background: #9B9B3C;
+        }
+
+        .integrer-header {
+            background: #588157;
+        }
+
+        .competence-level {
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .competence-level:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(88, 129, 87, 0.15);
+        }
+
+        .competence-level h4 {
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+            text-transform: lowercase;
+            font-size: 0.95rem;
+        }
+
+        .competence-level p {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--text-primary);
+            animation: none;
+        }
+
+        /* CONCEVOIR - Nuances rouges */
+        .concevoir-1 {
+            background: #E8D4D0;
+        }
+
+        .concevoir-2 {
+            background: #D4A3A0;
+        }
+
+        .concevoir-3 {
+            background: #A3534D;
+            color: white;
+        }
+
+        .concevoir-3 p {
+            color: white;
+        }
+
+        /* VÉRIFIER - Nuances oranges */
+        .verifier-1 {
+            background: #E8D9CE;
+        }
+
+        .verifier-2 {
+            background: #D4B894;
+        }
+
+        .verifier-3 {
+            background: #B8925F;
+            color: white;
+        }
+
+        .verifier-3 p {
+            color: white;
+        }
+
+        /* MAINTENIR - Nuances jaunes */
+        .maintenir-1 {
+            background: #F0F0D0;
+        }
+
+        .maintenir-2 {
+            background: #E8E87C;
+        }
+
+        .maintenir-3 {
+            background: #9B9B3C;
+            color: white;
+        }
+
+        .maintenir-3 p {
+            color: white;
+        }
+
+        /* INTÉGRER - Nuances vertes */
+        .integrer-1 {
+            background: #D4E8C8;
+        }
+
+        .integrer-2 {
+            background: #A8D4A0;
+        }
+
+        .integrer-3 {
+            background: #588157;
+            color: white;
+        }
+
+        .integrer-3 p {
+            color: white;
+        }
+
+        /* ZONE DE TEXTE POUR DÉVELOPPER */
+        .competence-development {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .competence-development h4 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            text-transform: lowercase;
+        }
+
+        .competence-development p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            animation: none;
+        }
+
+        @media (max-width: 1024px) {
+            .competences-grid-levels {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .competences-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .competences-grid-levels {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <nav>
-    <div class="nav-container">
-        <a href="index.html" class="active">accueil</a>
-        
-        <div class="nav-item">
-            <a href="projects.html">projets</a>
-            <div class="dropdown">
-                <div class="dropdown-title">projets geii</div>
-                <a href="project-1.html">projet électronique 1</a>
-                <a href="project-2.html">projet automatisation</a>
-                <a href="project-3.html">projet iot</a>
-                
-                <div class="dropdown-title">projets perso</div>
-                <a href="project-4.html">projet personnel 1</a>
-                <a href="project-5.html">projet personnel 2</a>
+        <div class="nav-container">
+            <a href="index.html">accueil</a>
+            
+            <div class="nav-item">
+                <a href="projects.html">projets</a>
+                <div class="dropdown">
+                    <div class="dropdown-title">projets geii</div>
+                    <a href="project-1.html">projet électronique 1</a>
+                    <a href="project-2.html">projet automatisation</a>
+                    <a href="project-3.html">projet iot</a>
+                    
+                    <div class="dropdown-title">projets perso</div>
+                    <a href="project-4.html">projet personnel 1</a>
+                    <a href="project-5.html">projet personnel 2</a>
+                </div>
             </div>
+            
+            <a href="about.html">à propos</a>
+            <a href="interests.html">centres d'intérêts</a>
+            <a href="skills.html" class="active">compétences</a>
+            <a href="contact.html">contact</a>
         </div>
-        
-        <a href="about.html">à propos</a>
-        <a href="interests.html">centres d'intérêts</a>
-        <a href="skills.html">compétences</a>
-        <a href="contact.html">contact</a>
-    </div>
-</nav>
+    </nav>
 
     <main class="page">
         <div class="container">
             <h1>compétences</h1>
             
-            <div style="
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 4rem;
-                margin-top: 3rem;
-            ">
+            <div class="competences-grid">
                 <!-- COLONNE 1 : PROGRAMMATION -->
                 <div>
                     <h2 style="font-size: 1.3rem; margin-bottom: 2rem;">programmation</h2>
                     
-                    <div style="margin-bottom: 2.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <div class="skill-bar-container">
+                        <div class="skill-label">
                             <span style="text-transform: lowercase;">c / c++</span>
                             <span style="color: var(--text-secondary); font-size: 0.9rem;">90%</span>
                         </div>
-                        <div style="
-                            width: 100%;
-                            height: 4px;
-                            background: rgba(0, 0, 0, 0.05);
-                            border-radius: 2px;
-                            overflow: hidden;
-                        ">
-                            <div style="
-                                width: 90%;
-                                height: 100%;
-                                background: var(--accent);
-                                transition: width 0.6s ease;
-                            "></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="--skill-width: 90%;"></div>
                         </div>
                     </div>
 
-                    <div style="margin-bottom: 2.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <div class="skill-bar-container">
+                        <div class="skill-label">
                             <span style="text-transform: lowercase;">python</span>
                             <span style="color: var(--text-secondary); font-size: 0.9rem;">80%</span>
                         </div>
-                        <div style="
-                            width: 100%;
-                            height: 4px;
-                            background: rgba(0, 0, 0, 0.05);
-                            border-radius: 2px;
-                            overflow: hidden;
-                        ">
-                            <div style="
-                                width: 80%;
-                                height: 100%;
-                                background: var(--accent);
-                                transition: width 0.6s ease;
-                            "></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="--skill-width: 80%;"></div>
                         </div>
                     </div>
 
-                    <div style="margin-bottom: 2.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <div class="skill-bar-container">
+                        <div class="skill-label">
                             <span style="text-transform: lowercase;">javascript</span>
                             <span style="color: var(--text-secondary); font-size: 0.9rem;">70%</span>
                         </div>
-                        <div style="
-                            width: 100%;
-                            height: 4px;
-                            background: rgba(0, 0, 0, 0.05);
-                            border-radius: 2px;
-                            overflow: hidden;
-                        ">
-                            <div style="
-                                width: 70%;
-                                height: 100%;
-                                background: var(--accent);
-                                transition: width 0.6s ease;
-                            "></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="--skill-width: 70%;"></div>
                         </div>
                     </div>
 
-                    <div style="margin-bottom: 2.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <div class="skill-bar-container">
+                        <div class="skill-label">
                             <span style="text-transform: lowercase;">html / css</span>
                             <span style="color: var(--text-secondary); font-size: 0.9rem;">85%</span>
                         </div>
-                        <div style="
-                            width: 100%;
-                            height: 4px;
-                            background: rgba(0, 0, 0, 0.05);
-                            border-radius: 2px;
-                            overflow: hidden;
-                        ">
-                            <div style="
-                                width: 85%;
-                                height: 100%;
-                                background: var(--accent);
-                                transition: width 0.6s ease;
-                            "></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="--skill-width: 85%;"></div>
                         </div>
+                    </div>
+
+                    <div class="competence-development">
+                        <h4>développement de cette compétence</h4>
+                        <p>j'ai développé mes compétences en programmation à travers de nombreux projets scolaires et personnels. j'ai commencé par le c++ avec arduino, puis j'ai progressé vers python et javascript pour des projets plus complexes. je continue à explorer de nouveaux langages et frameworks pour rester à jour avec les tendances technologiques.</p>
                     </div>
                 </div>
 
@@ -136,87 +352,134 @@
                 <div>
                     <h2 style="font-size: 1.3rem; margin-bottom: 2rem;">outils & technologies</h2>
                     
-                    <div style="margin-bottom: 2.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <div class="skill-bar-container">
+                        <div class="skill-label">
                             <span style="text-transform: lowercase;">arduino / esp32</span>
                             <span style="color: var(--text-secondary); font-size: 0.9rem;">85%</span>
                         </div>
-                        <div style="
-                            width: 100%;
-                            height: 4px;
-                            background: rgba(0, 0, 0, 0.05);
-                            border-radius: 2px;
-                            overflow: hidden;
-                        ">
-                            <div style="
-                                width: 85%;
-                                height: 100%;
-                                background: var(--accent);
-                                transition: width 0.6s ease;
-                            "></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="--skill-width: 85%;"></div>
                         </div>
                     </div>
 
-                    <div style="margin-bottom: 2.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <div class="skill-bar-container">
+                        <div class="skill-label">
                             <span style="text-transform: lowercase;">kicad</span>
                             <span style="color: var(--text-secondary); font-size: 0.9rem;">75%</span>
                         </div>
-                        <div style="
-                            width: 100%;
-                            height: 4px;
-                            background: rgba(0, 0, 0, 0.05);
-                            border-radius: 2px;
-                            overflow: hidden;
-                        ">
-                            <div style="
-                                width: 75%;
-                                height: 100%;
-                                background: var(--accent);
-                                transition: width 0.6s ease;
-                            "></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="--skill-width: 75%;"></div>
                         </div>
                     </div>
 
-                    <div style="margin-bottom: 2.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <div class="skill-bar-container">
+                        <div class="skill-label">
                             <span style="text-transform: lowercase;">git / github</span>
                             <span style="color: var(--text-secondary); font-size: 0.9rem;">80%</span>
                         </div>
-                        <div style="
-                            width: 100%;
-                            height: 4px;
-                            background: rgba(0, 0, 0, 0.05);
-                            border-radius: 2px;
-                            overflow: hidden;
-                        ">
-                            <div style="
-                                width: 80%;
-                                height: 100%;
-                                background: var(--accent);
-                                transition: width 0.6s ease;
-                            "></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="--skill-width: 80%;"></div>
                         </div>
                     </div>
 
-                    <div style="margin-bottom: 2.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <div class="skill-bar-container">
+                        <div class="skill-label">
                             <span style="text-transform: lowercase;">matlab</span>
                             <span style="color: var(--text-secondary); font-size: 0.9rem;">70%</span>
                         </div>
-                        <div style="
-                            width: 100%;
-                            height: 4px;
-                            background: rgba(0, 0, 0, 0.05);
-                            border-radius: 2px;
-                            overflow: hidden;
-                        ">
-                            <div style="
-                                width: 70%;
-                                height: 100%;
-                                background: var(--accent);
-                                transition: width 0.6s ease;
-                            "></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="--skill-width: 70%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="competence-development">
+                        <h4>développement de cette compétence</h4>
+                        <p>ma maîtrise des outils et technologies s'est construite progressivement à travers les projets pratiques. j'ai appris arduino et esp32 en créant des projets iot, kicad en conception de circuits électroniques, et git en travaillant en équipe. chaque outil a été choisi en fonction des besoins spécifiques de mes projets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NIVEAUX DE COMPÉTENCES -->
+            <div style="margin-top: 6rem;">
+                <h2>niveaux de développement des compétences</h2>
+
+                <div class="header-info">
+                    <div>
+                        <h3>b.u.t. génie électrique et informatique industrielle</h3>
+                        <p>formation en génie électrique avec spécialisation en automatisation</p>
+                    </div>
+                    <div>
+                        <h3>parcours automatisme et informatique industrielle</h3>
+                        <p>spécialisation dans les systèmes automatisés et les solutions informatiques industrielles</p>
+                    </div>
+                </div>
+
+                <div class="competences-grid-levels">
+                    <!-- COLONNE CONCEVOIR -->
+                    <div class="competence-column">
+                        <div class="competence-header concevoir-header">concevoir</div>
+                        <div class="competence-level concevoir-1">
+                            <h4>niveau 1</h4>
+                            <p>mener une conception partielle intégrant une démarche projet</p>
+                        </div>
+                        <div class="competence-level concevoir-2">
+                            <h4>niveau 2</h4>
+                            <p>concevoir un système en fiabilisant les solutions proposées</p>
+                        </div>
+                        <div class="competence-level concevoir-3">
+                            <h4>niveau 3</h4>
+                            <p>concevoir un système en adoptant une approche sélective dans ses choix technologiques</p>
+                        </div>
+                    </div>
+
+                    <!-- COLONNE VÉRIFIER -->
+                    <div class="competence-column">
+                        <div class="competence-header verifier-header">vérifier</div>
+                        <div class="competence-level verifier-1">
+                            <h4>niveau 1</h4>
+                            <p>effectuer les tests et mesures nécessaires à une vérification d'un système</p>
+                        </div>
+                        <div class="competence-level verifier-2">
+                            <h4>niveau 2</h4>
+                            <p>mettre en place un protocole de tests pour valider le fonctionnement d'un système</p>
+                        </div>
+                        <div class="competence-level verifier-3">
+                            <h4>niveau 3</h4>
+                            <p>élaborer une procédure intégrant une démarche qualité pour valider le fonctionnement d'un système</p>
+                        </div>
+                    </div>
+
+                    <!-- COLONNE MAINTENIR -->
+                    <div class="competence-column">
+                        <div class="competence-header maintenir-header">maintenir</div>
+                        <div class="competence-level maintenir-1">
+                            <h4>niveau 1</h4>
+                            <p>intervenir sur un système pour effectuer une opération de maintenance</p>
+                        </div>
+                        <div class="competence-level maintenir-2">
+                            <h4>niveau 2</h4>
+                            <p>mettre en place une stratégie de maintenance pour garantir un fonctionnement optimal</p>
+                        </div>
+                        <div class="competence-level maintenir-3">
+                            <h4>niveau 3</h4>
+                            <p>concevoir une stratégie de maintenance globale pour garantir la durabilité</p>
+                        </div>
+                    </div>
+
+                    <!-- COLONNE INTÉGRER -->
+                    <div class="competence-column">
+                        <div class="competence-header integrer-header">intégrer</div>
+                        <div class="competence-level integrer-1">
+                            <h4>niveau 1</h4>
+                            <p>procéder à une installation ou à une mise en service en suivant un protocole</p>
+                        </div>
+                        <div class="competence-level integrer-2">
+                            <h4>niveau 2</h4>
+                            <p>interagir avec les différents acteurs depuis l'élaboration du protocole</p>
+                        </div>
+                        <div class="competence-level integrer-3">
+                            <h4>niveau 3</h4>
+                            <p>piloter l'intégration d'un système en coordonnant les acteurs</p>
                         </div>
                     </div>
                 </div>
@@ -227,6 +490,7 @@
     <footer>
         <p>&copy; 2024 votre portfolio</p>
     </footer>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
