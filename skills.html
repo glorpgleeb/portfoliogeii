@@ -12,6 +12,7 @@
             gap: 4rem;
             margin-top: 3rem;
             margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease 0.1s backwards;
         }
 
         /* SKILL BARS - ANIMATED */
@@ -62,14 +63,15 @@
             gap: 2rem;
             margin: 4rem 0 2rem;
             padding: 2rem;
-            background: var(--bg-secondary);
+            background: rgba(88, 129, 87, 0.08);
             border-radius: 12px;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
         }
 
         .header-info h3 {
-            color: var(--text-primary);
+            color: var(--accent);
             margin-bottom: 0.5rem;
-            font-weight: 600;
+            font-weight: 500;
             text-transform: lowercase;
         }
 
@@ -85,6 +87,7 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
             margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease 0.3s backwards;
         }
 
         /* EN-TÊTES DES COLONNES */
@@ -125,13 +128,13 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             cursor: pointer;
         }
 
         .competence-level:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(88, 129, 87, 0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(88, 129, 87, 0.15);
         }
 
         .competence-level p {
@@ -236,15 +239,22 @@
         .competence-development {
             margin-top: 2rem;
             padding: 2rem;
-            background: var(--bg-secondary);
+            background: rgba(88, 129, 87, 0.08);
             border-radius: 12px;
             border-left: 4px solid var(--accent);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: fadeInUp 0.8s ease 0.3s backwards;
+        }
+
+        .competence-development:hover {
+            background: rgba(88, 129, 87, 0.12);
         }
 
         .competence-development h4 {
             margin-bottom: 1rem;
-            color: var(--text-primary);
+            color: var(--accent);
             text-transform: lowercase;
+            font-weight: 500;
         }
 
         .competence-development p {
@@ -261,12 +271,27 @@
             border-left: 4px solid var(--accent);
             border-radius: 8px;
             margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease 0.15s backwards;
         }
 
         .but1-info p {
             color: var(--text-secondary);
             animation: none;
             font-size: 0.95rem;
+        }
+
+        .but1-info strong {
+            color: var(--text-primary);
+        }
+
+        /* SECTION TITRE */
+        .skills-hero {
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease 0.1s backwards;
+        }
+
+        .skills-hero p {
+            animation: none;
         }
 
         @media (max-width: 1024px) {
@@ -287,14 +312,24 @@
             .referentiel-container {
                 grid-template-columns: 1fr;
             }
+
+            .competences-grid {
+                gap: 2rem;
+            }
+
+            .header-info {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
- <nav>
-    <a href="index.html" class="nav-logo">cardon alexis</a>
+<!-- NAVIGATION -->
+<nav>
     <div class="nav-container">
+        <a href="index.html" class="nav-logo">cardon alexis</a>
+        
         <div class="nav-item">
             <a href="projects.html">projets</a>
             <div class="dropdown">
@@ -304,201 +339,204 @@
                 <a href="project-3.html">projet KAH</a>
                 
                 <div class="dropdown-title">projets perso</div>
-                <a href="project-4.html">projet ambilight </a>
+                <a href="project-4.html">projet ambilight</a>
                 <a href="project-5.html">projet personnel 2</a>
             </div>
         </div>
         
-        <a href="about.html">à propos</a>
         <a href="interests.html">centres d'intérêts</a>
         <a href="skills.html">compétences</a>
         <a href="contact.html">contact</a>
     </div>
-    </nav>
+</nav>
 
-    <main class="page">
-        <div class="container">
+<main class="page">
+    <div class="container">
+        <div class="skills-hero">
             <h1>compétences</h1>
-            
-            <div class="competences-grid">
-                <!-- COLONNE 1 : PROGRAMMATION -->
-                <div>
-                    <h2 style="font-size: 1.3rem; margin-bottom: 2rem;">programmation</h2>
-                    
-                    <div class="skill-bar-container">
-                        <div class="skill-label">
-                            <span style="text-transform: lowercase;">c / c++</span>
-                            <span style="color: var(--text-secondary); font-size: 0.9rem;">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-fill" style="--skill-width: 90%;"></div>
-                        </div>
+            <p style="font-size: 1.1rem; color: var(--text-secondary);">découvrez mes compétences en programmation, électronique et outils techniques.</p>
+        </div>
+        
+        <div class="competences-grid">
+            <!-- COLONNE 1 : PROGRAMMATION -->
+            <div>
+                <h2 style="font-size: 1.3rem; margin-bottom: 2rem; text-transform: lowercase;">programmation</h2>
+                
+                <div class="skill-bar-container">
+                    <div class="skill-label">
+                        <span style="text-transform: lowercase;">c / c++</span>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem;">90%</span>
                     </div>
-
-                    <div class="skill-bar-container">
-                        <div class="skill-label">
-                            <span style="text-transform: lowercase;">python</span>
-                            <span style="color: var(--text-secondary); font-size: 0.9rem;">80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-fill" style="--skill-width: 80%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-bar-container">
-                        <div class="skill-label">
-                            <span style="text-transform: lowercase;">javascript</span>
-                            <span style="color: var(--text-secondary); font-size: 0.9rem;">70%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-fill" style="--skill-width: 70%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-bar-container">
-                        <div class="skill-label">
-                            <span style="text-transform: lowercase;">html / css</span>
-                            <span style="color: var(--text-secondary); font-size: 0.9rem;">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-fill" style="--skill-width: 85%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="competence-development">
-                        <h4>développement de cette compétence</h4>
-                        <p>j'ai développé mes compétences en programmation à travers de nombreux projets scolaires et personnels. j'ai commencé par le c++ avec arduino, puis j'ai progressé vers python et javascript pour des projets plus complexes. je continue à explorer de nouveaux langages et frameworks pour rester à jour avec les tendances technologiques.</p>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--skill-width: 90%;"></div>
                     </div>
                 </div>
 
-                <!-- COLONNE 2 : OUTILS & TECHNOLOGIES -->
-                <div>
-                    <h2 style="font-size: 1.3rem; margin-bottom: 2rem;">outils & technologies</h2>
-                    
-                    <div class="skill-bar-container">
-                        <div class="skill-label">
-                            <span style="text-transform: lowercase;">arduino / esp32</span>
-                            <span style="color: var(--text-secondary); font-size: 0.9rem;">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-fill" style="--skill-width: 85%;"></div>
-                        </div>
+                <div class="skill-bar-container">
+                    <div class="skill-label">
+                        <span style="text-transform: lowercase;">python</span>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem;">80%</span>
                     </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--skill-width: 80%;"></div>
+                    </div>
+                </div>
 
-                    <div class="skill-bar-container">
-                        <div class="skill-label">
-                            <span style="text-transform: lowercase;">kicad</span>
-                            <span style="color: var(--text-secondary); font-size: 0.9rem;">75%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-fill" style="--skill-width: 75%;"></div>
-                        </div>
+                <div class="skill-bar-container">
+                    <div class="skill-label">
+                        <span style="text-transform: lowercase;">javascript</span>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem;">70%</span>
                     </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--skill-width: 70%;"></div>
+                    </div>
+                </div>
 
-                    <div class="skill-bar-container">
-                        <div class="skill-label">
-                            <span style="text-transform: lowercase;">git / github</span>
-                            <span style="color: var(--text-secondary); font-size: 0.9rem;">80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-fill" style="--skill-width: 80%;"></div>
-                        </div>
+                <div class="skill-bar-container">
+                    <div class="skill-label">
+                        <span style="text-transform: lowercase;">html / css</span>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem;">85%</span>
                     </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--skill-width: 85%;"></div>
+                    </div>
+                </div>
 
-                    <div class="skill-bar-container">
-                        <div class="skill-label">
-                            <span style="text-transform: lowercase;">matlab</span>
-                            <span style="color: var(--text-secondary); font-size: 0.9rem;">70%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-fill" style="--skill-width: 70%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="competence-development">
-                        <h4>développement de cette compétence</h4>
-                        <p>ma maîtrise des outils et technologies s'est construite progressivement à travers les projets pratiques. j'ai appris arduino et esp32 en créant des projets iot, kicad en conception de circuits électroniques, et git en travaillant en équipe. chaque outil a été choisi en fonction des besoins spécifiques de mes projets.</p>
-                    </div>
+                <div class="competence-development">
+                    <h4>développement de cette compétence</h4>
+                    <p>j'ai développé mes compétences en programmation à travers de nombreux projets scolaires et personnels. j'ai commencé par le c++ avec arduino, puis j'ai progressé vers python et javascript pour des projets plus complexes. je continue à explorer de nouveaux langages et frameworks pour rester à jour avec les tendances technologiques.</p>
                 </div>
             </div>
 
-            <!-- NIVEAUX DE COMPÉTENCES -->
-            <div style="margin-top: 6rem;">
-                <h2>niveaux de développement des compétences</h2>
-
-                <div class="but1-info">
-                    <p><strong style="color: var(--text-primary);">première année de but :</strong> en première année, je développe les compétences fondamentales de "concevoir" et "vérifier". les compétences "maintenir" et "intégrer" seront développées au cours des années suivantes du cursus.</p>
-                </div>
-
-                <div class="header-info">
-                    <div>
-                        <h3>b.u.t. génie électrique et informatique industrielle</h3>
-                        <p>formation en génie électrique avec spécialisation en automatisation</p>
+            <!-- COLONNE 2 : OUTILS & TECHNOLOGIES -->
+            <div>
+                <h2 style="font-size: 1.3rem; margin-bottom: 2rem; text-transform: lowercase;">outils & technologies</h2>
+                
+                <div class="skill-bar-container">
+                    <div class="skill-label">
+                        <span style="text-transform: lowercase;">arduino / esp32</span>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem;">85%</span>
                     </div>
-                    <div>
-                        <h3>parcours automatisme et informatique industrielle</h3>
-                        <p>spécialisation dans les systèmes automatisés et les solutions informatiques industrielles</p>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--skill-width: 85%;"></div>
                     </div>
                 </div>
 
-                <!-- NIVEAU 1 -->
-                <div class="referentiel-container">
-                    <!-- EN-TÊTES -->
-                    <div class="competence-header concevoir-header">concevoir</div>
-                    <div class="competence-header verifier-header">vérifier</div>
-                    <div class="competence-header maintenir-header">maintenir</div>
-                    <div class="competence-header integrer-header">intégrer</div>
+                <div class="skill-bar-container">
+                    <div class="skill-label">
+                        <span style="text-transform: lowercase;">kicad</span>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem;">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--skill-width: 75%;"></div>
+                    </div>
+                </div>
 
-                    <!-- CARTES NIVEAU 1 -->
-                    <div class="competence-level concevoir-1">
-                        <p>mener une conception partielle intégrant une démarche projet</p>
+                <div class="skill-bar-container">
+                    <div class="skill-label">
+                        <span style="text-transform: lowercase;">git / github</span>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem;">80%</span>
                     </div>
-                    <div class="competence-level verifier-1">
-                        <p>effectuer les tests et mesures nécessaires à une vérification d'un système</p>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--skill-width: 80%;"></div>
                     </div>
-                    <div class="competence-placeholder">
-                        <p>non développée en 1ère année</p>
-                    </div>
-                    <div class="competence-placeholder">
-                        <p>non développée en 1ère année</p>
-                    </div>
+                </div>
 
-                    <!-- CARTES NIVEAU 2 -->
-                    <div class="competence-level concevoir-2">
-                        <p>concevoir un système en fiabilisant les solutions proposées</p>
+                <div class="skill-bar-container">
+                    <div class="skill-label">
+                        <span style="text-transform: lowercase;">matlab</span>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem;">70%</span>
                     </div>
-                    <div class="competence-level verifier-2">
-                        <p>mettre en place un protocole de tests pour valider le fonctionnement d'un système</p>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--skill-width: 70%;"></div>
                     </div>
-                    <div class="competence-level maintenir-1">
-                        <p>intervenir sur un système pour effectuer une opération de maintenance</p>
-                    </div>
-                    <div class="competence-level integrer-1">
-                        <p>procéder à une installation ou à une mise en service en suivant un protocole</p>
-                    </div>
+                </div>
 
-                    <!-- CARTES NIVEAU 3 -->
-                    <div class="competence-level concevoir-3">
-                        <p>concevoir un système en adoptant une approche sélective dans ses choix technologiques</p>
-                    </div>
-                    <div class="competence-level verifier-3">
-                        <p>élaborer une procédure intégrant une démarche qualité pour valider le fonctionnement d'un système</p>
-                    </div>
-                    <div class="competence-level maintenir-2">
-                        <p>mettre en place une stratégie de maintenance pour garantir un fonctionnement optimal</p>
-                    </div>
-                    <div class="competence-level integrer-2">
-                        <p>interagir avec les différents acteurs, depuis l'élaboration du protocole jusqu'à l'installation, dans une visée de démarche qualité</p>
-                    </div>
+                <div class="competence-development">
+                    <h4>développement de cette compétence</h4>
+                    <p>ma maîtrise des outils et technologies s'est construite progressivement à travers les projets pratiques. j'ai appris arduino et esp32 en créant des projets iot, kicad en conception de circuits électroniques, et git en travaillant en équipe. chaque outil a été choisi en fonction des besoins spécifiques de mes projets.</p>
                 </div>
             </div>
         </div>
-    </main>
 
-    <footer>
-        <p>&copy; 2024 votre portfolio</p>
-    </footer>
+        <!-- NIVEAUX DE COMPÉTENCES -->
+        <div style="margin-top: 6rem;">
+            <h2 style="text-transform: lowercase;">niveaux de développement des compétences</h2>
 
-    <script src="script.js"></script>
+            <div class="but1-info">
+                <p><strong>première année de but :</strong> en première année, je développe les compétences fondamentales de "concevoir" et "vérifier". les compétences "maintenir" et "intégrer" seront développées au cours des années suivantes du cursus.</p>
+            </div>
+
+            <div class="header-info">
+                <div>
+                    <h3>b.u.t. génie électrique et informatique industrielle</h3>
+                    <p>formation en génie électrique avec spécialisation en automatisation</p>
+                </div>
+                <div>
+                    <h3>parcours automatisme et informatique industrielle</h3>
+                    <p>spécialisation dans les systèmes automatisés et les solutions informatiques industrielles</p>
+                </div>
+            </div>
+
+            <!-- NIVEAU 1 -->
+            <div class="referentiel-container">
+                <!-- EN-TÊTES -->
+                <div class="competence-header concevoir-header">concevoir</div>
+                <div class="competence-header verifier-header">vérifier</div>
+                <div class="competence-header maintenir-header">maintenir</div>
+                <div class="competence-header integrer-header">intégrer</div>
+
+                <!-- CARTES NIVEAU 1 -->
+                <div class="competence-level concevoir-1">
+                    <p>mener une conception partielle intégrant une démarche projet</p>
+                </div>
+                <div class="competence-level verifier-1">
+                    <p>effectuer les tests et mesures nécessaires à une vérification d'un système</p>
+                </div>
+                <div class="competence-placeholder">
+                    <p>non développée en 1ère année</p>
+                </div>
+                <div class="competence-placeholder">
+                    <p>non développée en 1ère année</p>
+                </div>
+
+                <!-- CARTES NIVEAU 2 -->
+                <div class="competence-level concevoir-2">
+                    <p>concevoir un système en fiabilisant les solutions proposées</p>
+                </div>
+                <div class="competence-level verifier-2">
+                    <p>mettre en place un protocole de tests pour valider le fonctionnement d'un système</p>
+                </div>
+                <div class="competence-level maintenir-1">
+                    <p>intervenir sur un système pour effectuer une opération de maintenance</p>
+                </div>
+                <div class="competence-level integrer-1">
+                    <p>procéder à une installation ou à une mise en service en suivant un protocole</p>
+                </div>
+
+                <!-- CARTES NIVEAU 3 -->
+                <div class="competence-level concevoir-3">
+                    <p>concevoir un système en adoptant une approche sélective dans ses choix technologiques</p>
+                </div>
+                <div class="competence-level verifier-3">
+                    <p>élaborer une procédure intégrant une démarche qualité pour valider le fonctionnement d'un système</p>
+                </div>
+                <div class="competence-level maintenir-2">
+                    <p>mettre en place une stratégie de maintenance pour garantir un fonctionnement optimal</p>
+                </div>
+                <div class="competence-level integrer-2">
+                    <p>interagir avec les différents acteurs, depuis l'élaboration du protocole jusqu'à l'installation, dans une visée de démarche qualité</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 CARDON Alexis</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
