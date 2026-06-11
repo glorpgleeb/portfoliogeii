@@ -71,7 +71,7 @@ nav {
     color: var(--text-primary);
     font-size: 0.9rem;
     font-weight: 700;
-    text-transform: lowercase;
+    
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
     white-space: nowrap;
@@ -108,7 +108,7 @@ nav a {
     color: var(--text-primary);
     font-size: 0.9rem;
     font-weight: 400;
-    text-transform: lowercase;
+    
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
     position: relative;
@@ -215,7 +215,7 @@ nav a.active::after {
     color: #1E1713;
     text-decoration: none;
     transition: all 0.25s ease;
-    text-transform: lowercase;
+    
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 0.3px;
@@ -277,7 +277,7 @@ h1 {
 h2 {
     font-size: 2.5rem;
     font-weight: 300;
-    text-transform: lowercase;
+    
     margin-bottom: 1.5rem;
     letter-spacing: -0.3px;
     animation: fadeInUp 0.8s ease 0.1s backwards;
@@ -286,7 +286,7 @@ h2 {
 h3 {
     font-size: 1.2rem;
     font-weight: 400;
-    text-transform: lowercase;
+    
     margin-bottom: 0.5rem;
     color: var(--text-primary);
 }
@@ -294,7 +294,7 @@ h3 {
 h4 {
     font-size: 1rem;
     font-weight: 500;
-    text-transform: lowercase;
+    
     margin-bottom: 0.5rem;
     color: var(--text-primary);
 }
@@ -304,7 +304,7 @@ p {
     line-height: 1.7;
     color: var(--text-secondary);
     font-weight: 300;
-    text-transform: lowercase;
+    
     animation: fadeInUp 0.8s ease 0.2s backwards;
 }
 
@@ -353,7 +353,7 @@ a:hover::after {
     background: transparent;
     color: var(--accent);
     font-size: 0.9rem;
-    text-transform: lowercase;
+    
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     font-weight: 400;
@@ -576,7 +576,7 @@ a:hover::after {
     color: var(--text-primary);
     margin-bottom: 0.3rem;
     font-weight: 500;
-    text-transform: lowercase;
+    
 }
 
 .timeline-content p {
@@ -715,7 +715,7 @@ a:hover::after {
     background: rgba(88, 129, 87, 0.1);
     padding: 0.4rem 0.9rem;
     border-radius: 12px;
-    text-transform: lowercase;
+    
     transition: all 0.3s ease;
     border: 1px solid rgba(88, 129, 87, 0.2);
 }
@@ -767,7 +767,7 @@ a:hover::after {
     justify-content: space-between;
     margin-bottom: 0.6rem;
     font-size: 0.95rem;
-    text-transform: lowercase;
+    
 }
 
 .skill-bar {
@@ -872,7 +872,7 @@ a:hover::after {
     display: block;
     margin-bottom: 0.7rem;
     font-size: 0.9rem;
-    text-transform: lowercase;
+    
     font-weight: 400;
 }
 
