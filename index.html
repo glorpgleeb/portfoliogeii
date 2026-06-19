@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio - Portfolio CA -</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVIGATION (SANS "À PROPOS") -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">cardon alexis</a>
+        
+        <div class="nav-item">
+            <a href="projects.html">projets</a>
+            <div class="dropdown">
+                <div class="dropdown-title">Projets GEII (SAÉ)</div>
+                <a href="project-1.html">Projet SLR</a>
+                <a href="project-2.html">Projet TDB</a>
+                <a href="project-3.html">Projet KAH</a>
+                
+                <div class="dropdown-title">Projets paraGEII</div>
+                <a href="project-dutss.html">DU Santé</a>
+                
+                <div class="dropdown-title">Projets Perso</div>
+                <a href="project-ambilight.html">Projet Ambilight</a>
+                <a href="project-pomometeo.html">Cube & Station Météo</a>
+            </div>
+        </div>
+        
+        <a href="interests.html">centres d'intérêts</a>
+        <a href="skills.html">compétences</a>
+        <a href="contact.html">contact</a>
+    </div>
+</nav>
+
+<main class="page">
+    <!-- SECTION HERO -->
+    <div class="container">
+        <div class="grid-asymmetric" style="min-height: 70vh; align-items: center;">
+            <div>
+                <h1>CARDON Alexis</h1>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                    étudiant en but geii | génie électrique et informatique industrielle
+                </p>
+                <a href="projects.html" class="btn">voir mes projets</a>
+            </div>
+            <div style="
+                width: 100%;
+                aspect-ratio: 1;
+                border-radius: 16px;
+                overflow: hidden;
+                animation: slideUp 0.8s ease 0.2s backwards;
+            ">
+                <img src="images/hero.jpg" alt="CARDON Alexis" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+            </div>
+        </div>
+    </div>
+
+    <!-- ESPACE BLANC INTENTIONNEL -->
+    <div style="height: 6rem;"></div>
+
+    <!-- SECTION À PROPOS (STYLISÉE) -->
+    <div class="container">
+        <div class="about-section">
+            <div style="height: 4rem;"></div>
+            
+            <div class="about-header">
+                <h2>À propos de moi</h2>
+                <p class="about-subtitle">découvrez mon parcours, mes motivations et mon profil</p>
+            </div>
+            
+            <!-- GRILLE 2 COLONNES -->
+            <div class="about-grid">
+                <!-- GAUCHE : TEXTE + CARTES -->
+                <div class="about-left">
+                    <div class="about-intro">
+                        <h3>Qui suis-je ?</h3>
+                        <p>
+                            Je suis étudiant en BUT Génie Électrique et Informatique Industrielle (GEII) à l'IUT de <span class="accent-text">Bordeaux</span>. 
+                            J'adore l'électronique, la programmation et les systèmes embarqués. J'aime particulièrement concevoir et développer des solutions concrètes à des problèmes techniques qui demandent de la recherche et de la réflexion.
+                        </p>
+                        <p style="margin-top: 1rem;">
+                            Arriver en GEII pour moi a été un certain déclic. J’ai toujours eu la chance d’apprendre assez vite, mais sans jamais réellement bosser. Depuis que je suis ici, j’ai enfin la motivation d’aller plus loin et de tout comprendre, ce qui m’a vraiment poussé à m’y mettre à fond. Maintenant, je peux passer des heures sur un problème qui m’intéresse, alors qu’il y a un an, cela m’était presque impossible.
+                        </p>
+                        <p style="margin-top: 1rem;">
+                            Je marche à l'humain et aux interactions sociales. Le travail en équipe me plaît énormément : j'apprends de plus en plus à déléguer et à faire confiance, sans avoir besoin de repasser derrière tout le monde. Mon objectif est de devenir un ingénieur/chercheur qui fait la différence grâce à son dévouement et à l’investissement qu’il y met afin de fournir un projet parfait. Je veux concevoir des choses complexes et, à mon tour, transmettre et partager mes connaissances.
+                        </p>
+                    </div>
+
+                    <!-- CARTES INFO -->
+                    <h3 style="color: var(--accent); font-size: 1.3rem; font-weight: 500; margin-top: 2.5rem; margin-bottom: 0.6rem;">Ma formation actuelle</h3>
+                    <div class="about-info-cards">
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                    <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+                                </svg>
+                            </div>
+                            <h4>Formation</h4>
+                            <p>BUT GEII - IUT Bordeaux</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                                </svg>
+                            </div>
+                            <h4>Spécialisation en 2ème année</h4>
+                            <p>Électronique et Systèmes Embarqués (ESE)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DROITE : VISUAL + DÉTAILS -->
+                <div class="about-right">
+                    <div class="about-visual-card">
+                        <div style="
+                            width: 100%;
+                            aspect-ratio: 16/9;
+                            border-radius: 16px;
+                            overflow: hidden;
+                            animation: slideUp 0.8s ease 0.2s backwards;
+                            margin-bottom: 2rem;
+                        ">
+                            <img src="images/about.jpg" alt="Groupe d'étudiants GEII" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                        </div>
+
+                        <div class="about-details">
+                            <h3>Mon parcours</h3>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <h4>Lycée Saint-Exupéry Parentis-en-born - Première</h4>
+                                        <p>Spécialités Mathématiques, Sciences de l'ingénieur, Numérique et Sciences Informatiques</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <h4>Lycée Saint-Exupéry Parentis-en-born - Terminale</h4>
+                                        <p>Spécialités Sciences de la Vie et de la Terre et Mathématiques</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <h4>Université de Bordeaux - Licence de biologie </h4>
+                                        <p>Abandonnée car la formation et la méthode de travail ne me plaisait pas</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <h4>IUT de Bordeaux - BUT GEII</h4>
+                                        <p>Formation actuelle</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION MOTIVATIONS ET VISION -->
+            <div style="height: 2rem;"></div>
+
+            <div class="about-cta-grid">
+                <div class="cta-card">
+                    <div class="cta-number">01</div>
+                    <h3>Mes motivations</h3>
+                    <p>
+                        J'ai toujours été curieux de comprendre comment fonctionnent les objets technologiques autour de moi. Concevoir des systèmes et programmer, c'est ce qui m'a naturellement orienté vers le BUT GEII. La technologie fait partie de mon quotidien depuis tout petit, et j'aime autant bidouiller sur mon temps libre (comme sur des projets de systèmes embarqués) que travailler sur des projets concrets en cours.
+                    </p>
+                </div>
+                <div class="cta-card">
+                    <div class="cta-number">02</div>
+                    <h3>Mes aspirations</h3>
+                    <p>
+                        Après mon BUT, j'aimerais continuer mes études en école d'ingénieur ou en master pour acquérir des compétences solides en conception de systèmes complexes. Je m'intéresse particulièrement aux systèmes embarqués appliqués au domaine de la santé ou à la robotique, car j'ai vraiment envie que mon travail serve concrètement à améliorer le quotidien des gens.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SECTION EXPÉRIENCES PROFESSIONNELLES -->
+    <div class="container">
+        <div style="height: 2rem;"></div>
+        <div class="experience-header" style="text-align: center; margin-bottom: 3rem;">
+            <h2>Expériences Professionnelles</h2>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-top: 0.5rem;">savoir s'engager, travailler en équipe et assumer des responsabilités</p>
+        </div>
+        
+        <div class="experience-grid-clean">
+            <!-- EXPÉRIENCE 1 -->
+            <div class="experience-clean-card">
+                <div class="exp-dates-container">
+                    <span class="exp-date-badge">Mars — Août 2025</span>
+                    <span class="exp-date-badge accent-badge">Depuis Fév. 2026</span>
+                </div>
+                <h3>Hôte de caisse et d'accueil</h3>
+                <h4 class="exp-company">Weldom — Mimizan</h4>
+                <p>
+                    Accueil physique et téléphonique, conseil client, encaissement et gestion des retours produits. 
+                    Actuellement en poste les week-ends en parallèle de mes études en BUT GEII.
+                </p>
+            </div>
+            
+            <!-- EXPÉRIENCE 2 -->
+            <div class="experience-clean-card">
+                <div class="exp-dates-container">
+                    <span class="exp-date-badge">Juillet — Août 2025</span>
+                    <span class="exp-date-badge accent-badge">Juillet — Août 2026 (Cet été)</span>
+                </div>
+                <h3>Ripeur (saisonnier)</h3>
+                <h4 class="exp-company">SIVOM du Born — Parentis-en-Born</h4>
+                <p>
+                    Collecte des ordures ménagères en équipe. 
+                    Un travail physique exigeant de la rigueur et une ponctualité stricte (prise de poste à l'aube). De retour dans l'équipe pour la saison estivale 2026.
+                </p>
+            </div>
+        </div>
+        
+        <!-- COMPACT CUMUL HIGHLIGHT -->
+        <div class="experience-cumul-note">
+            <svg class="cumul-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <p>
+                Durant l'été 2025, j'ai cumulé ces deux emplois en parallèle (le SIVOM le matin et Weldom l'après-midi/week-ends), représentant une charge de travail de <strong>42 heures par semaine</strong>.
+            </p>
+        </div>
+        
+        <div style="height: 4rem;"></div>
+    </div>
+
+    <!-- ESPACE BLANC INTENTIONNEL -->
+    <div style="height: 8rem;"></div>
+
+    <!-- CALL TO ACTION ASYMÉTRIQUE -->
+    <div class="container-small">
+        <div style="text-align: center;">
+            <h2>le courant passe ?</h2>
+            <p style="margin-bottom: 2rem;">vous souhaitez me contacter ?</p>
+            <a href="contact.html" class="btn">m'envoyer un message</a>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 CARDON Alexis</p>
+</footer>
+
+<style>
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .logo {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text-primary);
+    }
+
+    .logo-subtitle {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        font-weight: 400;
+    }
+
+    /* STYLES SUPPLÉMENTAIRES POUR LA SECTION ABOUT */
+    .accent-text {
+        color: var(--accent);
+        font-weight: 500;
+    }
+
+    .about-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        animation: fadeInUp 0.8s ease 0.1s backwards;
+    }
+
+    .about-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        animation: none;
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-bottom: 3rem;
+        animation: fadeInUp 0.8s ease 0.15s backwards;
+    }
+
+    .about-left {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .about-intro {
+        padding: 2.5rem;
+        background: rgba(88, 129, 87, 0.08);
+        border-radius: 16px;
+        border-left: 4px solid var(--accent);
+        animation: fadeInUp 0.8s ease 0.2s backwards;
+    }
+
+    .about-intro h3 {
+        color: var(--accent);
+        margin-bottom: 1rem;
+        font-weight: 500;
+    }
+
+    .about-intro p {
+        line-height: 1.8;
+        animation: none;
+    }
+
+    .about-info-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .info-card {
+        padding: 2rem;
+        background: linear-gradient(135deg, rgba(88, 129, 87, 0.08) 0%, rgba(88, 129, 87, 0.04) 100%);
+        border: 1px solid rgba(88, 129, 87, 0.15);
+        border-radius: 12px;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .info-card:nth-child(1) { animation-delay: 0.25s; }
+    .info-card:nth-child(2) { animation-delay: 0.3s; }
+    .info-card:nth-child(3) { animation-delay: 0.35s; }
+
+    .info-card:hover {
+        background: linear-gradient(135deg, rgba(88, 129, 87, 0.12) 0%, rgba(88, 129, 87, 0.08) 100%);
+        border-color: var(--accent);
+        transform: translateY(-6px);
+        box-shadow: 0 12px 24px rgba(88, 129, 87, 0.15);
+    }
+
+    .info-card h4 {
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+
+    .info-card p {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        animation: none;
+    }
+
+    .about-right {
+        animation: fadeInUp 0.8s ease 0.2s backwards;
+    }
+
+    .about-visual-card {
+        padding: 2.5rem;
+        background: rgba(88, 129, 87, 0.04);
+        border: 1px solid rgba(88, 129, 87, 0.1);
+        border-radius: 16px;
+    }
+
+    .about-details {
+        margin-top: 2rem;
+    }
+
+    .about-details h3 {
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+    }
+
+    .timeline {
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(to bottom, var(--accent), rgba(88, 129, 87, 0.2));
+        border-radius: 2px;
+    }
+
+    .timeline-item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .timeline-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .timeline-dot {
+        width: 12px;
+        height: 12px;
+        background: var(--accent);
+        border-radius: 50%;
+        position: absolute;
+        left: -8px;
+        top: 6px;
+        box-shadow: 0 0 0 3px rgba(88, 129, 87, 0.15);
+    }
+
+    .timeline-content h4 {
+        color: var(--text-primary);
+        margin-bottom: 0.25rem;
+        font-weight: 500;
+    }
+
+    .timeline-content p {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        animation: none;
+    }
+
+    .about-cta-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        animation: fadeInUp 0.8s ease 0.25s backwards;
+    }
+
+    .cta-card {
+        padding: 2.5rem;
+        background: linear-gradient(135deg, rgba(88, 129, 87, 0.08) 0%, rgba(88, 129, 87, 0.04) 100%);
+        border: 1px solid rgba(88, 129, 87, 0.15);
+        border-radius: 16px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .cta-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--accent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+    }
+
+    .cta-card:hover {
+        background: linear-gradient(135deg, rgba(88, 129, 87, 0.12) 0%, rgba(88, 129, 87, 0.08) 100%);
+        border-color: var(--accent);
+        transform: translateY(-8px);
+        box-shadow: 0 16px 32px rgba(88, 129, 87, 0.15);
+    }
+
+    .cta-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .cta-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--accent);
+        opacity: 0.2;
+        margin-bottom: 0.5rem;
+        line-height: 1;
+    }
+
+    .cta-card h3 {
+        color: var(--accent);
+        margin-bottom: 1rem;
+        font-weight: 500;
+    }
+
+    .cta-card p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        animation: none;
+    }
+
+    @media (max-width: 1024px) {
+        .about-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .about-cta-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* STYLE DES EXPÉRIENCES PROFESSIONNELLES (VERSION COMPACTE) */
+    .experience-grid-clean {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+        animation: slideUp 0.8s ease 0.2s backwards;
+    }
+
+    .experience-clean-card {
+        padding: 2.5rem;
+        background: linear-gradient(135deg, rgba(88, 129, 87, 0.06) 0%, rgba(88, 129, 87, 0.02) 100%);
+        border: 1px solid rgba(88, 129, 87, 0.12);
+        border-radius: 16px;
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .experience-clean-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 3px;
+        background: var(--accent);
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.4s ease;
+    }
+
+    .experience-clean-card:hover {
+        background: linear-gradient(135deg, rgba(88, 129, 87, 0.1) 0%, rgba(88, 129, 87, 0.05) 100%);
+        border-color: var(--accent);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(88, 129, 87, 0.12);
+    }
+
+    .experience-clean-card:hover::before {
+        transform: scaleY(1);
+    }
+
+    .exp-dates-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .exp-date-badge {
+        display: inline-block;
+        padding: 0.4rem 0.8rem;
+        background: rgba(88, 129, 87, 0.08);
+        color: var(--text-secondary);
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+
+    .exp-date-badge.accent-badge {
+        background: rgba(88, 129, 87, 0.16);
+        color: var(--accent);
+        border: 1px solid rgba(88, 129, 87, 0.25);
+    }
+
+    .experience-clean-card h3 {
+        color: var(--text-primary);
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+
+    .exp-company {
+        color: var(--accent);
+        font-size: 0.95rem;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+    }
+
+    .experience-clean-card p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        animation: none;
+    }
+
+    .experience-cumul-note {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.5rem 2rem;
+        background: rgba(88, 129, 87, 0.04);
+        border: 1px solid rgba(88, 129, 87, 0.1);
+        border-radius: 12px;
+        animation: slideUp 0.8s ease 0.25s backwards;
+    }
+
+    .cumul-icon {
+        width: 24px;
+        height: 24px;
+        fill: none;
+        stroke: var(--accent);
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        flex-shrink: 0;
+    }
+
+    .experience-cumul-note p {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin: 0;
+        animation: none;
+    }
+    .experience-cumul-note strong {
+        color: var(--text-primary);
+    }
+</style>
+
+<script src="script.js"></script>
+
+</body>
+</html>

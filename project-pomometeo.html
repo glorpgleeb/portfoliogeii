@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube Pomodoro & Station Météo - Portfolio CA -</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">cardon alexis</a>
+        
+        <div class="nav-item">
+            <a href="projects.html">projets</a>
+            <div class="dropdown">
+                <div class="dropdown-title">Projets GEII (SAÉ)</div>
+                <a href="project-1.html">Projet SLR</a>
+                <a href="project-2.html">Projet TDB</a>
+                <a href="project-3.html">Projet KAH</a>
+                
+                <div class="dropdown-title">Projets paraGEII</div>
+                <a href="project-dutss.html">DU Santé</a>
+                
+                <div class="dropdown-title">Projets Perso</div>
+                <a href="project-ambilight.html">Projet Ambilight</a>
+                <a href="project-pomometeo.html">Cube & Station Météo</a>
+            </div>
+        </div>
+        
+        <a href="interests.html">centres d'intérêts</a>
+        <a href="skills.html">compétences</a>
+        <a href="contact.html">contact</a>
+    </div>
+</nav>
+
+    <main class="page">
+        <div class="container">
+            <!-- HEADER -->
+            <div style="margin-bottom: 4rem;">
+                <a href="projects.html" style="color: var(--accent); text-transform: lowercase; margin-bottom: 1rem;">← retour aux projets</a>
+                <h1>Cube Pomodoro & Station Météo</h1>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                    Conception d'un cube connecté autonome d'aide à la gestion du temps, station météo locale et horloge, basé sur une puce ESP32, un accéléromètre ADXL345 et un capteur de température DHT22.
+                </p>
+            </div>
+
+            <!-- IMAGE PRINCIPALE -->
+            <div style="width: 100%; aspect-ratio: 16/9; margin-bottom: 0.8rem; overflow: hidden; border-radius: 16px; border: 1px solid var(--border); background: var(--bg-secondary);">
+                <img src="images/project-pomometeo/pomometeo_cube.png" alt="Illustration conceptuelle du cube météo et pomodoro" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.8rem; margin-bottom: 4rem; text-align: center; font-style: italic;">Image conceptuelle générée par IA (l'illustration ne représente pas exactement le rendu final souhaité pour ce projet en cours de développement)</p>
+
+            <!-- CONTENU -->
+            <div class="grid-asymmetric" style="margin-bottom: 4rem;">
+                <div>
+                    <h2>Objectif du projet</h2>
+                    <p>
+                        J'ai lancé ce projet personnel avec plusieurs idées en tête pour le bureau de ma copine, qui utilise énormément la méthode Pomodoro pour réviser ses cours. Le cube lui servira à la fois de Pomodoro pour gérer ses sessions de révision, de station météo locale et d'horloge. Pour la météo, comme son logement ne dispose pas de routeur Wi-Fi connecté à internet, je ne peux pas récupérer les informations en ligne via l'API OpenWeatherMap. C'est pour cela que j'intègre un capteur physique de température et d'humidité DHT22 afin d'avoir des mesures locales réelles.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        Pour la partie commande, j'ai choisi d'intégrer un capteur accéléromètre ADXL345 pour que le cube puisse réagir au mouvement, et notamment à un simple tapotage sur le dessus du boîtier pour lancer ou couper le minuteur sans avoir besoin de bouton physique.
+                    </p>
+                </div>
+                <div style="
+                    padding: 2rem;
+                    background: var(--bg-secondary);
+                    border-radius: 16px;
+                    height: fit-content;
+                ">
+                    <h3 style="margin-bottom: 1rem;">Détails du projet</h3>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li><strong>durée :</strong> en cours (recherche & développement)</li>
+                        <li><strong>équipe :</strong> individuel</li>
+                        <li><strong>statut :</strong> en développement (boîtier au début, composants validés)</li>
+                        <li><strong>domaine :</strong> systèmes embarqués / IoT</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TECHNOLOGIES -->
+            <div style="margin-bottom: 4rem;">
+                <h2>Outils utilisés</h2>
+                <div style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                    margin-top: 1.5rem;
+                ">
+                    <span class="tag">ESP32 (Wemos D1 mini ou C3 mini)</span>
+                    <span class="tag">Accéléromètre ADXL345</span>
+                    <span class="tag">Capteur de température/humidité DHT22</span>
+                    <span class="tag">Écran OLED ou e-ink</span>
+                    <span class="tag">VS Code & PlatformIO</span>
+                    <span class="tag">Onshape & Impression 3D</span>
+                </div>
+            </div>
+
+            <!-- DÉVELOPPEMENT -->
+            <div style="margin-bottom: 4rem;">
+                <h2>Processus de développement</h2>
+                
+                <div style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 2rem;
+                    margin-top: 2rem;
+                ">
+                    <div>
+                        <div style="margin-bottom: 0;">
+                            <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 1 : Recherches & composants</h3>
+                            <p>
+                                J'ai fait toutes les recherches concernant les composants idéaux pour le projet. Pour le cerveau du cube, je pars sur une carte ESP32, comme un format Wemos D1 mini ou un ESP32-C3 mini. Pour l'affichage des informations, j'hésite encore entre un petit écran OLED classique ou un écran e-ink (papier électronique) pour son look épuré et sa très basse consommation.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div style="
+                        padding: 2.2rem;
+                        background: rgba(88, 129, 87, 0.04);
+                        border: 1px dashed var(--border);
+                        border-radius: 16px;
+                        height: fit-content;
+                    ">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Processus de développement toujours en cours</h3>
+                        <p style="font-size: 0.95rem; margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.6;">
+                            Le projet est en plein développement. Voici ma liste des tâches à accomplir pour finaliser le cube :
+                        </p>
+                        <ul style="list-style: none; padding-left: 0; line-height: 2.2;">
+                            <li style="display: flex; align-items: center; gap: 0.8rem; font-size: 0.95rem; color: var(--text-secondary);">
+                                <span style="color: var(--accent); font-weight: bold;">☐</span> Faire un prototype sur breadboard
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 0.8rem; font-size: 0.95rem; color: var(--text-secondary);">
+                                <span style="color: var(--accent); font-weight: bold;">☐</span> Écrire le code
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 0.8rem; font-size: 0.95rem; color: var(--text-secondary);">
+                                <span style="color: var(--accent); font-weight: bold;">☐</span> Mesurer les éléments pour modéliser en 3D sur Onshape
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 0.8rem; font-size: 0.95rem; color: var(--text-secondary);">
+                                <span style="color: var(--accent); font-weight: bold;">☐</span> Imprimer au fablab
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 0.8rem; font-size: 0.95rem; color: var(--text-secondary);">
+                                <span style="color: var(--accent); font-weight: bold;">☐</span> Finaliser le montage
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 0.8rem; font-size: 0.95rem; color: var(--text-secondary);">
+                                <span style="color: var(--accent); font-weight: bold;">☐</span> Le donner à ma copine
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RÉSULTATS -->
+            <div style="
+                padding: 3rem;
+                background: linear-gradient(135deg, var(--accent) 0%, #60a5fa 100%);
+                border-radius: 16px;
+                color: white;
+                margin-bottom: 4rem;
+            ">
+                <h2 style="color: white; margin-bottom: 1.5rem;">Résultats & apprentissages</h2>
+                <p style="color: rgba(255, 255, 255, 0.95); margin-bottom: 0;">
+                    Ce projet en est encore à ses débuts, mais la phase d'étude et de sélection des composants m'a permis de poser des bases solides. L'image de présentation en haut de page est d'ailleurs une illustration conceptuelle générée par IA pour poser une intention de design, car le rendu réel est encore en cours de création.
+                </p>
+            </div>
+
+            <!-- GALERIE -->
+            <div style="margin-bottom: 4rem;">
+                <h2>Galerie des composants</h2>
+                <div style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                    gap: 1.5rem;
+                    margin-top: 2rem;
+                ">
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1;">
+                            <img src="images/project-pomometeo/esp32_wemos_d1_mini.png" alt="Microcontrôleur ESP32 au format Wemos D1 Mini" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Microcontrôleur ESP32 (format Wemos D1 Mini), cerveau du cube connecté</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1;">
+                            <img src="images/project-pomometeo/dht22_sensor.png" alt="Capteur physique de température et d'humidité DHT22" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Capteur DHT22 pour mesurer la température et l'humidité locales en temps réel</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1;">
+                            <img src="images/project-pomometeo/adxl345_accelerometer.png" alt="Capteur accéléromètre 3 axes ADXL345" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Accéléromètre ADXL345 détectant les tapotements pour piloter le minuteur Pomodoro</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1;">
+                            <img src="images/project-pomometeo/oled_display.png" alt="Écran OLED ou e-ink miniature" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Écran miniature OLED / e-ink pour afficher l'heure, le minuteur et la météo</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2>Vous avez des questions ?</h2>
+                <p style="margin-bottom: 2rem;">N'hésitez pas à me contacter pour échanger sur la conception ou le code.</p>
+                <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
+                    <a href="contact.html" class="btn">Me contacter</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CARDON Alexis</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

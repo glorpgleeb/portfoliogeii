@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>centres d'intérêts - Portfolio CA -</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .interests-hero {
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease 0.1s backwards;
+        }
+
+        .interests-hero p {
+            animation: none;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            margin-top: 3rem;
+            animation: fadeInUp 0.8s ease 0.1s backwards;
+        }
+
+        /* CARTE CONTENEUR AVEC FLEXBOX RESPONSIVE */
+        .interest-card {
+            padding: 2.5rem;
+            background: rgba(88, 129, 87, 0.08);
+            border: 1px solid rgba(88, 129, 87, 0.15);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: fadeInUp 0.8s ease forwards;
+            position: relative;
+            overflow: hidden;
+            
+            /* Flexbox pour empiler sur mobile */
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .interest-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+            z-index: 2;
+        }
+
+        .interest-card:nth-child(1) { animation-delay: 0.1s; }
+        .interest-card:nth-child(2) { animation-delay: 0.15s; }
+        .interest-card:nth-child(3) { animation-delay: 0.2s; }
+        .interest-card:nth-child(4) { animation-delay: 0.25s; }
+        .interest-card:nth-child(5) { animation-delay: 0.3s; }
+        .interest-card:nth-child(6) { animation-delay: 0.35s; }
+
+        .interest-card:hover {
+            background: rgba(88, 129, 87, 0.12);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(88, 129, 87, 0.15);
+            border-color: var(--accent);
+        }
+
+        .interest-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* ZONE TEXTE */
+        .interest-text {
+            flex: 1;
+        }
+
+        .interest-title-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .interest-title-container h3 {
+            margin-bottom: 0;
+            font-size: 1.3rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .interest-icon {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: var(--accent);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        .interest-card p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            animation: none;
+        }
+
+        /* STYLE DES IMAGES ET WRAPPER (Mobile first) */
+        .interest-img-wrapper {
+            width: 100%;
+            height: 200px;
+            border-radius: 16px; /* Même arrondi que le conteneur */
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .interest-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Évite la déformation de l'image */
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        /* Effet zoom premium sur l'image au survol de la carte */
+        .interest-card:hover .interest-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        /* CONFIGURATION ORDINATEUR (Desktop) */
+        @media (min-width: 768px) {
+            .interest-card {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            /* Alternance asymétrique pour un rendu visuel dynamique et premium */
+            .interest-card:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+            .interest-img-wrapper {
+                width: 280px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION (SANS "À PROPOS") -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">cardon alexis</a>
+        
+        <div class="nav-item">
+            <a href="projects.html">projets</a>
+            <div class="dropdown">
+                <div class="dropdown-title">Projets GEII (SAÉ)</div>
+                <a href="project-1.html">Projet SLR</a>
+                <a href="project-2.html">Projet TDB</a>
+                <a href="project-3.html">Projet KAH</a>
+                
+                <div class="dropdown-title">Projets paraGEII</div>
+                <a href="project-dutss.html">DU Santé</a>
+                
+                <div class="dropdown-title">Projets Perso</div>
+                <a href="project-ambilight.html">Projet Ambilight</a>
+                <a href="project-pomometeo.html">Cube & Station Météo</a>
+            </div>
+        </div>
+        
+        <a href="interests.html">centres d'intérêts</a>
+        <a href="skills.html">compétences</a>
+        <a href="contact.html">contact</a>
+    </div>
+</nav>
+
+<main class="page">
+    <div class="container-small">
+        <div class="interests-hero">
+            <h1>Centres d'intérêts</h1>
+            <p style="font-size: 1.1rem; color: var(--text-secondary);">découvrez les domaines qui me passionnent et qui guident mon parcours technologique.</p>
+        </div>
+        
+        <div class="interests-grid">
+            <!-- INTÉRÊT 1 -->
+            <div class="interest-card">
+                <div class="interest-img-wrapper">
+                    <img src="images/projets_techno.jpg" alt="Informatique et systèmes embarqués">
+                </div>
+                <div class="interest-text">
+                    <div class="interest-title-container">
+                        <svg class="interest-icon" viewBox="0 0 24 24">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="2" y1="20" x2="22" y2="20"></line>
+                            <line x1="12" y1="17" x2="12" y2="20"></line>
+                        </svg>
+                        <h3>Informatique & Embarqué</h3>
+                    </div>
+                    <p>
+                        Au-delà des cours, j'adore apprendre par moi-même tout ce qui touche à l'informatique et aux systèmes embarqués. En ce moment, je suis en train d'apprendre le Python. J'aime expérimenter et j'ai plusieurs projets personnels en cours, comme un petit cube connecté qui fait office de Pomodoro et de station météo. D'une manière générale, je suis très curieux et je m'intéresse à énormément de choses, ce qui me pousse toujours à tester de nouvelles idées.
+                    </p>
+                </div>
+            </div>
+
+            <!-- INTÉRÊT 2 -->
+            <div class="interest-card">
+                <div class="interest-img-wrapper">
+                    <img src="images/jeux_videos.jpg" alt="Jeux vidéo">
+                </div>
+                <div class="interest-text">
+                    <div class="interest-title-container">
+                        <svg class="interest-icon" viewBox="0 0 24 24">
+                            <line x1="6" y1="12" x2="10" y2="12"></line>
+                            <line x1="8" y1="10" x2="8" y2="14"></line>
+                            <line x1="15" y1="13" x2="15.01" y2="13"></line>
+                            <line x1="18" y1="11" x2="18.01" y2="11"></line>
+                            <rect x="2" y="6" width="20" height="12" rx="3"></rect>
+                        </svg>
+                        <h3>Jeux vidéo</h3>
+                    </div>
+                    <p>
+                        Je joue principalement sur PC, que ce soit à des jeux compétitifs, des jeux solo ou des party games avec pas mal de profondeur. Pour les jeux compétitifs comme Rocket League, j'adore la compétition, me mesurer aux autres et chercher constamment à m'améliorer pour aller toujours plus loin. Côté solo, je me tourne plutôt vers des jeux difficiles ou qui font réfléchir, avec des expériences marquantes comme Outer Wilds, Celeste, Subnautica ou de nombreux Souls-like.
+                    </p>
+                </div>
+            </div>
+
+            <!-- INTÉRÊT 3 -->
+            <div class="interest-card">
+                <div class="interest-img-wrapper">
+                    <img src="images/sports.jpg" alt="Sports de raquette et vélo">
+                </div>
+                <div class="interest-text">
+                    <div class="interest-title-container">
+                        <svg class="interest-icon" viewBox="0 0 24 24">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                        <h3>Sports</h3>
+                    </div>
+                    <p>
+                        Après avoir fait un an de tennis en club à Parentis-en-Born, je pratique aujourd'hui le sport en loisir. J'aime particulièrement le tennis pour sa complexité et la satisfaction de la balle qui vient taper proprement la raquette. Je joue aussi au badminton pour la vitesse du volant et l'intensité des échanges. Enfin, je fais du vélo de route, ce qui est une activité très méditative pour moi, parfaite pour réfléchir et déconnecter tout en faisant du sport.
+                    </p>
+                </div>
+            </div>
+
+            <!-- INTÉRÊT 4 -->
+            <div class="interest-card">
+                <div class="interest-img-wrapper">
+                    <img src="images/lecture.jpg" alt="Lecture et introspection">
+                </div>
+                <div class="interest-text">
+                    <div class="interest-title-container">
+                        <svg class="interest-icon" viewBox="0 0 24 24">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        <h3>Lecture</h3>
+                    </div>
+                    <p>
+                        Je lis un peu de tout, de la lecture de journaux d'actualité jusqu'à des textes de Kafka ou des œuvres plus douces comme Le peintre du dimanche. Cela m'apporte beaucoup d'introspection, me donne des sujets sur lesquels réfléchir en profondeur, des émotions à explorer et de la matière pour nourrir mes pensées au quotidien.
+                    </p>
+                </div>
+            </div>
+
+            <!-- INTÉRÊT 5 -->
+            <div class="interest-card">
+                <div class="interest-img-wrapper">
+                    <img src="images/cuisine.jpg" alt="Cuisine et partage">
+                </div>
+                <div class="interest-text">
+                    <div class="interest-title-container">
+                        <svg class="interest-icon" viewBox="0 0 24 24">
+                            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                            <line x1="6" y1="2" x2="6" y2="4"></line>
+                            <line x1="10" y1="2" x2="10" y2="4"></line>
+                            <line x1="14" y1="2" x2="14" y2="4"></line>
+                        </svg>
+                        <h3>Cuisine</h3>
+                    </div>
+                    <p>
+                        Je ne suis pas très pâtisserie, mais j'aime cuisiner de tout, avec une préférence pour la cuisine asiatique. J'aime être rigoureux en cuisine, toujours dans l'objectif de perfectionner mes compétences et mes gestes. Pour moi, cuisiner est une façon de montrer mon affection en préparant de bons petits plats pour mes proches. C'est aussi un moment de concentration totale : quand il faut gérer deux cuissons en même temps, impossible de penser à autre chose, ce qui en fait un excellent moyen de vider mon esprit.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 CARDON Alexis</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet SAE Son Lumière Rafale - Portfolio CA -</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">cardon alexis</a>
+        
+        <div class="nav-item">
+            <a href="projects.html">projets</a>
+            <div class="dropdown">
+                <div class="dropdown-title">Projets GEII (SAÉ)</div>
+                <a href="project-1.html">Projet SLR</a>
+                <a href="project-2.html">Projet TDB</a>
+                <a href="project-3.html">Projet KAH</a>
+                
+                <div class="dropdown-title">Projets paraGEII</div>
+                <a href="project-dutss.html">DU Santé</a>
+                
+                <div class="dropdown-title">Projets Perso</div>
+                <a href="project-ambilight.html">Projet Ambilight</a>
+                <a href="project-pomometeo.html">Cube & Station Météo</a>
+            </div>
+        </div>
+        
+        <a href="interests.html">centres d'intérêts</a>
+        <a href="skills.html">compétences</a>
+        <a href="contact.html">contact</a>
+    </div>
+</nav>
+
+    <main class="page">
+        <div class="container">
+            <!-- HEADER -->
+            <div style="margin-bottom: 4rem;">
+                <a href="projects.html" style="color: var(--accent); text-transform: lowercase; margin-bottom: 1rem;">← retour aux projets</a>
+                <h1>Projet Son Lumière Rafale</h1>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                    Premier projet de Première année au sein du département GEII de l'IUT de Bordeaux qui se place comme une introduction au travail en équipe ainsi qu'aux fondamentaux de la conception, fabrication et vérification d'une carte électronique.
+                </p>
+            </div>
+
+            <!-- IMAGE PRINCIPALE -->
+            <div style="width: 100%; aspect-ratio: 16/9; margin-bottom: 0.8rem; overflow: hidden; border-radius: 16px; border: 1px solid var(--border); background: #FFFDF9;">
+                <img src="images/project-1/slr.jpg" alt="Maquette du Rafale miniature" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 80%;">
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.8rem; margin-bottom: 4rem; text-align: center; font-style: italic;">Maquette en carton du Rafale miniature intégrant la carte électronique de contrôle</p>
+
+            <!-- CONTENU -->
+            <div class="grid-asymmetric" style="margin-bottom: 4rem;">
+                <div>
+                    <h2>Objectif du projet</h2>
+                    <p>
+                      L'objectif de ce premier projet est de créer notre toute première carte électronique dans le but de gérer l'allumage des leds et le retentissement du buzzer d'un rafale miniature. 
+                    </p>
+                    <p style="margin-top: 1rem;">
+                      Dans cet objectif là, nous avons réalisé ce projet à deux chacun s'occupant d'une partie ou travaillant ensemble en fonction de la situation. Le projet consiste en la réalisation d'une solution technique répondant au besoin d'un client tout en répondant à un cahier des charges précis. L'équipe s'occupant de la réalisation du projet doit fournir des documents tels que le Dossier de Conception Détaillée ou le Dossier de Vérification, mais aussi passer des entretiens oraux qui attestent de la bonne avancée du projet en équipe et dans une démarche précise. 
+                    </p>
+                </div>
+                <div style="
+                    padding: 2rem;
+                    background: var(--bg-secondary);
+                    border-radius: 16px;
+                    height: fit-content;
+                ">
+                    <h3 style="margin-bottom: 1rem;">Détails du projet</h3>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li><strong>durée :</strong> 18 heures en 7 semaine</li>
+                        <li><strong>équipe :</strong> 2 personnes</li>
+                        <li><strong>statut :</strong> terminé</li>
+                        <li><strong>domaine :</strong> électronique </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TECHNOLOGIES -->
+            <div style="margin-bottom: 4rem;">
+                <h2>Outils utilisés</h2>
+                <div style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                    margin-top: 1.5rem;
+                ">
+                    <span class="tag">Proteus ISIS & ARES</span>
+                    <span class="tag">Insoleuse & graveuse</span>
+                    <span class="tag">Fer à souder</span>
+                    <span class="tag">Oscilloscope & multimètre</span>
+                    <span class="tag">Google Docs</span>
+                </div>
+            </div>
+
+            <!-- DÉVELOPPEMENT -->
+            <div style="margin-bottom: 4rem;">
+                <h2>Processus de développement</h2>
+                
+                <div style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 2rem;
+                ">
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 1 : Conception</h3>
+                        <p>
+                            Le premier objectif a été de concevoir l'architecture de la carte lumière répondant aux exigences de Toy Corporation. Nous avons dimensionné les composants de notre circuit astable autour d'un timer NE555 pour piloter le clignotement de la LED jaune (période de 1,9 s et impulsion de 0,1 s). Nous avons calculé les valeurs des résistances (comme R1 à 1,5 kΩ et R2 à 27 kΩ) et des condensateurs pour fixer précisément ces temps, ainsi que les résistances de protection (R4, R5, R6) pour calibrer l'intensité des LEDs rouge, jaune et verte à 500 mCd. Cette étude théorique a donné lieu à notre Dossier de Conception (DDC).
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 2 : Outils informatiques</h3>
+                        <p>
+                            Nous avons ensuite saisi notre schéma sur Proteus ISIS (fichier SCHEMA_ELEC_LUMIERE_EQ05.DSN) pour y câbler le NE555, les connecteurs HE14 et les composants passifs. L'étape cruciale a été le routage du PCB double face sur ARES (câblage en couches TOP et BOTTOM). Pour s'adapter à l'espace restreint du modèle réduit de Rafale, nous avons placé la majorité des composants sur la face TOP et les connecteurs d'alimentation et des LEDs (J1, J2, LEDJ...) sur la face BOTTOM. Nous avons ensuite généré les typons à l'échelle 1 et les schémas d'implantation pour le Dossier de Fabrication (DDF).
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 3 : Fabrication</h3>
+                        <p>
+                            La fabrication physique de notre circuit double face a été réalisée dans les ateliers de l'IUT. Nous avons procédé à l'insolation et la gravure chimique du cuivre, puis au perçage des pastilles (de 0,8 mm à 1,5 mm pour les connecteurs) à la perceuse à colonne. Nous avons ensuite soudé nos composants traversants (THD), en faisant particulièrement attention aux connecteurs soudés côté TOP. Enfin, nous avons inspecté la carte à la binoculaire et testé la continuité des pistes à l'ohmmètre pour exclure tout court-circuit avant la mise sous tension.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 4 : Validation</h3>
+                        <p>
+                            Pour finir, la dernière phase consiste à tester et valider notre carte en réalisant les essais décrits dans le Dossier de Vérification (DDV). À l'aide d'un banc de test, d'une alimentation de table et d'un oscilloscope, nous avons mesuré les signaux de notre carte. Nous avons notamment vérifié le clignotement de la LED jaune géré par le NE555 pour s'assurer que la période de 1,9s et le temps actif de 0,1s étaient conformes aux exigences du CDC. Après avoir validé toutes les mesures de tension et d'intensité lumineuse des différentes LEDs, nous avons pu remplir la matrice de conformité prouvant au client Toy Corporation que notre produit répondait à toutes ses attentes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RÉSULTATS -->
+            <div style="
+                padding: 3rem;
+                background: linear-gradient(135deg, var(--accent) 0%, #60a5fa 100%);
+                border-radius: 16px;
+                color: white;
+                margin-bottom: 4rem;
+            ">
+                <h2 style="color: white; margin-bottom: 1.5rem;">Résultats & apprentissages</h2>
+                <p style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">
+                    Ce premier projet s'est conclu avec succès : notre carte lumière était pleinement opérationnelle et répondait à toutes les exigences du cahier des charges de Toy Corporation. La fabrication de la carte a été une vraie concrétisation du travail fourni et cela m'a fait grandement plaisir de voir fonctionner un circuit que nous avions nous-mêmes conçu (de façon guidée certes). J'ai particulièrement apprécié la phase de rédaction des dossiers techniques (DDC et DDF), bien que la phase de dimensionnement et de calcul des composants ait été plus ardue en raison de mes difficultés initiales en mathématiques.
+                </p>
+                <p style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">
+                    Sur le plan technique, j'ai acquis de nombreuses compétences pratiques : la modélisation sous ISIS, le routage double face sous ARES, le maniement des machines de gravure et d'insolation, ainsi que la soudure THD. Ce projet m'a aussi appris l'importance d'aller à un rythme mesuré : en voulant aller trop vite lors de l'assemblage, j'ai soudé le support à 8 broches du NE555 à l'envers. Grâce à la vigilance de mon binôme, nous avons repéré l'erreur et j'ai appris sur le tas à dessouder proprement le composant. Cette gaffe s'est avérée extrêmement formatrice et nous en avons ri, tout en comprenant la nécessité d'une double vérification visuelle.
+                </p>
+                <p style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">
+                    En termes de collaboration, le travail en binôme s'est déroulé de façon idéale et sans aucun dysfonctionnement. Nous avons fonctionné de manière très équilibrée en réalisant toutes les tâches à deux, sans rapport de force ou hiérarchie. L'organisation rigoureuse de nos fichiers et l'écoute des idées de chacun ont été indispensables pour mener à bien ce premier jalon de notre formation en BUT GEII.
+                </p>
+            </div>
+
+            <!-- GALERIE (optionnel) -->
+            <div style="margin-bottom: 4rem;">
+                <h2>Galerie du projet</h2>
+                <div style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 1.5rem;
+                    margin-top: 2rem;
+                ">
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1; padding: 10px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/project-1/schema_electrique.bmp" alt="Schéma électrique de la carte" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Schéma de saisie sous Proteus ISIS (NE555 & Leds)</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1; padding: 10px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/project-1/implantation_dessus.bmp" alt="Implantation des composants (Dessus)" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Schéma d'implantation des composants (Face supérieure - TOP)</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1; padding: 10px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/project-1/implantation_dessous.bmp" alt="Implantation des connecteurs (Dessous)" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Schéma d'implantation des connecteurs (Face inférieure - BOTTOM)</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1; padding: 10px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/project-1/typon_dessus.bmp" alt="Typon face supérieure" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Tracé des pistes de la couche supérieure (TOP)</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1; padding: 10px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/project-1/typon_dessous.bmp" alt="Typon face inférieure" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Tracé des pistes de la couche inférieure (BOTTOM)</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1; padding: 10px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/project-1/plan_percage.bmp" alt="Plan de perçage de la carte" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Plan de perçage mécanique des trous et vias</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2>Vous avez des questions ?</h2>
+                <p style="margin-bottom: 2rem;">N'hésitez pas à me contacter pour discuter davantage de ce projet ou pour voir une démo.</p>
+                <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
+                    <a href="contact.html" class="btn">Me contacter</a>
+                    <a href="https://drive.google.com/drive/folders/1eCZfG7218AS1l2dDauCd-RSULSB_Gg1N?usp=drive_link" class="btn" style="background: var(--accent); color: white;" target="_blank" rel="noopener noreferrer">Accéder aux documents</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 votre portfolio</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

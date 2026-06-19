@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Ambilight - Immersion Visuelle - Portfolio CA -</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">cardon alexis</a>
+        
+        <div class="nav-item">
+            <a href="projects.html">projets</a>
+            <div class="dropdown">
+                <div class="dropdown-title">Projets GEII (SAÉ)</div>
+                <a href="project-1.html">Projet SLR</a>
+                <a href="project-2.html">Projet TDB</a>
+                <a href="project-3.html">Projet KAH</a>
+                
+                <div class="dropdown-title">Projets paraGEII</div>
+                <a href="project-dutss.html">DU Santé</a>
+                
+                <div class="dropdown-title">Projets Perso</div>
+                <a href="project-ambilight.html">Projet Ambilight</a>
+                <a href="project-pomometeo.html">Cube & Station Météo</a>
+            </div>
+        </div>
+        
+        <a href="interests.html">centres d'intérêts</a>
+        <a href="skills.html">compétences</a>
+        <a href="contact.html">contact</a>
+    </div>
+</nav>
+
+    <main class="page">
+        <div class="container">
+            <!-- HEADER -->
+            <div style="margin-bottom: 4rem;">
+                <a href="projects.html" style="color: var(--accent); text-transform: lowercase; margin-bottom: 1rem;">← retour aux projets</a>
+                <h1>Projet Ambilight</h1>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                    Conception et fabrication d'un système de rétroéclairage LED synchronisé dynamiquement avec le flux vidéo de l'écran de mon petit frère pour améliorer son immersion lorsqu'il joue sur PC.
+                </p>
+            </div>
+
+            <!-- IMAGE PRINCIPALE -->
+            <div style="width: 100%; aspect-ratio: 16/9; margin-bottom: 0.8rem; overflow: hidden; border-radius: 16px; border: 1px solid var(--border); background: var(--bg-secondary);">
+                <img src="images/project-ambilight/ambilight_monitor.png" alt="Rendu de l'effet d'immersion visuelle Ambilight sur écran" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.8rem; margin-bottom: 4rem; text-align: center; font-style: italic;">Système Ambilight actif projetant les couleurs du jeu sur le mur arrière via connexion Wi-Fi</p>
+
+            <!-- CONTENU -->
+            <div class="grid-asymmetric" style="margin-bottom: 4rem;">
+                <div>
+                    <h2>Objectif du projet</h2>
+                    <p>
+                        J'ai réalisé ce projet de façon autonome sur mon temps libre. L'objectif était de fabriquer un système de rétroéclairage dynamique (Ambilight) pour le moniteur de mon petit frère afin de lui donner une meilleure immersion lorsqu'il joue à ses jeux vidéo sur PC, tout en fatiguant moins ses yeux quand il joue dans le noir.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        Le système s'articule en deux parties principales : d'un côté, le logiciel Hyperion installé sur le PC qui analyse l'écran en temps réel pour en extraire les couleurs dominantes, et de l'autre, un petit microcontrôleur Wemos D1 Mini (ESP8266) sous firmware WLED qui reçoit ces données en Wi-Fi et pilote un ruban de LEDs WS2812B collé au dos de son écran.
+                    </p>
+                </div>
+                <div style="
+                    padding: 2rem;
+                    background: var(--bg-secondary);
+                    border-radius: 16px;
+                    height: fit-content;
+                ">
+                    <h3 style="margin-bottom: 1rem;">Détails du projet</h3>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li><strong>durée :</strong> libre (projet personnel)</li>
+                        <li><strong>équipe :</strong> individuel</li>
+                        <li><strong>statut :</strong> terminé</li>
+                        <li><strong>domaine :</strong> domotique / IoT</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TECHNOLOGIES -->
+            <div style="margin-bottom: 4rem;">
+                <h2>Outils utilisés</h2>
+                <div style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                    margin-top: 1.5rem;
+                ">
+                    <span class="tag">Wemos D1 Mini (ESP8266)</span>
+                    <span class="tag">Ruban LED WS2812B (adressables)</span>
+                    <span class="tag">Firmware WLED</span>
+                    <span class="tag">Logiciel Hyperion (PC)</span>
+                    <span class="tag">Liaison Wi-Fi</span>
+                    <span class="tag">Soudure à l'étain</span>
+                </div>
+            </div>
+
+            <!-- DÉVELOPPEMENT -->
+            <div style="margin-bottom: 4rem;">
+                <h2>Processus de développement</h2>
+                
+                <div style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 2rem;
+                    margin-top: 2rem;
+                ">
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 1 : Choix du matériel</h3>
+                        <p>
+                            J'ai choisi d'utiliser un microcontrôleur Wemos D1 Mini avec connexion Wi-Fi intégrée et un ruban LED WS2812B. Pour simplifier l'alimentation électrique, le système est alimenté directement en 5V via le port micro-USB de la carte Wemos connectée à un adaptateur secteur, ce qui est suffisant pour le nombre de LEDs utilisées sur son écran.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 2 : Flashage & configuration</h3>
+                        <p>
+                            J'ai relié la carte Wemos à mon PC pour flasher le firmware open-source WLED à l'aide d'un installateur web tout simple. Une fois connectée au réseau Wi-Fi local, j'ai configuré les paramètres dans l'interface de WLED : j'ai renseigné le modèle de ruban LED (WS2812B), la broche de données (broche GPIO2 / D4) et le nombre précis de LEDs collées sur l'écran.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 3 : Montage & soudures</h3>
+                        <p>
+                            J'ai mesuré et découpé le ruban LED pour couvrir le dos de l'écran. Dans chaque angle, j'ai soudé à la main de petits fils souples pour assurer la continuité des liaisons (5V, Ground et Data). C'est la partie qui demandait le plus de patience, mais l'expérience de soudure acquise lors de mes projets à l'IUT m'a beaucoup aidé.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 4 : Configuration logicielle</h3>
+                        <p>
+                            Sur le PC de mon frère, j'ai installé le logiciel Hyperion pour analyser l'image. J'ai configuré la disposition des LEDs autour de l'écran et lié le logiciel à l'adresse IP de la carte Wemos. Les données de couleurs sont transmises en Wi-Fi de manière instantanée, offrant un effet réactif et fluide en jeu.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RÉSULTATS -->
+            <div style="
+                padding: 3rem;
+                background: linear-gradient(135deg, var(--accent) 0%, #60a5fa 100%);
+                border-radius: 16px;
+                color: white;
+                margin-bottom: 4rem;
+            ">
+                <h2 style="color: white; margin-bottom: 1.5rem;">Résultats & apprentissages</h2>
+                <p style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">
+                    Ce projet a été une vraie réussite et mon petit frère a adoré le rendu visuel lorsqu'il joue ! C'était très gratifiant de fabriquer un objet fonctionnel de A à Z.
+                </p>
+                <p style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">
+                    Sur le plan technique, ce projet m'a permis de me familiariser avec les microcontrôleurs Wi-Fi de la famille ESP, de comprendre le fonctionnement de firmwares IoT comme WLED, et d'optimiser une liaison réseau locale en Wi-Fi pour limiter la latence. J'ai aussi pu perfectionner ma technique de soudure fine sur des pastilles de ruban LED très rapprochées.
+                </p>
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2>Vous avez des questions ?</h2>
+                <p style="margin-bottom: 2rem;">N'hésitez pas à me contacter pour en savoir plus sur les étapes de réalisation.</p>
+                <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
+                    <a href="contact.html" class="btn">Me contacter</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CARDON Alexis</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

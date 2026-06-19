@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projet TDB - Portfolio CA -</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">cardon alexis</a>
+        
+        <div class="nav-item">
+            <a href="projects.html">projets</a>
+            <div class="dropdown">
+                <div class="dropdown-title">Projets GEII (SAÉ)</div>
+                <a href="project-1.html">Projet SLR</a>
+                <a href="project-2.html">Projet TDB</a>
+                <a href="project-3.html">Projet KAH</a>
+                
+                <div class="dropdown-title">Projets paraGEII</div>
+                <a href="project-dutss.html">DU Santé</a>
+                
+                <div class="dropdown-title">Projets Perso</div>
+                <a href="project-ambilight.html">Projet Ambilight</a>
+                <a href="project-pomometeo.html">Cube & Station Météo</a>
+            </div>
+        </div>
+        
+        <a href="interests.html">centres d'intérêts</a>
+        <a href="skills.html">compétences</a>
+        <a href="contact.html">contact</a>
+    </div>
+</nav>
+
+    <main class="page">
+        <div class="container">
+            <!-- HEADER -->
+            <div style="margin-bottom: 4rem;">
+                <a href="projects.html" style="color: var(--accent); text-transform: lowercase; margin-bottom: 1rem;">← retour aux projets</a>
+                <h1>Projet Thermomètre de Bain</h1>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                    Conception et fabrication d'un thermomètre de bain électronique pour bébé avec alertes de température lumineuses.
+                </p>
+            </div>
+
+            <!-- IMAGE PRINCIPALE -->
+            <div style="width: 100%; aspect-ratio: 16/9; margin-bottom: 0.8rem; overflow: hidden; border-radius: 16px; border: 1px solid var(--border); background: var(--bg-secondary);">
+                <img src="images/project-2/IMG_0540.jpg" alt="Thermomètre de bain électronique finalisé" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.8rem; margin-bottom: 4rem; text-align: center; font-style: italic;">Carte électronique du thermomètre de bain finalisée, soudée et fonctionnelle</p>
+
+            <!-- CONTENU -->
+            <div class="grid-asymmetric" style="margin-bottom: 4rem;">
+                <div>
+                    <h2>Objectif du projet</h2>
+                    <p>
+                        L'objectif de ce projet est de réaliser une carte électronique autonome capable de mesurer la température de l'eau à l'aide d'un capteur analogique et d'indiquer de façon visuelle si l'eau est trop froide (température &lt; 36°C), à la bonne température (entre 36°C et 39°C) ou trop chaude (&gt; 39°C).
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        Conçu pour assurer le confort et la sécurité des nourrissons lors du bain, ce projet en groupe de 4 personnes (réparti en 2 binômes) a nécessité la mise en œuvre d'une démarche d'ingénierie rigoureuse. De la traduction des exigences du cahier des charges aux tests finaux sur banc d'essais, nous avons élaboré le Dossier de Conception (DDC) et le Dossier de Validation (DDV) pour attester de la conformité du produit.
+                    </p>
+                </div>
+                <div style="
+                    padding: 2rem;
+                    background: var(--bg-secondary);
+                    border-radius: 16px;
+                    height: fit-content;
+                ">
+                    <h3 style="margin-bottom: 1rem;">Détails du projet</h3>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li><strong>Durée :</strong> 24 heures en 8 semaines</li>
+                        <li><strong>Équipe :</strong> 4 personnes (2 binômes)</li>
+                        <li><strong>Statut :</strong> Terminé</li>
+                        <li><strong>Domaine :</strong> Électronique & CAO</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TECHNOLOGIES -->
+            <div style="margin-bottom: 4rem;">
+                <h2>Outils utilisés</h2>
+                <div style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                    margin-top: 1.5rem;
+                ">
+                    <span class="tag">Proteus ISIS & ARES</span>
+                    <span class="tag">Électronique analogique</span>
+                    <span class="tag">Régulation & AOP</span>
+                    <span class="tag">Soudure THD</span>
+                    <span class="tag">Dossier technique DDF/DDV</span>
+                </div>
+            </div>
+
+            <!-- DÉVELOPPEMENT -->
+            <div style="margin-bottom: 4rem;">
+                <h2>Processus de développement</h2>
+                
+                <div style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 2rem;
+                    margin-top: 2rem;
+                ">
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 1 : Conception</h3>
+                        <p>
+                            L'objectif de ce second projet était de créer une carte électronique capable d'allumer une LED bleue, verte ou rouge selon la température de l'eau. Dans cet objectif là, nous avons séparé les tâches en fonction des blocs synoptiques du projet. Pour la partie électronique, nous avons choisi d'utiliser un capteur LM35DZ (qui fournit une tension de 10 mV/°C) et de comparer sa tension à nos seuils de +36°C (360 mV) et +39°C (390 mV) à l'aide de deux AOP du composant MCP6002 montés en comparateurs.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 2 : CAO (Proteus)</h3>
+                        <p>
+                            Pour la CAO, nous avons dessiné notre schéma électrique sous ISIS et simulé son comportement. Ensuite, l'étape la plus complexe a été de réaliser le routage du PCB double face sur le logiciel ARES. Il fallait faire attention à ce que les connecteurs et les LEDs soient bien placés par rapport au boîtier physique du thermomètre. Après avoir validé le layout, nous avons rédigé le Dossier de Fabrication (DDF) avec les typons à l'échelle 1 et les schémas d'implantation.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 3 : Fabrication</h3>
+                        <p>
+                            Pour fabriquer le prototype, nous avons utilisé l'insoleuse et la graveuse chimique de l'IUT pour faire notre circuit imprimé double face. C'est lors de la soudure des composants traversants (THD) que nous avons commis notre seule gaffe : nous avons soudé 3 résistances aux mauvais emplacements à cause d'une mauvaise lecture de leurs bandes de couleurs. Nous avons pu régler cela sur le tas en dessoudant les composants grâce aux compétences acquises sur le projet SLR précédent.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 4 : Validation</h3>
+                        <p>
+                            Pour la validation, nous avons branché notre carte sur un banc de test avec une alimentation de table et un générateur de tension simulant le capteur LM35. Nous avons mesuré les tensions de basculement au voltmètre pour vérifier que les leds bleue, verte et rouge changeaient d'état exactement aux seuils attendus de 360 mV et 390 mV. Tous les tests se sont révélés conformes à ce qui était demandé par le cahier des charges, ce qui nous a permis de valider notre Dossier de Vérification (DDV).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RÉSULTATS -->
+            <div style="
+                padding: 3rem;
+                background: linear-gradient(135deg, var(--accent) 0%, #60a5fa 100%);
+                border-radius: 16px;
+                color: white;
+                margin-bottom: 4rem;
+            ">
+                <h2 style="color: white; margin-bottom: 1.5rem;">Résultats & apprentissages</h2>
+                <p style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">
+                    Ce projet de thermomètre de bain a été une vraie réussite : notre carte électronique était entièrement fonctionnelle et répondait aux exigences de sécurité du cahier des charges. J'ai beaucoup aimé le fait que le projet prenne une plus grosse ampleur. Ce n'est qu'un thermomètre de bain je l'entends, mais c'est un projet bien plus conséquent que l'introduction qu'a été pour nous le projet SLR. Pouvoir m'améliorer dans diverses compétences comme la soudure et la conception CAO m'a beaucoup motivé, et cela fait vraiment plaisir de voir fonctionner une carte que l'on a conçue soi-même.
+                </p>
+                <p style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">
+                    Le travail en équipe a été un peu spécial lors de ce projet : nous l'avons commencé à 4, mais après les premières heures, deux de nos membres ont dû nous abandonner à cause de problèmes de santé. Nous nous sommes donc retrouvés à seulement 2 pour gérer tout le développement et la fabrication. Niveau humain, il y avait un membre du groupe que j'avais personnellement un peu de mal à supporter au début, mais cela n'a en rien nui à la réalisation de notre projet. De plus, j'ai trouvé la partie de rédaction des dossiers de conception (DDC) et de vérification (DDV) un peu moins digeste et beaucoup plus présente que sur le projet précédent, mais je n'ai tout de même aucun problème avec cela car j'ai pleinement conscience que cette rigueur documentaire me suivra tout au long de ma formation et même plus tard dans mon métier.
+                </p>
+                <p style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">
+                    Sur le plan technique, nous avons appris à surmonter des erreurs pratiques en direct. Lors du soudage, nous nous sommes trompés sur la valeur de 3 résistances en identifiant mal les bandes de couleurs. Heureusement, nous avons pu corriger cet incident rapidement en mettant en œuvre les compétences de dessoudage que j'avais acquises sur le tas lors de ma gaffe sur le support du NE555 du projet précédent. Cela montre qu'une erreur peut s'avérer utile par la suite et qu'une bonne organisation dans le groupe est indispensable pour avancer dans de bonnes conditions.
+                </p>
+            </div>
+
+            <!-- GALERIE (optionnel) -->
+            <div style="margin-bottom: 4rem;">
+                <h2>Galerie du projet</h2>
+                <div style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 1.5rem;
+                    margin-top: 2rem;
+                ">
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1; display: flex; align-items: center; justify-content: center;">
+                            <video src="images/project-2/IMG_0436.mp4" controls style="max-width: 100%; max-height: 100%; border-radius: 12px;" muted loop></video>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Démo vidéo du fonctionnement et du basculement des leds</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1; padding: 10px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/project-2/IMG_0390.jpg" alt="Carte électronique TDB dans l'étuve d'essai" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Carte électronique TDB dans l'étuve d'essai</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1; padding: 10px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/project-2/implantation_dessus.bmp" alt="Plan d'implantation ARES" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Plan d'implantation des composants (Face supérieure - TOP)</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1; padding: 10px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/project-2/typon_dessus.bmp" alt="Typon face supérieure" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Tracé des pistes de la couche supérieure (TOP)</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1; padding: 10px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/project-2/plan_percage.bmp" alt="Plan de perçage mécanique" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Plan de perçage de la carte double face</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2>Vous avez des questions ?</h2>
+                <p style="margin-bottom: 2rem;">N'hésitez pas à me contacter pour discuter davantage de ce projet ou pour voir une démo.</p>
+                <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
+                    <a href="contact.html" class="btn">Me contacter</a>
+                    <a href="https://drive.google.com/drive/folders/1QNl91NKvSRQTEqZiCj7mcyKm3r1Jvv7d?usp=sharing" class="btn" style="background: var(--accent); color: white;" target="_blank" rel="noopener noreferrer">Accéder aux documents</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 votre portfolio</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

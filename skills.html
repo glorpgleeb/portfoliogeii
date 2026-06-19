@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>compétences - Portfolio CA -</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* HERO SECTION */
+        .skills-hero {
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease 0.1s backwards;
+        }
+
+        .skills-hero p {
+            animation: none;
+        }
+
+        /* SECTION CONTAINER */
+        .section-skills {
+            margin-bottom: 5rem;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .section-title-custom {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-bottom: 2.5rem;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .section-title-custom::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            margin-top: 0.5rem;
+            border-radius: 2px;
+        }
+
+        /* HARD SKILLS GRID */
+        .hard-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* HARD SKILL CARD */
+        .skill-card {
+            background: rgba(88, 129, 87, 0.04);
+            border: 1px solid rgba(88, 129, 87, 0.15);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 270px;
+        }
+
+        .skill-card:hover {
+            background: rgba(88, 129, 87, 0.08);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(88, 129, 87, 0.12);
+        }
+
+        .skill-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .skill-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* BADGES */
+        .skill-badge {
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 500;
+            border: 1px solid transparent;
+            white-space: nowrap;
+        }
+
+        .badge-debutant {
+            background: rgba(184, 146, 95, 0.1);
+            color: #B8925F;
+            border-color: rgba(184, 146, 95, 0.2);
+        }
+
+        .badge-intermediate {
+            background: rgba(88, 129, 87, 0.1);
+            color: var(--accent);
+            border-color: rgba(88, 129, 87, 0.2);
+        }
+
+        .badge-advanced {
+            background: rgba(163, 83, 77, 0.1);
+            color: #A3534D;
+            border-color: rgba(163, 83, 77, 0.2);
+        }
+
+        /* GAUGE DE NIVEAU (5 SEGMENTS) */
+        .skill-gauge {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 1.2rem;
+            max-width: 160px;
+        }
+
+        .gauge-segment {
+            height: 6px;
+            flex: 1;
+            background: rgba(0, 0, 0, 0.06);
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        /* Coloriage selon le niveau */
+        .skill-card[data-level="1"] .gauge-segment:nth-child(1) {
+            background: #B8925F;
+        }
+        .skill-card[data-level="2"] .gauge-segment:nth-child(1),
+        .skill-card[data-level="2"] .gauge-segment:nth-child(2) {
+            background: var(--accent);
+        }
+        .skill-card[data-level="3"] .gauge-segment:nth-child(1),
+        .skill-card[data-level="3"] .gauge-segment:nth-child(2),
+        .skill-card[data-level="3"] .gauge-segment:nth-child(3) {
+            background: var(--accent);
+        }
+        .skill-card[data-level="4"] .gauge-segment:nth-child(1),
+        .skill-card[data-level="4"] .gauge-segment:nth-child(2),
+        .skill-card[data-level="4"] .gauge-segment:nth-child(3),
+        .skill-card[data-level="4"] .gauge-segment:nth-child(4) {
+            background: #A3534D;
+        }
+        .skill-card[data-level="5"] .gauge-segment {
+            background: #A3534D;
+        }
+
+        .skill-desc {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            animation: none;
+        }
+
+        /* LIENS PROJETS */
+        .skill-projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            border-top: 1px solid rgba(88, 129, 87, 0.15);
+            padding-top: 1rem;
+            margin-top: auto;
+        }
+
+        .skill-projects span {
+            animation: none;
+            color: var(--text-secondary);
+        }
+
+        .project-link-tag {
+            background: rgba(88, 129, 87, 0.06);
+            border: 1px solid rgba(88, 129, 87, 0.15);
+            color: var(--accent) !important;
+            padding: 0.2rem 0.6rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        .project-link-tag:hover {
+            background: var(--accent);
+            color: white !important;
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .project-link-tag::after {
+            display: none !important;
+        }
+
+        /* SOFT SKILLS */
+        .soft-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .soft-skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .soft-skill-card {
+            background: linear-gradient(135deg, rgba(88, 129, 87, 0.05) 0%, rgba(88, 129, 87, 0.01) 100%);
+            border: 1px solid rgba(88, 129, 87, 0.15);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 250px;
+        }
+
+        .soft-skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .soft-skill-card:hover {
+            background: rgba(88, 129, 87, 0.08);
+            border-color: var(--accent);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(88, 129, 87, 0.15);
+        }
+
+        .soft-skill-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .soft-skill-icon-wrapper {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .soft-skill-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(88, 129, 87, 0.1);
+            border-radius: 12px;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .soft-skill-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .soft-skill-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .soft-skill-desc {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            animation: none;
+        }
+
+        /* LAYOUT RÉFÉRENTIEL */
+        .referentiel-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease 0.3s backwards;
+        }
+
+        /* EN-TÊTES DES COLONNES */
+        .competence-header {
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+            grid-column: span 1;
+        }
+
+        .concevoir-header {
+            background: #A3534D;
+        }
+
+        .verifier-header {
+            background: #B8925F;
+        }
+
+        .maintenir-header {
+            background: #9B9B3C;
+        }
+
+        .integrer-header {
+            background: #588157;
+        }
+
+        /* CARTES DE NIVEAUX */
+        .competence-level {
+            padding: 1.5rem;
+            border-radius: 12px;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+        }
+
+        .competence-level:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(88, 129, 87, 0.15);
+        }
+
+        .competence-level p {
+            font-size: 0.8rem;
+            line-height: 1.4;
+            color: var(--text-primary);
+            animation: none;
+        }
+
+        /* COULEURS CONCEVOIR */
+        .concevoir-1 {
+            background: #E8D4D0;
+        }
+
+        .concevoir-2 {
+            background: #D4A3A0;
+        }
+
+        .concevoir-3 {
+            background: #A3534D;
+            color: white;
+        }
+
+        .concevoir-3 p {
+            color: white;
+        }
+
+        /* COULEURS VÉRIFIER */
+        .verifier-1 {
+            background: #E8D9CE;
+        }
+
+        .verifier-2 {
+            background: #D4B894;
+        }
+
+        .verifier-3 {
+            background: #B8925F;
+            color: white;
+        }
+
+        .verifier-3 p {
+            color: white;
+        }
+
+        /* COULEURS MAINTENIR */
+        .maintenir-1 {
+            background: #F0F0D0;
+        }
+
+        .maintenir-2 {
+            background: #E8E87C;
+        }
+
+        .maintenir-3 {
+            background: #9B9B3C;
+            color: white;
+        }
+
+        .maintenir-3 p {
+            color: white;
+        }
+
+        /* COULEURS INTÉGRER */
+        .integrer-1 {
+            background: #D4E8C8;
+        }
+
+        .integrer-2 {
+            background: #A8D4A0;
+        }
+
+        .integrer-3 {
+            background: #588157;
+            color: white;
+        }
+
+        .integrer-3 p {
+            color: white;
+        }
+
+        /* PLACEHOLDER */
+        .competence-placeholder {
+            padding: 1.5rem;
+            border-radius: 12px;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #f5f5f5;
+            border: 2px dashed #ddd;
+        }
+
+        .competence-placeholder p {
+            color: #999;
+            font-size: 0.8rem;
+            animation: none;
+        }
+
+        /* INFO BUT1 */
+        .but1-info {
+            padding: 2rem;
+            background: rgba(88, 129, 87, 0.08);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease 0.15s backwards;
+        }
+
+        .but1-info p {
+            color: var(--text-secondary);
+            animation: none;
+            font-size: 0.95rem;
+        }
+
+        .but1-info strong {
+            color: var(--text-primary);
+        }
+
+        /* NIVEAUX DE COMPÉTENCES */
+        .header-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 4rem 0 2rem;
+            padding: 2rem;
+            background: rgba(88, 129, 87, 0.08);
+            border-radius: 12px;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .header-info h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .header-info p {
+            color: var(--text-secondary);
+            animation: none;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 1024px) {
+            .referentiel-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .referentiel-container {
+                grid-template-columns: 1fr;
+            }
+
+            .header-info {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION (SANS "À PROPOS") -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">cardon alexis</a>
+        
+        <div class="nav-item">
+            <a href="projects.html">projets</a>
+            <div class="dropdown">
+                <div class="dropdown-title">Projets GEII (SAÉ)</div>
+                <a href="project-1.html">Projet SLR</a>
+                <a href="project-2.html">Projet TDB</a>
+                <a href="project-3.html">Projet KAH</a>
+                
+                <div class="dropdown-title">Projets paraGEII</div>
+                <a href="project-dutss.html">DU Santé</a>
+                
+                <div class="dropdown-title">Projets Perso</div>
+                <a href="project-ambilight.html">Projet Ambilight</a>
+                <a href="project-pomometeo.html">Cube & Station Météo</a>
+            </div>
+        </div>
+        
+        <a href="interests.html">centres d'intérêts</a>
+        <a href="skills.html">compétences</a>
+        <a href="contact.html">contact</a>
+    </div>
+</nav>
+
+<main class="page">
+    <div class="container">
+        <div class="skills-hero">
+            <h1>Mes compétences</h1>
+            <p style="font-size: 1.1rem; color: var(--text-secondary);">découvrez mes compétences en programmation, électronique et outils techniques.</p>
+        </div>
+        
+        <!-- SECTION 1 : HARD SKILLS -->
+        <div class="section-skills">
+            <h2 class="section-title-custom">Hard Skills</h2>
+            <div class="hard-skills-grid">
+                
+                <!-- C++ -->
+                <div class="skill-card" data-level="4">
+                    <div>
+                        <div class="skill-card-header">
+                            <span class="skill-name">C++</span>
+                            <span class="skill-badge badge-advanced">Intermédiaire / Avancé</span>
+                        </div>
+                        <div class="skill-gauge">
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                        </div>
+                        <p class="skill-desc">
+                            Programmation de microcontrôleurs (ATmega328P, ESP32) pour des systèmes embarqués et de commande. Gestion des entrées/sorties, de protocoles de communication et écriture d'algorithmes de contrôle.
+                        </p>
+                    </div>
+                    <div class="skill-projects">
+                        <span>Appliqué dans :</span>
+                        <a href="project-3.html" class="project-link-tag">Projet KAH</a>
+                        <a href="project-pomometeo.html" class="project-link-tag">Cube Pomodoro</a>
+                    </div>
+                </div>
+
+                <!-- Suite Proteus -->
+                <div class="skill-card" data-level="4">
+                    <div>
+                        <div class="skill-card-header">
+                            <span class="skill-name">Suite Proteus (ISIS & ARES)</span>
+                            <span class="skill-badge badge-advanced">Intermédiaire / Avancé</span>
+                        </div>
+                        <div class="skill-gauge">
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                        </div>
+                        <p class="skill-desc">
+                            CAO électronique complète : saisie de schémas théoriques complexes sous ISIS, simulation analogique et numérique, et routage de circuits imprimés (PCB simple et double face) sous ARES.
+                        </p>
+                    </div>
+                    <div class="skill-projects">
+                        <span>Appliqué dans :</span>
+                        <a href="project-1.html" class="project-link-tag">Projet SLR</a>
+                        <a href="project-2.html" class="project-link-tag">Projet TDB</a>
+                        <a href="project-3.html" class="project-link-tag">Projet KAH</a>
+                    </div>
+                </div>
+
+                <!-- GRAFCET -->
+                <div class="skill-card" data-level="3">
+                    <div>
+                        <div class="skill-card-header">
+                            <span class="skill-name">GRAFCET</span>
+                            <span class="skill-badge badge-intermediate">Intermédiaire</span>
+                        </div>
+                        <div class="skill-gauge">
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                        </div>
+                        <p class="skill-desc">
+                            Modélisation des cycles de fonctionnement et automatisation séquentielle de systèmes industriels. Implémentation de grafcets complexes pour coordonner des actions matérielles.
+                        </p>
+                    </div>
+                    <div class="skill-projects">
+                        <span>Appliqué dans :</span>
+                        <span style="font-style: italic; color: var(--text-secondary);">Cours d'automatisme (BUT1)</span>
+                    </div>
+                </div>
+
+                <!-- Arduino -->
+                <div class="skill-card" data-level="3">
+                    <div>
+                        <div class="skill-card-header">
+                            <span class="skill-name">Arduino & Systèmes Embarqués</span>
+                            <span class="skill-badge badge-intermediate">Acquis / Intermédiaire</span>
+                        </div>
+                        <div class="skill-gauge">
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                        </div>
+                        <p class="skill-desc">
+                            Mise en œuvre pratique de modules et capteurs (DHT22, accéléromètres, TSOP infrarouge) avec cartes Arduino et ESP32. Programmation et interfaçage matériel.
+                        </p>
+                    </div>
+                    <div class="skill-projects">
+                        <span>Appliqué dans :</span>
+                        <a href="project-3.html" class="project-link-tag">Projet KAH</a>
+                        <a href="project-pomometeo.html" class="project-link-tag">Cube Pomodoro</a>
+                    </div>
+                </div>
+
+                <!-- Onshape -->
+                <div class="skill-card" data-level="2">
+                    <div>
+                        <div class="skill-card-header">
+                            <span class="skill-name">Onshape & CAO 3D</span>
+                            <span class="skill-badge badge-intermediate">Débutant / Intermédiaire</span>
+                        </div>
+                        <div class="skill-gauge">
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                        </div>
+                        <p class="skill-desc">
+                            Modélisation mécanique en 3D de pièces et de boîtiers de protection sur Onshape. Gestion des dimensions, assemblages de composants et préparation pour l'impression 3D.
+                        </p>
+                    </div>
+                    <div class="skill-projects">
+                        <span>Appliqué dans :</span>
+                        <a href="project-pomometeo.html" class="project-link-tag">Cube Pomodoro</a>
+                        <a href="project-dutss.html" class="project-link-tag">DU Santé</a>
+                    </div>
+                </div>
+
+                <!-- Editeur de texte Docs -->
+                <div class="skill-card" data-level="5">
+                    <div>
+                        <div class="skill-card-header">
+                            <span class="skill-name">Éditeur de texte Docs</span>
+                            <span class="skill-badge badge-advanced">Avancé</span>
+                        </div>
+                        <div class="skill-gauge">
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                        </div>
+                        <p class="skill-desc">
+                            Rédaction structurée et rigoureuse de documents techniques professionnels indispensables au cycle projet : Dossier de Conception Détaillée (DDC), Dossier de Vérification (DDV).
+                        </p>
+                    </div>
+                    <div class="skill-projects">
+                        <span>Appliqué dans :</span>
+                        <a href="project-1.html" class="project-link-tag">Projet SLR</a>
+                        <a href="project-2.html" class="project-link-tag">Projet TDB</a>
+                        <a href="project-3.html" class="project-link-tag">Projet KAH</a>
+                    </div>
+                </div>
+
+                <!-- Python -->
+                <div class="skill-card" data-level="1">
+                    <div>
+                        <div class="skill-card-header">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-badge badge-debutant">Débutant</span>
+                        </div>
+                        <div class="skill-gauge">
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                        </div>
+                        <p class="skill-desc">
+                            Apprentissage des bases de l'algorithmique, de la manipulation de variables et de structures de contrôle. Écriture de scripts simples pour le traitement de données.
+                        </p>
+                    </div>
+                    <div class="skill-projects">
+                        <span>Appliqué dans :</span>
+                        <span style="font-style: italic; color: var(--text-secondary);">Projets personnels & Auto-apprentissage</span>
+                    </div>
+                </div>
+
+                <!-- Instrumentation & Mesures -->
+                <div class="skill-card" data-level="3">
+                    <div>
+                        <div class="skill-card-header">
+                            <span class="skill-name">Instrumentation & Mesures</span>
+                            <span class="skill-badge badge-intermediate">Intermédiaire</span>
+                        </div>
+                        <div class="skill-gauge">
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                            <div class="gauge-segment"></div>
+                        </div>
+                        <p class="skill-desc">
+                            Utilisation et configuration des appareils de test et mesure en laboratoire (oscilloscope, GBF, multimètre, maquettes) pour caractériser et valider des circuits électroniques analogiques et numériques.
+                        </p>
+                    </div>
+                    <div class="skill-projects">
+                        <span>Appliqué dans :</span>
+                        <a href="project-1.html" class="project-link-tag">Projet SLR</a>
+                        <a href="project-2.html" class="project-link-tag">Projet TDB</a>
+                        <a href="project-3.html" class="project-link-tag">Projet KAH</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SECTION 2 : SOFT SKILLS -->
+        <div class="section-skills">
+            <h2 class="section-title-custom">Soft Skills</h2>
+            <div class="soft-skills-grid">
+                
+                <!-- Coordination de travail en équipe -->
+                <div class="soft-skill-card">
+                    <div>
+                        <div class="soft-skill-icon-wrapper">
+                            <div class="soft-skill-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <h3 class="soft-skill-title">Coordination de travail en équipe</h3>
+                        </div>
+                        <p class="soft-skill-desc">
+                            Organisation du travail, répartition stratégique des tâches en fonction des forces de chacun, et coordination de projets collectifs de tailles variées, du binôme jusqu'à des équipes de 7 personnes (Projet KAH).
+                        </p>
+                    </div>
+                    <div class="skill-projects">
+                        <span>Développé dans :</span>
+                        <a href="project-3.html" class="project-link-tag">Projet KAH</a>
+                        <a href="project-2.html" class="project-link-tag">Projet TDB</a>
+                        <a href="project-1.html" class="project-link-tag">Projet SLR</a>
+                    </div>
+                </div>
+
+                <!-- Communication technique -->
+                <div class="soft-skill-card">
+                    <div>
+                        <div class="soft-skill-icon-wrapper">
+                            <div class="soft-skill-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="soft-skill-title">Communication technique</h3>
+                        </div>
+                        <p class="soft-skill-desc">
+                            Aptitude à formaliser des données complexes sous forme de rapports écrits clairs (DDC, DDV) et à présenter oralement des résultats techniques de manière synthétique et compréhensible devant un jury.
+                        </p>
+                    </div>
+                    <div class="skill-projects">
+                        <span>Développé dans :</span>
+                        <a href="project-1.html" class="project-link-tag">Projet SLR</a>
+                        <a href="project-2.html" class="project-link-tag">Projet TDB</a>
+                        <a href="project-3.html" class="project-link-tag">Projet KAH</a>
+                    </div>
+                </div>
+
+                <!-- Rigueur de travail & Adaptabilité -->
+                <div class="soft-skill-card">
+                    <div>
+                        <div class="soft-skill-icon-wrapper">
+                            <div class="soft-skill-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="soft-skill-title">Rigueur de travail & Adaptabilité</h3>
+                        </div>
+                        <p class="soft-skill-desc">
+                            Forte capacité d'adaptation et rigueur personnelle développées en conciliant les exigences du BUT1 GEII avec des expériences professionnelles intenses (cumul d'emplois saisonniers de 42h/semaine en été chez Weldom et le SIVOM, impliquant ponctualité, réactivité et gestion de la fatigue).
+                        </p>
+                    </div>
+                    <div class="skill-projects">
+                        <span>Développé dans :</span>
+                        <span style="font-style: italic; color: var(--text-secondary);">Jobs étudiants (Weldom/SIVOM) & Projets</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- NIVEAUX DE COMPÉTENCES -->
+        <div style="margin-top: 6rem;">
+            <h2 style="text-transform: none; font-size: 2rem; margin-top: 5rem; margin-bottom: 2rem; color: var(--text-primary);">Référentiel de compétences GEII</h2>
+
+            <div class="but1-info">
+                <p><strong>Première année de B.U.T. :</strong> en première année, je développe les compétences fondamentales de "Concevoir" et "Vérifier". Les compétences "Maintenir" et "Intégrer" seront développées au cours des années suivantes du cursus.</p>
+            </div>
+
+
+
+            <!-- NIVEAU 1 -->
+            <div class="referentiel-container">
+                <!-- EN-TÊTES -->
+                <div class="competence-header concevoir-header">Concevoir</div>
+                <div class="competence-header verifier-header">Vérifier</div>
+                <div class="competence-header maintenir-header">Maintenir</div>
+                <div class="competence-header integrer-header">Intégrer</div>
+
+                <!-- CARTES NIVEAU 1 -->
+                <div class="competence-level concevoir-1">
+                    <p>Mener une conception partielle intégrant une démarche projet</p>
+                </div>
+                <div class="competence-level verifier-1">
+                    <p>Effectuer les tests et mesures nécessaires à une vérification d'un système</p>
+                </div>
+                <div class="competence-placeholder">
+                    <p>Non développée en 1ère année</p>
+                </div>
+                <div class="competence-placeholder">
+                    <p>Non développée en 1ère année</p>
+                </div>
+
+                <!-- CARTES NIVEAU 2 -->
+                <div class="competence-level concevoir-2">
+                    <p>Concevoir un système en fiabilisant les solutions proposées</p>
+                </div>
+                <div class="competence-level verifier-2">
+                    <p>Mettre en place un protocole de tests pour valider le fonctionnement d'un système</p>
+                </div>
+                <div class="competence-level maintenir-1">
+                    <p>Intervenir sur un système pour effectuer une opération de maintenance</p>
+                </div>
+                <div class="competence-level integrer-1">
+                    <p>Procéder à une installation ou à une mise en service en suivant un protocole</p>
+                </div>
+
+                <!-- CARTES NIVEAU 3 -->
+                <div class="competence-level concevoir-3">
+                    <p>Concevoir un système en adoptant une approche sélective dans ses choix technologiques</p>
+                </div>
+                <div class="competence-level verifier-3">
+                    <p>Élaborer une procédure intégrant une démarche qualité pour valider le fonctionnement d'un système</p>
+                </div>
+                <div class="competence-level maintenir-2">
+                    <p>Mettre en place une stratégie de maintenance pour garantir un fonctionnement optimal</p>
+                </div>
+                <div class="competence-level integrer-2">
+                    <p>Interagir avec les différents acteurs, depuis l'élaboration du protocole jusqu'à l'installation, dans une visée de démarche qualité</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 CARDON Alexis</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet DU Santé - Acquisition Physiologique - Portfolio CA -</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">cardon alexis</a>
+        
+        <div class="nav-item">
+            <a href="projects.html">projets</a>
+            <div class="dropdown">
+                <div class="dropdown-title">Projets GEII (SAÉ)</div>
+                <a href="project-1.html">Projet SLR</a>
+                <a href="project-2.html">Projet TDB</a>
+                <a href="project-3.html">Projet KAH</a>
+                
+                <div class="dropdown-title">Projets paraGEII</div>
+                <a href="project-dutss.html">DU Santé</a>
+                
+                <div class="dropdown-title">Projets Perso</div>
+                <a href="project-ambilight.html">Projet Ambilight</a>
+                <a href="project-pomometeo.html">Cube & Station Météo</a>
+            </div>
+        </div>
+        
+        <a href="interests.html">centres d'intérêts</a>
+        <a href="skills.html">compétences</a>
+        <a href="contact.html">contact</a>
+    </div>
+</nav>
+
+    <main class="page">
+        <div class="container">
+            <!-- HEADER -->
+            <div style="margin-bottom: 4rem;">
+                <a href="projects.html" style="color: var(--accent); text-transform: lowercase; margin-bottom: 1rem;">← retour aux projets</a>
+                <h1>Projet DU Santé</h1>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                    Conception d'un prototype d'acquisition de données physiologiques pour le suivi à distance de patients hospitalisés, faisant la transition entre l'ingénierie et le domaine médical.
+                </p>
+            </div>
+
+            <!-- IMAGE PRINCIPALE -->
+            <div style="width: 100%; aspect-ratio: 16/9; margin-bottom: 0.8rem; overflow: hidden; border-radius: 16px; border: 1px solid var(--border); background: var(--bg-secondary);">
+                <img src="images/project-dutss/du_sante_prototype.png" alt="Prototype d'acquisition DU Santé sur table d'essais" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.8rem; margin-bottom: 4rem; text-align: center; font-style: italic;">Prototype fonctionnel d'acquisition de température et de rythme cardiaque connecté à un microcontrôleur</p>
+
+            <!-- CONTENU -->
+            <div class="grid-asymmetric" style="margin-bottom: 4rem;">
+                <div>
+                    <h2>Objectif du projet</h2>
+                    <p>
+                        Ce projet s'inscrit dans le cadre du diplôme universitaire (DU) Santé, qui associe les technologies du numérique au milieu médical. L'objectif était de développer un dispositif portatif capable de mesurer en temps réel la température corporelle et la fréquence cardiaque d'un patient, puis de transmettre ces données de manière fiable pour un suivi clinique.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        La principale difficulté résidait dans l'acquisition propre du signal cardiaque. Les pulsations sanguines au bout du doigt provoquent d'infimes variations de lumière (détectées par photopléthysmographie). Pour exploiter ces données sur un microcontrôleur, il a fallu concevoir une chaîne d'amplification et de filtrage analogique robuste afin d'isoler le signal des bruits ambiants et parasites.
+                    </p>
+                </div>
+                <div style="
+                    padding: 2rem;
+                    background: var(--bg-secondary);
+                    border-radius: 16px;
+                    height: fit-content;
+                ">
+                    <h3 style="margin-bottom: 1rem;">Détails du projet</h3>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li><strong>durée :</strong> 35 heures</li>
+                        <li><strong>équipe :</strong> 2 personnes</li>
+                        <li><strong>statut :</strong> terminé</li>
+                        <li><strong>domaine :</strong> biomédical</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TECHNOLOGIES -->
+            <div style="margin-bottom: 4rem;">
+                <h2>Outils utilisés</h2>
+                <div style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                    margin-top: 1.5rem;
+                ">
+                    <span class="tag">Arduino IDE</span>
+                    <span class="tag">Capteur LM35 & Infrarouge</span>
+                    <span class="tag">Amplificateurs opérationnels (AOP)</span>
+                    <span class="tag">Filtrage analogique</span>
+                    <span class="tag">Traitement du signal</span>
+                </div>
+            </div>
+
+            <!-- DÉVELOPPEMENT -->
+            <div style="margin-bottom: 4rem;">
+                <h2>Processus de développement</h2>
+                
+                <div style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 2rem;
+                    margin-top: 2rem;
+                ">
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 1 : Filtrage analogique</h3>
+                        <p>
+                            La première phase a consisté à concevoir le circuit d'acquisition biologique. Le signal cardiaque issu du capteur optique infrarouge étant de très faible amplitude et bruité, nous avons implémenté un filtre passe-bande actif à l'aide d'amplificateurs opérationnels (AOP). Ce filtre élimine la composante continue et le bruit à haute fréquence (notamment le parasite 50 Hz de l'éclairage ambiant) tout en amplifiant le signal utile pour le rendre mesurable.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 2 : Programmation</h3>
+                        <p>
+                            Sur le microcontrôleur Arduino, nous avons écrit le programme d'échantillonnage de la tension filtrée. Le code analyse le signal analogique reçu et détecte les pics de tension correspondant aux battements cardiaques. En mesurant précisément l'intervalle de temps entre chaque pic, le programme calcule le rythme cardiaque instantané en battements par minute (BPM) et filtre les valeurs aberrantes.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 3 : Étalonnage</h3>
+                        <p>
+                            Afin de garantir la fiabilité médicale du dispositif, nous avons réalisé une phase de calibration des capteurs. Les données de température fournies par le LM35 ont été calibrées à l'aide d'un thermomètre médical étalon. De même, les mesures de rythme cardiaque ont été comparées et ajustées par rapport à des mesures manuelles de pouls et un saturomètre de référence.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 4 : Validation</h3>
+                        <p>
+                            La dernière phase a consisté à tester le système en continu sur plusieurs sujets d'essais. Nous avons vérifié la stabilité des mesures sur des périodes prolongées et dans différentes conditions d'éclairage. L'ensemble des résultats a été consigné dans un rapport technique comparatif, démontrant la viabilité du prototype face aux critères du cahier des charges biomédical.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RÉSULTATS -->
+            <div style="
+                padding: 3rem;
+                background: linear-gradient(135deg, var(--accent) 0%, #60a5fa 100%);
+                border-radius: 16px;
+                color: white;
+                margin-bottom: 4rem;
+            ">
+                <h2 style="color: white; margin-bottom: 1.5rem;">Résultats & apprentissages</h2>
+                <p style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">
+                    Ce projet biomédical a été extrêmement formateur, car il m'a permis d'appliquer les théories d'amplification analogique et de traitement numérique du signal apprises en cours à une problématique concrète et utile : le suivi de santé des patients. Le fait de voir le tracé du rythme cardiaque se stabiliser et s'afficher avec précision a été une excellente validation de notre conception matérielle et logicielle.
+                </p>
+                <p style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">
+                    Sur le plan technique, j'ai perfectionné mes connaissances en filtrage actif et en programmation de microcontrôleurs pour le traitement de signaux analogiques complexes. J'ai également pris conscience des contraintes de sécurité et de précision strictes inhérentes aux technologies médicales.
+                </p>
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2>Vous avez des questions ?</h2>
+                <p style="margin-bottom: 2rem;">N'hésitez pas à me contacter pour discuter davantage de ce projet.</p>
+                <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
+                    <a href="contact.html" class="btn">Me contacter</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CARDON Alexis</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

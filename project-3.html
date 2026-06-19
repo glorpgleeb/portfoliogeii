@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projet KAH - Portfolio CA -</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">cardon alexis</a>
+        
+        <div class="nav-item">
+            <a href="projects.html">projets</a>
+            <div class="dropdown">
+                <div class="dropdown-title">Projets GEII (SAÉ)</div>
+                <a href="project-1.html">Projet SLR</a>
+                <a href="project-2.html">Projet TDB</a>
+                <a href="project-3.html">Projet KAH</a>
+                
+                <div class="dropdown-title">Projets paraGEII</div>
+                <a href="project-dutss.html">DU Santé</a>
+                
+                <div class="dropdown-title">Projets Perso</div>
+                <a href="project-ambilight.html">Projet Ambilight</a>
+                <a href="project-pomometeo.html">Cube & Station Météo</a>
+            </div>
+        </div>
+        
+        <a href="interests.html">centres d'intérêts</a>
+        <a href="skills.html">compétences</a>
+        <a href="contact.html">contact</a>
+    </div>
+</nav>
+
+    <main class="page">
+        <div class="container">
+            <!-- HEADER -->
+            <div style="margin-bottom: 4rem;">
+                <a href="projects.html" style="color: var(--accent); text-transform: lowercase; margin-bottom: 1rem;">← retour aux projets</a>
+                <h1>Projet Kart à Hélice (KAH)</h1>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                    Conception et fabrication d'un système de télécommande infrarouge complet (émetteur et récepteur) pour un modèle réduit de kart à hélice.
+                </p>
+            </div>
+
+            <!-- IMAGE PRINCIPALE -->
+            <div style="width: 100%; aspect-ratio: 16/9; margin-bottom: 0.8rem; overflow: hidden; border-radius: 16px; border: 1px solid var(--border); background: var(--bg-secondary);">
+                <img src="images/project-3/img_20260612_154108.jpg" alt="Prototype finalisé du Kart à Hélice (KAH)" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.8rem; margin-bottom: 4rem; text-align: center; font-style: italic;">Le prototype du Kart à Hélice (KAH) finalisé pour les phases de tests</p>
+
+            <!-- CONTENU -->
+            <div class="grid-asymmetric" style="margin-bottom: 4rem;">
+                <div>
+                    <h2>Objectif du projet</h2>
+                    <p>
+                        L'objectif de ce projet était de créer un système de transmission sans fil infrarouge pour piloter un kart à hélice à distance. La carte émettrice devait encoder la vitesse (via un potentiomètre glissière) et la direction (via un potentiomètre rotatif) sous forme de trames au protocole NEC, puis les envoyer via deux LEDs infrarouges. La carte réceptrice, quant à elle, captait le signal grâce à un récepteur-démodulateur TSOP58438, décodait la trame pour commander un servomoteur de direction et le moteur à hélice (via un ESC), tout en assurant des fonctions de sécurité (arrêt si perte de signal) et des alertes visuelles et sonores.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        Réalisé en groupe de 7 personnes avec une répartition par rôles (émetteur, récepteur, mécanique, etc.), ce projet de fin de première année nous a demandé une grande rigueur organisationnelle. Avec mon binôme Akbar, nous avons travaillé sur les parties Traitement et Énergie du projet, tout en travaillant à la rédaction des dossiers de conception (DDC) et de vérification (DDV) pour valider la conformité par rapport au cahier des charges.
+                    </p>
+                </div>
+                <div style="
+                    padding: 2rem;
+                    background: var(--bg-secondary);
+                    border-radius: 16px;
+                    height: fit-content;
+                ">
+                    <h3 style="margin-bottom: 1rem;">Détails du projet</h3>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li><strong>Durée :</strong> 60 heures</li>
+                        <li><strong>Équipe :</strong> 7 personnes (binôme avec Akbar)</li>
+                        <li><strong>Statut :</strong> Terminé</li>
+                        <li><strong>Domaine :</strong> Électronique & Informatique embarquée</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TECHNOLOGIES -->
+            <div style="margin-bottom: 4rem;">
+                <h2>Outils utilisés</h2>
+                <div style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                    margin-top: 1.5rem;
+                ">
+                    <span class="tag">ISIS de Proteus</span>
+                    <span class="tag">Arduino en C++</span>
+                    <span class="tag">ATmega328P</span>
+                    <span class="tag">Infrarouge & TSOP58438</span>
+                    <span class="tag">Insoleuse & graveuse</span>
+                    <span class="tag">Oscilloscope</span>
+                </div>
+            </div>
+
+            <!-- DÉVELOPPEMENT -->
+            <div style="margin-bottom: 4rem;">
+                <h2>Processus de développement</h2>
+                
+                <div style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 2rem;
+                    margin-top: 2rem;
+                ">
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 1 : Conception</h3>
+                        <p>
+                            Le but de ce projet de fin d'année était de concevoir un système de commande infrarouge pour piloter un kart à hélice à distance. Avec mon binôme Akbar, nous devions programmer le microcontrôleur ATmega328P en C++ sous Arduino IDE pour lire les deux potentiomètres (un linéaire pour la vitesse de l'hélice et un rotatif pour la direction) et envoyer ces données sous forme de trames NEC. Nous avons calculé les résistances et dimensionné les transistors pour alimenter les leds infrarouges à 200mA afin d'avoir une bonne portée d'émission.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 2 : Outils informatique</h3>
+                        <p>
+                            Après la conception théorique, on est passés sur les outils informatique pour modéliser et programmer le projet. Pour la saisie de schéma et la simulation, on a utilisé isis de proteus pour valider notre circuit avant de fabriquer la carte. En parallèle, nous avons programmé en c++ sous l'environnement arduino sur le microcontrôleur ATmega328P afin de concevoir l'émetteur et le récepteur, notamment pour coder et décoder les trames infrarouges (protocole NEC), gérer les potentiomètres et piloter le servomoteur de direction ainsi que l'ESC du moteur.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 3 : Fabrication</h3>
+                        <p>
+                            Pour la fabrication, nous avons réalisé les circuits imprimés en laboratoire avec l'insoleuse et la graveuse chimique. C'est lors du perçage des trous de fixation à la perceuse à colonne que nous avons fait notre seule gaffe : le trou en bas à gauche de la carte réceptrice a dévié à cause d'un manque de précision manuel, ce qui a créé une non-conformité mécanique lors de l'assemblage sur le kart.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Phase 4 : Validation</h3>
+                        <p>
+                            Pour valider le projet, nous avons fait des essais sur banc d'essais à l'aide d'un oscilloscope pour mesurer et visualiser les trames NEC reçues. Nous avons programmé le récepteur en C++ sous Arduino IDE pour qu'il décode ces trames et pilote le servomoteur de direction et l'ESC du moteur de l'hélice. La portée du signal a été mesurée à près de 40 mètres avec le récepteur TSOP58438, ce qui était pleinement conforme au cahier des charges.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RÉSULTATS -->
+            <div style="
+                padding: 3rem;
+                background: linear-gradient(135deg, var(--accent) 0%, #60a5fa 100%);
+                border-radius: 16px;
+                color: white;
+                margin-bottom: 4rem;
+            ">
+                <h2 style="color: white; margin-bottom: 1.5rem;">Résultats & apprentissages</h2>
+                <p style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">
+                    Ce projet de kart à hélice a été une superbe expérience pour finir l'année. La fabrication et la programmation en C++ sous Arduino IDE ont été très concrètes, et c'est vraiment plaisant de voir notre kart rouler et réagir directement aux ordres de la télécommande. Sur le plan technique, j'ai beaucoup progressé sur la programmation des registres de l'ATmega328P et sur l'analyse de signaux à l'oscilloscope pour déboguer les trames infrarouges.
+                </p>
+                <p style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">
+                    La plus grande leçon de ce projet vient du perçage manuel qui a dévié de quelques millimètres sur un trou de fixation. Cela m'a fait comprendre qu'un travail manuel peut manquer de précision sous l'effet de la fatigue ou du tremblement, et que pour une vraie production en série il faudrait utiliser une machine à commande numérique.
+                </p>
+                <p style="color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">
+                    Enfin, l'organisation à 7 s'est révélée très formatrice. Je me suis placé un peu comme le coordinateur de l'équipe et quand quelqu'un avait un doute sur quelque chose, c'est à moi qu'on s'adressait. Je pense que cela est de temps en temps légèrement difficile à gérer quand la charge de travail et la complexité commencent à augmenter, mais c'était très enrichissant. Le travail en binôme avec Akbar s'est également très bien déroulé, et nous avons dû bien nous coordonner pour synchroniser notre code et nos cartes respectives, ce qui a été une excellente préparation pour nos revues orales de jalon.
+                </p>
+            </div>
+
+            <!-- GALERIE -->
+            <div style="margin-bottom: 4rem;">
+                <h2>Galerie du projet</h2>
+                <div style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 1.5rem;
+                    margin-top: 2rem;
+                ">
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1; display: flex; align-items: center; justify-content: center;">
+                            <video src="images/project-3/demo.mp4" controls style="max-width: 100%; max-height: 100%; border-radius: 12px;" muted loop></video>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Démo vidéo du Kart à Hélice en fonctionnement et en course</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1; padding: 10px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/project-3/img_20260612_154054.jpg" alt="Carte Émetteur KAH" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Carte Émetteur KAH prête à l'utilisation</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1; padding: 10px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/project-3/implantation_dessus.bmp" alt="Plan d'implantation ARES récepteur" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Plan d'implantation des composants du récepteur (Face supérieure - TOP)</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1; padding: 10px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/project-3/typon_dessus.bmp" alt="Typon récepteur face supérieure" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Tracé des pistes de la couche supérieure (TOP) du récepteur</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="aspect-ratio: 4/3; overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-secondary); flex-grow: 1; padding: 10px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/project-3/plan_percage.bmp" alt="Plan de perçage mécanique récepteur" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center; font-style: italic;">Plan de perçage de la carte réceptrice double face</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2>Vous avez des questions ?</h2>
+                <p style="margin-bottom: 2rem;">N'hésitez pas à me contacter pour discuter davantage de ce projet ou pour voir une démo.</p>
+                <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
+                    <a href="contact.html" class="btn">Me contacter</a>
+                    <a href="https://drive.google.com/drive/folders/1I2_lFcB4N31nbeZ7Nqb3GZW7Xq4tn1Ce?usp=sharing" class="btn" style="background: var(--accent); color: white;" target="_blank" rel="noopener noreferrer">Accéder aux documents</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CARDON Alexis</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

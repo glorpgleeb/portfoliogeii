@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projets - Portfolio CA -</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .projects-hero {
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease 0.1s backwards;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            padding: 1rem 0;
+            margin-bottom: 4rem;
+        }
+
+        .projects-grid.grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 900px;
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid.grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .project-item {
+            background: #ffffff;
+            border: 1px solid rgba(163, 177, 138, 0.25);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .project-item:nth-child(1) { animation-delay: 0.1s; }
+        .project-item:nth-child(2) { animation-delay: 0.2s; }
+        .project-item:nth-child(3) { animation-delay: 0.3s; }
+        .project-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .project-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(88, 129, 87, 0.12);
+            border-color: var(--accent);
+        }
+
+        .project-link {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .project-image {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background: linear-gradient(135deg, var(--accent) 0%, #344E41 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .project-image-icon {
+            font-size: 3rem;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .project-item:hover .project-image-icon {
+            transform: scale(0.6) translateY(-20px);
+            opacity: 0;
+        }
+
+        .project-preview-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 23, 19, 0.92);
+            backdrop-filter: blur(6px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            color: #FFFDF9;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .project-item:hover .project-preview-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .preview-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--border);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.8rem;
+        }
+
+        .preview-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            width: 100%;
+            max-width: 200px;
+            margin-bottom: 1rem;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.65rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .stat-value {
+            font-weight: 500;
+            color: #FFFDF9;
+            font-size: 0.8rem;
+        }
+
+        .preview-action {
+            font-size: 0.8rem;
+            color: var(--border);
+            border-bottom: 1px solid rgba(163, 177, 138, 0.4);
+            padding-bottom: 2px;
+            margin-top: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover .preview-action {
+            color: #FFFDF9;
+            border-color: #FFFDF9;
+        }
+
+        .project-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            transition: all 0.4s ease;
+        }
+
+        .project-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .project-content p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            animation: none;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: auto;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            color: var(--accent);
+            background: rgba(88, 129, 87, 0.1);
+            padding: 0.4rem 0.9rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(88, 129, 87, 0.2);
+            cursor: pointer;
+        }
+
+        .tag:hover {
+            background: var(--accent);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION (SANS "À PROPOS") -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">cardon alexis</a>
+        
+        <div class="nav-item">
+            <a href="projects.html">projets</a>
+            <div class="dropdown">
+                <div class="dropdown-title">Projets GEII (SAÉ)</div>
+                <a href="project-1.html">Projet SLR</a>
+                <a href="project-2.html">Projet TDB</a>
+                <a href="project-3.html">Projet KAH</a>
+                
+                <div class="dropdown-title">Projets paraGEII</div>
+                <a href="project-dutss.html">DU Santé</a>
+                
+                <div class="dropdown-title">Projets Perso</div>
+                <a href="project-ambilight.html">Projet Ambilight</a>
+                <a href="project-pomometeo.html">Cube & Station Météo</a>
+            </div>
+        </div>
+        
+        <a href="interests.html">centres d'intérêts</a>
+        <a href="skills.html">compétences</a>
+        <a href="contact.html">contact</a>
+    </div>
+</nav>
+    
+<main class="page">
+    <div class="container">
+        <div class="projects-hero">
+            <h1>Mes projets</h1>
+            <p style="font-size: 1.1rem; color: var(--text-secondary);">découvrez mes projets académiques et personnels en électronique et programmation embarquée.</p>
+               <!-- SECTION 1 : PROJETS GEII (SAÉ) -->
+        <div class="category-section" id="geii" style="margin-top: 1rem; margin-bottom: 4rem;">
+            <div class="category-header" style="margin-bottom: 2rem; border-left: 4px solid var(--accent); padding-left: 1.2rem; animation: fadeInUp 0.8s ease 0.15s backwards;">
+                <span class="category-tag" style="font-size: 0.75rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 0.3rem;">Cursus Académique</span>
+                <h2 style="font-size: 1.8rem; margin: 0 0 0.5rem 0; text-transform: none; font-weight: 500;">Projets GEII (SAÉ)</h2>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); margin: 0; animation: none;">Projets d'ingénierie et de développement réalisés en équipe dans le cadre du BUT GEII.</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- PROJET 1 -->
+                <div class="project-item">
+                    <a href="project-1.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/project-1/slr.jpg" alt="Projet SLR" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 80%; position: absolute; top: 0; left: 0;">
+                            <div class="project-preview-overlay" style="z-index: 2;">
+                                <span class="preview-title">aperçu rapide</span>
+                                <div class="preview-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">durée</span>
+                                        <span class="stat-value">18 heures</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">équipe</span>
+                                        <span class="stat-value">2 personnes</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">statut</span>
+                                        <span class="stat-value">terminé</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">domaine</span>
+                                        <span class="stat-value">électronique</span>
+                                    </div>
+                                </div>
+                                <span class="preview-action">Voir les détails →</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Projet SLR</h3>
+                            <p>Conception d'une carte électronique complète pour gérer les lumières et alertes sonores d'un modèle réduit de Rafale.</p>
+                            <div class="project-tags">
+                                <span class="tag">proteus</span>
+                                <span class="tag">pcb design</span>
+                                <span class="tag">soudure</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- PROJET 2 -->
+                <div class="project-item">
+                    <a href="project-2.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/project-2/IMG_0540.jpg" alt="Projet TDB" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                            <div class="project-preview-overlay" style="z-index: 2;">
+                                <span class="preview-title">aperçu rapide</span>
+                                <div class="preview-stats">
+                                    <div class="stat-item">
+                                         <span class="stat-label">durée</span>
+                                         <span class="stat-value">24 heures</span>
+                                    </div>
+                                    <div class="stat-item">
+                                         <span class="stat-label">équipe</span>
+                                         <span class="stat-value">2 personnes</span>
+                                    </div>
+                                    <div class="stat-item">
+                                         <span class="stat-label">statut</span>
+                                         <span class="stat-value">terminé</span>
+                                    </div>
+                                    <div class="stat-item">
+                                         <span class="stat-label">domaine</span>
+                                         <span class="stat-value">électronique</span>
+                                    </div>
+                                </div>
+                                <span class="preview-action">Voir les détails →</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Projet TDB</h3>
+                            <p>Conception et fabrication d'un thermomètre de bain électronique pour bébé avec alertes de température lumineuses.</p>
+                            <div class="project-tags">
+                                <span class="tag">électronique</span>
+                                <span class="tag">proteus</span>
+                                <span class="tag">soudure</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- PROJET 3 -->
+                <div class="project-item">
+                    <a href="project-3.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/project-3/img_20260612_154108.jpg" alt="Projet KAH" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                            <div class="project-preview-overlay" style="z-index: 2;">
+                                <span class="preview-title">aperçu rapide</span>
+                                <div class="preview-stats">
+                                    <div class="stat-item">
+                                         <span class="stat-label">durée</span>
+                                         <span class="stat-value">60 heures</span>
+                                     </div>
+                                    <div class="stat-item">
+                                         <span class="stat-label">équipe</span>
+                                         <span class="stat-value">7 personnes</span>
+                                    </div>
+                                    <div class="stat-item">
+                                         <span class="stat-label">statut</span>
+                                         <span class="stat-value">terminé</span>
+                                    </div>
+                                    <div class="stat-item">
+                                         <span class="stat-label">domaine</span>
+                                         <span class="stat-value">embarqué</span>
+                                    </div>
+                                </div>
+                                <span class="preview-action">Voir les détails →</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Projet KAH</h3>
+                            <p>Conception d'un système d'émission et de réception infrarouge pour piloter un kart à hélice.</p>
+                            <div class="project-tags">
+                                <span class="tag">c++</span>
+                                <span class="tag">arduino</span>
+                                <span class="tag">proteus</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2 : PROJETS PARAGEII (PROJETS ASSOCIÉS) -->
+        <div class="category-section" id="parageii" style="margin-bottom: 4rem;">
+            <div class="category-header" style="margin-bottom: 2rem; border-left: 4px solid var(--border); padding-left: 1.2rem; animation: fadeInUp 0.8s ease 0.15s backwards;">
+                <span class="category-tag" style="font-size: 0.75rem; font-weight: 700; color: var(--border); text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 0.3rem;">Projets Associés</span>
+                <h2 style="font-size: 1.8rem; margin: 0 0 0.5rem 0; text-transform: none; font-weight: 500;">Projets paraGEII</h2>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); margin: 0; animation: none;">Projets associés de près ou de loin au domaine GEII (projets associatifs, options, etc.).</p>
+            </div>
+            
+            <div class="projects-grid">
+                    <!-- PROJET DU SANTE -->
+                    <div class="project-item" id="du-sante">
+                        <a href="project-dutss.html" class="project-link">
+                            <div class="project-image">
+                                <img src="images/project-dutss/du_sante_prototype.png" alt="Projet DU Santé" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                                <div class="project-preview-overlay" style="z-index: 2;">
+                                    <span class="preview-title">aperçu rapide</span>
+                                    <div class="preview-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-label">durée</span>
+                                            <span class="stat-value">35 heures</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">équipe</span>
+                                            <span class="stat-value">2 personnes</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">statut</span>
+                                            <span class="stat-value">terminé</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">domaine</span>
+                                            <span class="stat-value">biomédical</span>
+                                        </div>
+                                    </div>
+                                    <span class="preview-action">Voir les détails →</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>DU Santé</h3>
+                                <p>Conception d'un prototype d'acquisition de données physiologiques (température, rythme cardiaque) pour le suivi de patients hospitalisés.</p>
+                                <div class="project-tags">
+                                    <span class="tag">arduino</span>
+                                    <span class="tag">capteurs</span>
+                                    <span class="tag">biomédical</span>
+                                    <span class="tag">traitement du signal</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                
+            </div>
+        </div>
+
+        <!-- SECTION 3 : PROJETS PERSO (CREATIONS ET LOISIRS) -->
+        <div class="category-section" id="perso" style="margin-bottom: 4rem;">
+            <div class="category-header" style="margin-bottom: 2rem; border-left: 4px solid #799F61; padding-left: 1.2rem; animation: fadeInUp 0.8s ease 0.15s backwards;">
+                <span class="category-tag" style="font-size: 0.75rem; font-weight: 700; color: #799F61; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 0.3rem;">Créations & Loisirs</span>
+                <h2 style="font-size: 1.8rem; margin: 0 0 0.5rem 0; text-transform: none; font-weight: 500;">Projets Perso</h2>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); margin: 0; animation: none;">Créations personnelles, informatique matérielle et configurations de loisir développées par pure passion.</p>
+            </div>
+            
+            <div class="projects-grid grid-2">
+                    <!-- PROJET 4 (Ambilight) -->
+                    <div class="project-item" id="ambilight">
+                        <a href="project-ambilight.html" class="project-link">
+                            <div class="project-image">
+                                <img src="images/project-ambilight/ambilight_monitor.png" alt="Projet Ambilight" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                                <div class="project-preview-overlay" style="z-index: 2;">
+                                    <span class="preview-title">aperçu rapide</span>
+                                    <div class="preview-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-label">durée</span>
+                                            <span class="stat-value">libre</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">équipe</span>
+                                            <span class="stat-value">individuel</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">statut</span>
+                                            <span class="stat-value">terminé</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">domaine</span>
+                                            <span class="stat-value">domotique</span>
+                                        </div>
+                                    </div>
+                                    <span class="preview-action">Voir les détails →</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Projet Ambilight</h3>
+                                <p>Création d'un système de rétroéclairage LED synchronisé dynamiquement avec le flux vidéo affiché à l'écran.</p>
+                                <div class="project-tags">
+                                    <span class="tag">arduino</span>
+                                    <span class="tag">led ws2812b</span>
+                                    <span class="tag">c++</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- PROJET 5 (Cube Pomodoro) -->
+                    <div class="project-item" id="cube">
+                        <a href="project-pomometeo.html" class="project-link">
+                            <div class="project-image">
+                                <img src="images/project-pomometeo/pomometeo_cube.png" alt="Projet Cube Pomodoro & Station Météo" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                                <div class="project-preview-overlay" style="z-index: 2;">
+                                    <span class="preview-title">aperçu rapide</span>
+                                    <div class="preview-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-label">durée</span>
+                                            <span class="stat-value">30 heures</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">équipe</span>
+                                            <span class="stat-value">individuel</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">statut</span>
+                                            <span class="stat-value">terminé</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">domaine</span>
+                                            <span class="stat-value">embarqué</span>
+                                        </div>
+                                    </div>
+                                    <span class="preview-action">Voir les détails →</span>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Cube Pomodoro & Station Météo</h3>
+                                <p>Conception d'un cube connecté d'aide à la gestion du temps et d'une station de suivi des conditions ambiantes, basée sur un microcontrôleur ESP32, divers capteurs et impression 3D.</p>
+                                <div class="project-tags">
+                                    <span class="tag">esp32</span>
+                                    <span class="tag">capteurs</span>
+                                    <span class="tag">c++</span>
+                                    <span class="tag">impression 3d</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                
+
+                
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 CARDON Alexis</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
